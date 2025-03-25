@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafael's CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link href="https://www.nerdfonts.com/assets/css/webfont.css" rel="stylesheet" type="text/css">
+    <style>
+        :root {
+            interpolate-size: allow-keywords;
+            --primary-color: #00aaff;
+            --accent-color: #8646e9;
+            --accent-color2: #5946e9;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .container {
+            width: 1200px;
+            min-height: 100%;
+            overflow-y: hidden;
+            margin: 40px auto;
+        }
+
+        main,
+        .main-header {
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        main {
+            width: 700px;
+            float: right;
+            padding-bottom: 50px;
+        }
+
+        h1,
+        h2 {
+            color: var(--primary-color);
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .skills,
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: var(--accent-color2);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 25px;
+            margin: 5px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .skill {
+            background: #00aaff;
+            color: #121212;
+            padding: 6px 12px;
+            border-radius: 5px;
+            margin: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .contact a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .profile-pic {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            background: rgb(95, 4, 222);
+            background: linear-gradient(210deg, rgba(95, 4, 222, 1) 0%, rgba(0, 159, 255, 1) 100%);
+        }
+
+        .profile-pic img {
+            width: 97%;
+            height: 97%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile-img {
+            width: 100%;
+            object-fit: cover;
+            position: static;
+        }
+
+        .theme-toggle,
+        .lang-toggle {
+            cursor: pointer;
+        }
+
+        .theme-toggle {
+            top: 20px;
+            right: 20px;
+        }
+
+        .lang-toggle {
+            top: 20px;
+            right: 40px;
+        }
+
+        .main-header {
+            text-align: center;
+            width: 400px;
+            float: left;
+        }
+
+        details summary {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            line-height: 40px;
+            border-bottom: 1px solid #80808080;
+        }
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details::details-content {
+            overflow: hidden;
+            height: 0;
+            transition: height 0.3s;
+        }
+
+        details[open]::details-content {
+            height: auto;
+        }
+
+        details::details-content {
+            overflow: hidden;
+            height: 0;
+            transition: height 0.3s, content-visibility 0.3s;
+            transition-behavior: allow-discrete;
+        }
+
+        details[open] summary svg {
+            opacity: 0;
+        }
+
+        .socials,
+        .location,
+        .toggles {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .socials {
+            grid-gap: 20px;
+        }
+
+        .location {
+            grid-gap: 5px;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            color: black;
+            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        .menu ul {
+            padding: 0;
+        }
+
+        .menu li {
+            list-style-type: none;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: rgba(0, 159, 255, 1);
+        }
+
+        .timeline {
+            position: relative;
+            margin: 20px 0;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #00aaff;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: #00aaff;
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            color: #00aaff;
+            font-weight: bold;
+            margin-bottom: 5px;
+            margin-left: 40px;
+        }
+
+        .card,
+        .timeline-content {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .card .card-img {
+            width: 100%;
+            min-height: 150px;
+            max-height: 150px;
+            object-fit: cover;
+            vertical-align: top;
+            opacity: 0.5;
+            border-radius: 5px;
+        }
+
+        .card .card-content {
+            padding: 10px 25px 25px 25px;
+            position: relative;
+            text-align: justify;
+        }
+
+
+        .card .card-content-img {
+            border-radius: 50%;
+            position: absolute;
+            top: -75px;
+            right: 30px;
+            z-index: 1;
+            max-width: 150px;
+            opacity: 1;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            filter: saturate(1.5);
+        }
+
+        .button {
+            display: inline-grid;
+            grid-auto-flow: column;
+            gap: 10px;
+            background: #00aaff;
+            color: #0b2c63;
+            padding: 10px 15px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.3s ease-in-out;
+            align-items: center;
+            max-height: 20px;
+        }
+
+        .button i {
+            font-size: 20px;
+            padding: 0;
+        }
+
+        .card-footer {
+            display: flex;
+            gap: 10px;
+        }
+
+        .button:hover {
+            background: #43c0ff;
+            color: #102157;
+            box-shadow: 0 6px 14px rgba(0, 136, 204, 0.5);
+        }
+
+        .img-flag {
+            width: 30px;
+            aspect-ratio: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="main-header">
+            <!-- <img class="profile-img" src="static/img/utilbox/utilbox-code-header.png" /> -->
+            <div class="profile-pic">
+                <img src="static/img/photo.jpg" />
+            </div>
+            <h1>Rafael Comunhão Ferreira</h1>
+            <p id="role">🧑🏻‍🎓Computer Engineer | 🧑🏻‍💻 Full stack Software Engineer | 💜.NET Expert | 💛JavaScript
+                | ✨Clean code</p>
+            <section class="section">
+                <p>Hi, I'm Rafael, a software developer passionate about building scalable and efficient applications. I
+                    thrive on solving complex challenges and continuously improving my skills.</p>
+            </section>
+            <section class="section menu">
+                <h3>Menu</h3>
+                <nav>
+                    <ul>
+                        <li><a href="#about-me">About me</a></li>
+                        <li><a href="#skills">Tecnhical skills</a></li>
+                        <li><a href="#career">Career</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#skills">Soft skills</a></li>
+                        <li><a href="#skills">Additional courses</a></li>
+                        <li><a href="#languages">Languages</a></li>
+                        <li><a href="#skills">Text books</a></li>
+                        <li><a href="#skills">Interests</a></li>
+                    </ul>
+                </nav>
+            </section>
+            <section class="section location">
+                <i class="nf nf-md-map_marker center"></i> Brazil-SP
+            </section>
+            <section class="section socials">
+                <a class="social-icon" href="https://www.linkedin.com/in/rafael-ferreira93" target="_blank"><i
+                        class="nf nf-fa-linkedin center"></i>
+                </a>
+                <a class="social-icon" href="https://github.com/rafaelchampion/" target="_blank"><i
+                        class="nf nf-md-github center"></i>
+                </a>
+            </section>
+            <section class="section toggles">
+                <div class="theme-toggle" onclick="toggleTheme()">🌓</div>
+                <div class="lang-toggle" onclick="toggleLanguage()">🌍</div>
+            </section>
+        </header>
+        <main>
+            <section class="section" id="about-me">
+                <h2>About me</h2>
+                <p>Hi! I'm Rafael. A senior developer with over 8 years of experience, specialized in .NET development
+                    and software architecture. I'm a purposeful professional with strong experience in
+                    developing complex enterprise systems. Committed to clean code practices and
+                    SOLID principles, with a history of delivering scalable and high-performance
+                    solutions.</p>
+            </section>
+            <section class="section" id="skills">
+                <h2>Technical Skills</h2>
+                <details open>
+                    <summary>Backend
+                        <svg aria-hidden="true" focusable="false" class="octicon octicon-plus" viewBox="0 0 16 16"
+                            width="16" height="16" fill="#ffffff">
+                            <path
+                                d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z">
+                            </path>
+                        </svg>
+                    </summary>
+                    <div class="skills">
+                        <span class="skill"><i class="devicon-csharp-plain"></i> C#</span>
+                        <span class="skill"><i class="devicon-dot-net-plain-wordmark"></i> .NET Framework</span>
+                        <span class="skill"><i class="devicon-dotnetcore-plain"></i> .NET Core</span>
+                        <span class="skill"><i class="nf nf-md-dot_net center"></i> .NET 5+</span>
+                        <span class="skill">Entity Framework</span>
+                        <span class="skill">DevExpress</span>
+                        <span class="skill"><i class="nf nf-md-api center"></i> REST</span>
+                        <span class="skill"><i class="nf nf-md-api center"></i> SOAP</span>
+                        <span class="skill">Web APIs</span>
+                    </div>
+                </details>
+                <details open>
+                    <summary>Frontend<svg aria-hidden="true" focusable="false" class="octicon octicon-plus"
+                            viewBox="0 0 16 16" width="16" height="16" fill="#ffffff">
+                            <path
+                                d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z">
+                            </path>
+                        </svg></summary>
+                    <div class="skills">
+                        <span class="skill"><i class="devicon-html5-plain-wordmark"></i> HTML5</span>
+                        <span class="skill"><i class="devicon-css3-plain-wordmark"></i> CSS3</span>
+                        <span class="skill"><i class="devicon-bootstrap-plain"></i> Bootstrap</span>
+                        <span class="skill"><i class="devicon-tailwindcss-original"></i> Tailwind</span>
+                        <span class="skill"><i class="devicon-javascript-plain"></i> JavaScript</span>
+                        <span class="skill"><i class="devicon-typescript-plain"></i> TypeScript</span>
+                        <span class="skill"><i class="devicon-jquery-plain"></i> jQuery</span>
+                        <span class="skill">ASP.NET MVC</span>
+                        <span class="skill">Razor Pages</span>
+                        <span class="skill"><i class="devicon-blazor-original"></i> Blazor</span>
+                        <span class="skill"><i class="devicon-angularjs-plain"></i> Angular</span>
+                    </div>
+                </details>
+                <details>
+                    <summary>Databases<svg aria-hidden="true" focusable="false" class="octicon octicon-plus"
+                            viewBox="0 0 16 16" width="16" height="16" fill="#ffffff">
+                            <path
+                                d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z">
+                            </path>
+                        </svg></summary>
+                    <div class="skills">
+                        <span class="skill"><i class="devicon-microsoftsqlserver-plain"></i> SQL Server</span>
+                        <span class="skill"><i class="devicon-mysql-original"></i> MySQL</span>
+                        <span class="skill"><i class="devicon-azuresqldatabase-plain"></i> PL/SQL</span>
+                        <span class="skill"><i class="nf nf-fa-angles_up center"></i> Query performance</span>
+                        <span class="skill"><i class="nf nf-md-database_arrow_right center"></i> Stored
+                            procedures</span>
+                        <span class="skill"><i class="nf nf-md-database_plus center"></i> Triggers</span>
+                        <span class="skill"><i class="nf nf-md-database_eye center"></i> Views</span>
+                        <span class="skill"><i class="nf nf-md-database_sync center"></i> Functions</span>
+                    </div>
+                </details>
+                <details>
+                    <summary>DevOps<svg aria-hidden="true" focusable="false" class="octicon octicon-plus"
+                            viewBox="0 0 16 16" width="16" height="16" fill="#ffffff">
+                            <path
+                                d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z">
+                            </path>
+                        </svg></summary>
+                    <div class="skills">
+                        <span class="skill"><i class="nf nf-md-database_sync center"></i> CI/CD</span>
+                        <span class="skill"><i class="devicon-git-plain"></i> Git</span>
+                        <span class="skill"><i class="devicon-github-original"></i> GitHub</span>
+                        <span class="skill"><i class="devicon-githubactions-plain"></i> GitHub Actions</span>
+                        <span class="skill"><i class="devicon-azuredevops-plain"></i> Azure DevOps</span>
+                        <span class="skill"><i class="devicon-docker-plain"></i> Docker</span>
+                        <span class="skill"><i class="devicon-docker-plain"></i>Docker compose</span>
+                    </div>
+                </details>
+                <details>
+                    <summary>Tests<svg aria-hidden="true" focusable="false" class="octicon octicon-plus"
+                            viewBox="0 0 16 16" width="16" height="16" fill="#ffffff">
+                            <path
+                                d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z">
+                            </path>
+                        </svg></summary>
+                    <div class="skills">
+                        <span class="skill"><i class="nf nf-dev-selenium center"></i> Selenium</span>
+                        <span class="skill">NUnit</span>
+                        <span class="skill">xUnit</span>
+                    </div>
+                </details>
+                <details>
+                    <summary>Architecture<svg aria-hidden="true" focusable="false" class="octicon octicon-plus"
+                            viewBox="0 0 16 16" width="16" height="16" fill="#ffffff">
+                            <path
+                                d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z">
+                            </path>
+                        </svg></summary>
+                    <div class="skills">
+                        <span class="skill">DDD</span>
+                        <span class="skill">TDD</span>
+                        <span class="skill">Clean Architecture</span>
+                        <span class="skill"><i class="nf nf-md-hexagon_slice_6 center"></i> Hexagonal
+                            Architecture</span>
+                        <span class="skill"><i class="nf nf-ple-lego_separator center"></i> CQRS</span>
+                    </div>
+                </details>
+                <details>
+                    <summary>Code quality<svg aria-hidden="true" focusable="false" class="octicon octicon-plus"
+                            viewBox="0 0 16 16" width="16" height="16" fill="#ffffff">
+                            <path
+                                d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z">
+                            </path>
+                        </svg></summary>
+                    <div class="skills">
+                        <span class="skill">Clean Code</span>
+                        <span class="skill">Design Patterns</span>
+                        <span class="skill">DRI</span>
+                        <span class="skill">YAGNI</span>
+                        <span class="skill">KISS</span>
+                    </div>
+                </details>
+                <details>
+                    <summary>Agile<svg aria-hidden="true" focusable="false" class="octicon octicon-plus"
+                            viewBox="0 0 16 16" width="16" height="16" fill="#ffffff">
+                            <path
+                                d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z">
+                            </path>
+                        </svg></summary>
+                    <div class="skills">
+                        <span class="skill">Agile</span>
+                        <span class="skill">Scrum</span>
+                        <span class="skill">Kanban</span>
+                    </div>
+                </details>
+                <details>
+                    <summary>Other skills<svg aria-hidden="true" focusable="false" class="octicon octicon-plus"
+                            viewBox="0 0 16 16" width="16" height="16" fill="#ffffff">
+                            <path
+                                d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z">
+                            </path>
+                        </svg></summary>
+                    <div class="skills">
+                        <span class="skill"><i class="devicon-java-plain"></i> Java</span>
+                        <span class="skill"><i class="devicon-processing-plain"></i> Processing</span>
+                        <span class="skill"><i class="devicon-p5js-original"></i> P5.JS</span>
+                    </div>
+                </details>
+            </section>
+            <section id="career" class="section career">
+                <h2>Career</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Apr. 2021 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Senior Software Engineer</h3>
+                            <p><strong>Grupo Fast</strong></p>
+                            <p>Maintenance and development of new system features for managing a network of laser hair
+                                removal
+                                clinics, focusing on patient care, scheduling, inventory management, account management,
+                                and team
+                                management.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Feb. 2020 - Apr. 2021</div>
+                        <div class="timeline-content">
+                            <h3>.NET Developer</h3>
+                            <p><strong>Fast Escova Franchising</strong></p>
+                            <p>Planning and development of a system for managing a network of clinics focused on
+                                application
+                                automation.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Feb. 2019 - Feb. 2020</div>
+                        <div class="timeline-content">
+                            <h3>.NET Developer</h3>
+                            <p><strong>MedicMais Franchising</strong></p>
+                            <p>Planning and development of a system for managing a network of medical clinics with high
+                                demand.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Nov. 2016 - Jan. 2019</div>
+                        <div class="timeline-content">
+                            <h3>Junior .NET Developer</h3>
+                            <p><strong>Instituto da Construção</strong></p>
+                            <p>Development of new features for a management system for students and classes in
+                                construction-related
+                                courses.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Apr. 2016 - Nov. 2016</div>
+                        <div class="timeline-content">
+                            <h3>Support Analyst</h3>
+                            <p><strong>Resolve Franchising</strong></p>
+                            <p>Provided support and training for franchisees and employees using three franchise ERP
+                                systems.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Nov. 2012 - Jul. 2015</div>
+                        <div class="timeline-content">
+                            <h3>Administrative Assistant</h3>
+                            <p><strong>De Rose Comércio e Representações LTDA</strong></p>
+                            <p>Office routines, invoicing, and electronic invoices.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education" class="section">
+                <h2>🎓Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Jan. 2014 - Dec. 2018</div>
+                        <div class="timeline-content">
+                            <h3>Computer engineering</h3>
+                            <p><strong>UNORTE - Centro Universitário do Norte de São Paulo</strong> • <span>Bachelor
+                                    degree</span></p>
+                            </p>
+                            <p>Scientific initiation program: Galvanometer usage in laser harp electronics.</p>
+                            <p>Thesis: Comparative study of A* pathtracing algorithm vs. machine learning genetic
+                                algorithm on warehouse robots automation.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Jan. 2009 - Jul. 2010</div>
+                        <div class="timeline-content">
+                            <h3>Computer technician</h3>
+                            <p><strong>ETEC Philadelpho Gouvêa Netto</strong> • <span>Technician degree</span></p>
+                            <p>Thesis: Newstand sales software automation.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="section">
+                <h2>Projects</h2>
+                <div class="card">
+                    <img class="card-img" src="static/img/utilbox/utilbox-code-header.png" />
+                    <div class="card-content">
+                        <img class="card-content-img" src="static/img/utilbox/utilbox-logo.png" />
+                        <div class="card-title">
+                            <h2>Utilbox</h3>
+                        </div>
+                        <div class="badges card-badges">
+                            <div class="badge">Open source</div>
+                            <div class="badge">MIT License</div>
+                        </div>
+                        <div class="card-text">
+                            <p>
+                                A modular collection of C# utility libraries designed to simplify common development
+                                tasks. With separate
+                                packages for handling dates, enums, results, strings, and pagination, Utilbox is
+                                made
+                                for developers to code without the need to reinvent the wheel.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/rafaelchampion/Utilbox" target="_blank" class="button">
+                                <i class="devicon-github-original"></i>
+                                <span>View on GitHub</span>
+                                <i class="nf nf-oct-link_external center"></i>
+                            </a>
+                            <a href="https://www.nuget.org/packages?q=Utilbox" target="_blank" class="button">
+                                <i class="nf nf-dev-nuget center"></i>
+                                <span>View on Nuget.org</span>
+                                <i class="nf nf-oct-link_external center"></i>
+                            </a>
+                        </div>
+                    </div>
+            </section>
+
+            <section id="languages" class="section">
+                <h2>Languages</h2>
+                <p><img class="img-flag" src="static/img/flags/bra.png"> Brazilian Portuguese (Native)</li>
+                <p><img class="img-flag" src="static/img/flags/usa.png"> English (Fluent)</li>
+            </section>
+
+            <section class="section">
+                <h2>About Me</h2>
+                <p>Driven by technology and innovation, I strive to create solutions that make an impact. I enjoy
+                    working
+                    with cross-functional teams and continuously learning new technologies.</p>
+            </section>
+
+            <section class="section contact">
+                <h2>Contact</h2>
+                <p>Email: <a href="mailto:rafael@example.com">rafael@example.com</a></p>
+                <p>GitHub: <a href="https://github.com/yourgithub">github.com/yourgithub</a></p>
+                <p>LinkedIn: <a href="https://linkedin.com/in/yourlinkedin">linkedin.com/in/yourlinkedin</a></p>
+                <p>Phone: +55 (XX) XXXXX-XXXX</p>
+            </section>
+        </main>
+    </div>
+    <script>
+        function toggleTheme() {
+            document.body.style.backgroundColor = document.body.style.backgroundColor === 'white' ? '#121212' : 'white';
+            document.body.style.color = document.body.style.color === 'black' ? 'white' : 'black';
+        }
+
+        function toggleLanguage() {
+            const elements = {
+                "name": { en: "Rafael", pt: "Rafael" },
+                "role": { en: "Passionate Software Developer | .NET Expert | Tech Enthusiast", pt: "Desenvolvedor de Software Apaixonado | Especialista em .NET | Entusiasta de Tecnologia" },
+                "greetings-title": { en: "Greetings/Presentation", pt: "Saudações/Apresentação" },
+                "greetings": { en: "Hi, I'm Rafael, a software developer passionate about building scalable and efficient applications. I thrive on solving complex challenges and continuously improving my skills.", pt: "Olá, sou Rafael, um desenvolvedor de software apaixonado por criar aplicações escaláveis e eficientes. Adoro resolver desafios complexos e melhorar continuamente minhas habilidades." },
+                "skills-title": { en: "Technical Skills", pt: "Habilidades Técnicas" },
+                "contact-title": { en: "Contact", pt: "Contato" }
+            };
+
+            const currentLang = document.documentElement.lang === "en" ? "pt" : "en";
+            document.documentElement.lang = currentLang;
+
+            Object.keys(elements).forEach(id => {
+                document.getElementById(id).textContent = elements[id][currentLang];
+            });
+        }
+    </script>
+</body>
+
+</html>
