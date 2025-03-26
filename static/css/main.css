@@ -444,9 +444,6 @@ details[open] summary svg {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-.timeline-content {
     text-align: justify;
 }
 
@@ -766,6 +763,13 @@ details[open] summary svg {
 
     .button span {
         text-align: center;
+    }
+
+    .card .card-content,
+    .timeline-content,
+    .section#about-me,
+    .section#interests {
+        text-align: left;
     }
 
     .card .card-content-img {
