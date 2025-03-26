@@ -1,400 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rafael's CV</title>
+    <meta name="description" content="Resumo acadêmico e profissional de Rafael Comunhão Ferreira, especialista em
+    desenvolvimento .NET e arquitetura de software.">
+    <title>Rafael Comunhão Ferreira - Resumo acadêmico e profissional</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link href="https://www.nerdfonts.com/assets/css/webfont.css" rel="stylesheet" type="text/css">
-    <style>
-        :root {
-            interpolate-size: allow-keywords;
-            --primary-color: #00aaff;
-            --accent-color: #8646e9;
-            --accent-color2: #5946e9;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #121212;
-            color: #ffffff;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        .container {
-            width: 1200px;
-            min-height: 100%;
-            overflow-y: hidden;
-            margin: 40px auto;
-        }
-
-        main,
-        .main-header {
-            padding: 20px;
-            background: #1e1e1e;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        main {
-            width: 700px;
-            float: right;
-            padding-bottom: 50px;
-        }
-
-        h1,
-        h2 {
-            color: var(--primary-color);
-        }
-
-        .section {
-            margin-bottom: 30px;
-        }
-
-        .skills,
-        .badges {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            background: var(--accent-color2);
-            color: white;
-            padding: 4px 10px;
-            border-radius: 25px;
-            margin: 5px;
-            font-weight: 500;
-            font-size: 14px;
-        }
-
-        .skill {
-            background: #00aaff;
-            color: #121212;
-            padding: 6px 12px;
-            border-radius: 5px;
-            margin: 5px;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        .contact a {
-            color: #00aaff;
-            text-decoration: none;
-        }
-
-        .contact a:hover {
-            text-decoration: underline;
-        }
-
-        .profile-pic {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: gray;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 20px;
-            background: rgb(95, 4, 222);
-            background: linear-gradient(210deg, rgba(95, 4, 222, 1) 0%, rgba(0, 159, 255, 1) 100%);
-        }
-
-        .profile-pic img {
-            width: 97%;
-            height: 97%;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .profile-img {
-            width: 100%;
-            object-fit: cover;
-            position: static;
-        }
-
-        .theme-toggle,
-        .lang-toggle {
-            cursor: pointer;
-        }
-
-        .theme-toggle {
-            top: 20px;
-            right: 20px;
-        }
-
-        .lang-toggle {
-            top: 20px;
-            right: 40px;
-        }
-
-        .main-header {
-            text-align: center;
-            width: 400px;
-            float: left;
-        }
-
-        details summary {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 20px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            margin-bottom: 10px;
-            line-height: 40px;
-            border-bottom: 1px solid #80808080;
-        }
-
-        details summary::-webkit-details-marker {
-            display: none;
-        }
-
-        details::details-content {
-            overflow: hidden;
-            height: 0;
-            transition: height 0.3s;
-        }
-
-        details[open]::details-content {
-            height: auto;
-        }
-
-        details::details-content {
-            overflow: hidden;
-            height: 0;
-            transition: height 0.3s, content-visibility 0.3s;
-            transition-behavior: allow-discrete;
-        }
-
-        details[open] summary svg {
-            opacity: 0;
-        }
-
-        .socials,
-        .location,
-        .toggles {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .socials {
-            grid-gap: 20px;
-        }
-
-        .location {
-            grid-gap: 5px;
-        }
-
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #ffffff;
-            color: black;
-            display: block;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-        }
-
-        .menu ul {
-            padding: 0;
-        }
-
-        .menu li {
-            list-style-type: none;
-            margin: 10px 0;
-            font-size: 18px;
-        }
-
-        .menu a {
-            text-decoration: none;
-            color: rgba(0, 159, 255, 1);
-        }
-
-        .timeline {
-            position: relative;
-            margin: 20px 0;
-            padding-left: 40px;
-        }
-
-        .timeline::before {
-            content: "";
-            position: absolute;
-            left: 20px;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: #00aaff;
-            border-radius: 2px;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 30px;
-        }
-
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: 10px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            background: #00aaff;
-            border-radius: 50%;
-        }
-
-        .timeline-date {
-            color: #00aaff;
-            font-weight: bold;
-            margin-bottom: 5px;
-            margin-left: 40px;
-        }
-
-        .card,
-        .timeline-content {
-            background: #2a2a2a;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-        }
-
-        .card .card-img {
-            width: 100%;
-            min-height: 150px;
-            max-height: 150px;
-            object-fit: cover;
-            vertical-align: top;
-            opacity: 0.5;
-            border-radius: 5px;
-        }
-
-        .card .card-content {
-            padding: 10px 25px 25px 25px;
-            position: relative;
-            text-align: justify;
-        }
-
-
-        .card .card-content-img {
-            border-radius: 50%;
-            position: absolute;
-            top: -75px;
-            right: 30px;
-            z-index: 1;
-            max-width: 150px;
-            opacity: 1;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-            filter: saturate(1.5);
-        }
-
-        .button {
-            display: inline-grid;
-            grid-auto-flow: column;
-            gap: 10px;
-            background: #00aaff;
-            color: #0b2c63;
-            padding: 10px 15px;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: 0.3s ease-in-out;
-            align-items: center;
-            max-height: 20px;
-        }
-
-        .button i {
-            font-size: 20px;
-            padding: 0;
-        }
-
-        .card-footer {
-            display: flex;
-            gap: 10px;
-        }
-
-        .button:hover {
-            background: #43c0ff;
-            color: #102157;
-            box-shadow: 0 6px 14px rgba(0, 136, 204, 0.5);
-        }
-
-        .img-flag {
-            width: 30px;
-            aspect-ratio: 1;
-        }
-    </style>
+    <link rel="stylesheet" href="static/css/main.css" />
 </head>
 
 <body>
     <div class="container">
-        <header class="main-header">
-            <!-- <img class="profile-img" src="static/img/utilbox/utilbox-code-header.png" /> -->
-            <div class="profile-pic">
-                <img src="static/img/photo.jpg" />
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <div class="profile-pic">
+                    <img src="static/img/photo.jpg" alt="Rafael's Profile Picture">
+                </div>
+                <h1>
+                    Rafael Comunhão Ferreira
+                </h1>
+                <div>
+                    <i class="nf nf-md-map_marker center"></i> <span data-text-en="SP • Brazil"
+                        data-text-pt="SP • Brasil">SP
+                        • Brazil</span>
+                </div>
+                <p id="role"
+                    data-text-en="🧑🏻‍🎓Computer Engineer • 🧑🏻‍💻 Full stack Software Engineer • 💜.NET Expert • 💛JavaScript • ✨Clean code"
+                    data-text-pt="🧑🏻‍🎓Engenheiro de Computação | 🧑🏻‍💻 Desenvolvedor Full Stack | 💜Especialista .NET | 💛JavaScript | ✨Código Limpo">
+                    🧑🏻‍🎓Computer Engineer • 🧑🏻‍💻 Full stack Software Engineer • 💜.NET Expert • 💛JavaScript •
+                    ✨Clean
+                    code
+                </p>
             </div>
-            <h1>Rafael Comunhão Ferreira</h1>
-            <p id="role">🧑🏻‍🎓Computer Engineer | 🧑🏻‍💻 Full stack Software Engineer | 💜.NET Expert | 💛JavaScript
-                | ✨Clean code</p>
-            <section class="section">
-                <p>Hi, I'm Rafael, a software developer passionate about building scalable and efficient applications. I
-                    thrive on solving complex challenges and continuously improving my skills.</p>
-            </section>
-            <section class="section menu">
-                <h3>Menu</h3>
-                <nav>
-                    <ul>
-                        <li><a href="#about-me">About me</a></li>
-                        <li><a href="#skills">Tecnhical skills</a></li>
-                        <li><a href="#career">Career</a></li>
-                        <li><a href="#education">Education</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#skills">Soft skills</a></li>
-                        <li><a href="#skills">Additional courses</a></li>
-                        <li><a href="#languages">Languages</a></li>
-                        <li><a href="#skills">Text books</a></li>
-                        <li><a href="#skills">Interests</a></li>
-                    </ul>
-                </nav>
-            </section>
-            <section class="section location">
-                <i class="nf nf-md-map_marker center"></i> Brazil-SP
-            </section>
-            <section class="section socials">
-                <a class="social-icon" href="https://www.linkedin.com/in/rafael-ferreira93" target="_blank"><i
-                        class="nf nf-fa-linkedin center"></i>
+        </aside>
+        <header class="main-nav">
+            <div class="nav-left">
+                <a class="nav-logo" href="#about-me">Rafael Ferreira</a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i class="nav-toggle-icon nf nf-md-microsoft_xbox_controller_menu center"></i>
+            </button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#about-me" data-text-en="About me" data-text-pt="Sobre mim">Sobre Mim</a></li>
+                    <li><a href="#skills" data-text-en="Skills" data-text-pt="Habilidades">Habilidades</a></li>
+                    <li><a href="#career" data-text-en="Career" data-text-pt="Experiência profissional">Experiência
+                            profissional</a></li>
+                    <li><a href="#education" data-text-en="Education" data-text-pt="Formação acadêmica">Formação
+                            acadêmica</a></li>
+                    <li><a href="#projects" data-text-en="Projects" data-text-pt="Projetos">Projetos</a></li>
+                    <li><a href="#courses" data-text-en="Courses" data-text-pt="Cursos">Cursos</a></li>
+                    <li><a href="#languages" data-text-en="Languages" data-text-pt="Idiomas">Idiomas</a></li>
+                    <li><a href="#books" data-text-en="Books" data-text-pt="Sobre mim">Livros</a></li>
+                    <li><a href="#interests" data-text-en="Interests" data-text-pt="Interesses">Interesses</a></li>
+                </ul>
+            </nav>
+            <div class="nav-extras">
+                <!-- <a class="social-icon" href="https://www.linkedin.com/in/rafael-ferreira93" target="_blank"
+                    aria-label="LinkedIn">
+                    <i class="nf nf-fa-linkedin"></i>
                 </a>
-                <a class="social-icon" href="https://github.com/rafaelchampion/" target="_blank"><i
-                        class="nf nf-md-github center"></i>
-                </a>
-            </section>
-            <section class="section toggles">
-                <div class="theme-toggle" onclick="toggleTheme()">🌓</div>
-                <div class="lang-toggle" onclick="toggleLanguage()">🌍</div>
-            </section>
+                <a class="social-icon" href="https://github.com/rafaelchampion" target="_blank" aria-label="GitHub">
+                    <i class="nf nf-md-github"></i>
+                </a> -->
+                <button class="toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
+                    <img class="img-flag" src="static/img/theme/switch.png">
+                </button>
+                <button id="lang-toggle-pt" class="toggle-btn" aria-label="Toggle Language PT-BR">
+                    <img class="img-flag" src="static/img/flags/bra.png">
+                </button>
+                <button id="lang-toggle-en" class="toggle-btn" aria-label="Toggle Language EN-US">
+                    <img class="img-flag" src="static/img/flags/usa.png">
+                </button>
+            </div>
         </header>
-        <main>
+        <main class="main-content">
             <section class="section" id="about-me">
-                <h2>About me</h2>
-                <p>Hi! I'm Rafael. A senior developer with over 8 years of experience, specialized in .NET development
-                    and software architecture. I'm a purposeful professional with strong experience in
-                    developing complex enterprise systems. Committed to clean code practices and
-                    SOLID principles, with a history of delivering scalable and high-performance
-                    solutions.</p>
+                <h2 data-text-en="About me" data-text-pt="Sobre mim">Sobre mim</h2>
+                <p data-text-en="Hi, I'm Rafael, a senior software engineer with
+                    over 8 years of experience, specialized in .NET development
+                    and software architecture. I'm passionate about building scalable and efficient applications and
+                    thrive on solving complex challenges and continuously improving my skills. I'm a purposeful
+                    professional with strong experience in developing complex enterprise systems. Committed to clean
+                    code practices and SOLID principles, with a history of delivering scalable and high-performance
+                    solutions." data-text-pt="Olá, sou Rafael, um engenheiro de software sênior com
+                    mais de 8 anos de experiência, especializado em desenvolvimento .NET
+                    e arquitetura de software. Sou apaixonado por construir aplicações escaláveis ​​e eficientes e por
+                    solucionar desafios complexos que ajudem na melhoria contínua de minhas habilidades. Sou um
+                    profissional
+                    com propósito e sólida experiência no desenvolvimento de sistemas empresariais complexos.
+                    Sou comprometido com práticas de código limpo e princípios SOLID, e possuo um histórico de entrega
+                    de
+                    soluções escaláveis ​​e de alto desempenho.">
+                    Olá, sou Rafael, um engenheiro de software sênior com
+                    mais de 8 anos de experiência, especializado em desenvolvimento .NET
+                    e arquitetura de software. Sou apaixonado por construir aplicações escaláveis ​​e eficientes e por
+                    solucionar desafios complexos que ajudem na melhoria contínua de minhas habilidades. Sou um
+                    profissional
+                    com propósito e sólida experiência no desenvolvimento de sistemas empresariais complexos.
+                    Sou comprometido com práticas de código limpo e princípios SOLID, e possuo um histórico de entrega
+                    de
+                    soluções escaláveis ​​e de alto desempenho.
+                </p>
             </section>
             <section class="section" id="skills">
-                <h2>Technical Skills</h2>
+                <h2 data-text-en="🛠️ Technical Skills" data-text-pt="🛠️ Habilidades Técnicas">🛠️ Habilidades Técnicas
+                </h2>
+                <p data-text-en="Click on the categories to expand and see more skills."
+                    data-text-pt="Clique nas categorias para expandi-las e visualizar mais habilidades.">Clique nas
+                    categorias para expandi-las e visualizar mais habilidades.</small>
                 <details open>
-                    <summary>Backend
+                    <summary><span data-text-en="Backend" data-text-pt="Backend">Backend</span>
                         <svg aria-hidden="true" focusable="false" class="octicon octicon-plus" viewBox="0 0 16 16"
                             width="16" height="16" fill="#ffffff">
                             <path
@@ -408,15 +128,17 @@
                         <span class="skill"><i class="devicon-dotnetcore-plain"></i> .NET Core</span>
                         <span class="skill"><i class="nf nf-md-dot_net center"></i> .NET 5+</span>
                         <span class="skill">Entity Framework</span>
-                        <span class="skill">DevExpress</span>
+                        <span class="skill">SignalR</span>
                         <span class="skill"><i class="nf nf-md-api center"></i> REST</span>
                         <span class="skill"><i class="nf nf-md-api center"></i> SOAP</span>
                         <span class="skill">Web APIs</span>
+                        <span class="skill">DevExpress</span>
                     </div>
                 </details>
                 <details open>
-                    <summary>Frontend<svg aria-hidden="true" focusable="false" class="octicon octicon-plus"
-                            viewBox="0 0 16 16" width="16" height="16" fill="#ffffff">
+                    <summary><span data-text-en="Frontend" data-text-pt="Frontend">Frontend</span><svg
+                            aria-hidden="true" focusable="false" class="octicon octicon-plus" viewBox="0 0 16 16"
+                            width="16" height="16" fill="#ffffff">
                             <path
                                 d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z">
                             </path>
@@ -435,9 +157,10 @@
                         <span class="skill"><i class="devicon-angularjs-plain"></i> Angular</span>
                     </div>
                 </details>
-                <details>
-                    <summary>Databases<svg aria-hidden="true" focusable="false" class="octicon octicon-plus"
-                            viewBox="0 0 16 16" width="16" height="16" fill="#ffffff">
+                <details open>
+                    <summary><span data-text-en="Databases" data-text-pt="Bancos de dados">Bancos de dados</span><svg
+                            aria-hidden="true" focusable="false" class="octicon octicon-plus" viewBox="0 0 16 16"
+                            width="16" height="16" fill="#ffffff">
                             <path
                                 d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z">
                             </path>
@@ -446,17 +169,20 @@
                         <span class="skill"><i class="devicon-microsoftsqlserver-plain"></i> SQL Server</span>
                         <span class="skill"><i class="devicon-mysql-original"></i> MySQL</span>
                         <span class="skill"><i class="devicon-azuresqldatabase-plain"></i> PL/SQL</span>
-                        <span class="skill"><i class="nf nf-fa-angles_up center"></i> Query performance</span>
                         <span class="skill"><i class="nf nf-md-database_arrow_right center"></i> Stored
                             procedures</span>
                         <span class="skill"><i class="nf nf-md-database_plus center"></i> Triggers</span>
                         <span class="skill"><i class="nf nf-md-database_eye center"></i> Views</span>
                         <span class="skill"><i class="nf nf-md-database_sync center"></i> Functions</span>
+                        <span class="skill"><i class="nf nf-fa-angles_up center"></i> <span
+                                data-text-en="Query performance" data-text-pt="Performance de consultas">Performance de
+                                consultas</span></span>
                     </div>
                 </details>
-                <details>
-                    <summary>DevOps<svg aria-hidden="true" focusable="false" class="octicon octicon-plus"
-                            viewBox="0 0 16 16" width="16" height="16" fill="#ffffff">
+                <details open>
+                    <summary><span data-text-en="DevOps" data-text-pt="DevOps">DevOps</span><svg aria-hidden="true"
+                            focusable="false" class="octicon octicon-plus" viewBox="0 0 16 16" width="16" height="16"
+                            fill="#ffffff">
                             <path
                                 d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z">
                             </path>
@@ -472,8 +198,9 @@
                     </div>
                 </details>
                 <details>
-                    <summary>Tests<svg aria-hidden="true" focusable="false" class="octicon octicon-plus"
-                            viewBox="0 0 16 16" width="16" height="16" fill="#ffffff">
+                    <summary><span data-text-en="Tests" data-text-pt="Testes">Testes</span><svg aria-hidden="true"
+                            focusable="false" class="octicon octicon-plus" viewBox="0 0 16 16" width="16" height="16"
+                            fill="#ffffff">
                             <path
                                 d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z">
                             </path>
@@ -485,8 +212,9 @@
                     </div>
                 </details>
                 <details>
-                    <summary>Architecture<svg aria-hidden="true" focusable="false" class="octicon octicon-plus"
-                            viewBox="0 0 16 16" width="16" height="16" fill="#ffffff">
+                    <summary><span data-text-en="Architecture" data-text-pt="Arquitetura">Arquitetura</span><svg
+                            aria-hidden="true" focusable="false" class="octicon octicon-plus" viewBox="0 0 16 16"
+                            width="16" height="16" fill="#ffffff">
                             <path
                                 d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z">
                             </path>
@@ -494,14 +222,15 @@
                     <div class="skills">
                         <span class="skill">DDD</span>
                         <span class="skill">TDD</span>
+                        <span class="skill"><i class="nf nf-ple-lego_separator center"></i> CQRS</span>
                         <span class="skill">Clean Architecture</span>
                         <span class="skill"><i class="nf nf-md-hexagon_slice_6 center"></i> Hexagonal
                             Architecture</span>
-                        <span class="skill"><i class="nf nf-ple-lego_separator center"></i> CQRS</span>
                     </div>
                 </details>
                 <details>
-                    <summary>Code quality<svg aria-hidden="true" focusable="false" class="octicon octicon-plus"
+                    <summary><span data-text-en="Code quality" data-text-pt="Qualidade de código">Qualidade de
+                            código</span><svg aria-hidden="true" focusable="false" class="octicon octicon-plus"
                             viewBox="0 0 16 16" width="16" height="16" fill="#ffffff">
                             <path
                                 d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z">
@@ -516,8 +245,9 @@
                     </div>
                 </details>
                 <details>
-                    <summary>Agile<svg aria-hidden="true" focusable="false" class="octicon octicon-plus"
-                            viewBox="0 0 16 16" width="16" height="16" fill="#ffffff">
+                    <summary><span data-text-en="Agile" data-text-pt="Agile">Agile</span><svg aria-hidden="true"
+                            focusable="false" class="octicon octicon-plus" viewBox="0 0 16 16" width="16" height="16"
+                            fill="#ffffff">
                             <path
                                 d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z">
                             </path>
@@ -529,7 +259,8 @@
                     </div>
                 </details>
                 <details>
-                    <summary>Other skills<svg aria-hidden="true" focusable="false" class="octicon octicon-plus"
+                    <summary><span data-text-en="Other skills" data-text-pt="Outras habilidades">Outras
+                            habilidades</span><svg aria-hidden="true" focusable="false" class="octicon octicon-plus"
                             viewBox="0 0 16 16" width="16" height="16" fill="#ffffff">
                             <path
                                 d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z">
@@ -543,103 +274,225 @@
                 </details>
             </section>
             <section id="career" class="section career">
-                <h2>Career</h2>
+                <h2 data-text-en="💼 Career" data-text-pt="💼 Experiência profissional">💼 Experiência profissional</h2>
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="timeline-date">Apr. 2021 - Present</div>
+                        <div class="timeline-date" data-text-en="Apr. 2021 - Present"
+                            data-text-pt="Abr. 2021 - Presente">Abr. 2021 - Presente</div>
                         <div class="timeline-content">
-                            <h3>Senior Software Engineer</h3>
-                            <p><strong>Grupo Fast</strong></p>
-                            <p>Maintenance and development of new system features for managing a network of laser hair
-                                removal
-                                clinics, focusing on patient care, scheduling, inventory management, account management,
-                                and team
-                                management.</p>
+                            <h3 data-text-en="Senior Software Engineer" data-text-pt="Engenheiro de software sênior">
+                                Engenheiro de software sênior</h3>
+                            <p><strong data-text-en="in Grupo Fast" data-text-pt="em Grupo Fast">em Grupo Fast</strong>
+                            </p>
+                            <p data-text-en="Maintenance and development of new system features for managing a network of laser hair removal clinics, focusing on patient care, scheduling, inventory management and account management. <mark>ASP.NET MVC</mark>,<mark>Razor Pages</mark>, <mark>.NET Core to .NET
+                                    8</mark>, <mark>RESTful APIs</mark>, <mark>integration with several business partners</mark>, <mark>API developement and security</mark>, <mark>refactoring</mark> and <mark>performance improvements</mark>, continuous delivery, data reestructuring, framework upgrades, <mark>new projects architecture decisions</mark>, user experience and more."
+                                data-text-pt="Manutenção e desenvolvimento de novos recursos de sistema para gerenciar uma rede de clínicas de depilação a laser, com foco em atendimento ao paciente, agendamento, gerenciamento de estoque e gerenciamento de contas. <mark>ASP.NET MVC</mark>,<mark>Razor Pages</mark>, <mark>.NET Core a .NET
+                                    8</mark>, <mark>APIs RESTful</mark>, <mark>integração com vários parceiros de negócios</mark>, <mark>desenvolvimento e segurança de APIs</mark>, <mark>refatoração</mark> e <mark>melhorias de desempenho</mark>, entrega contínua, reestruturação de dados, atualizações de framework, <mark>decisões de arquitetura de novos projetos</mark>, experiência do usuário entre outros.">
+                                Manutenção e desenvolvimento de novos recursos de sistema para gerenciar uma rede de
+                                clínicas de depilação a laser, com
+                                foco em atendimento ao paciente, agendamento, gerenciamento de estoque e gerenciamento
+                                de contas. <mark>ASP.NET MVC</mark>,<mark>Razor Pages</mark>, <mark>.NET Core a .NET
+                                    8</mark>, <mark>APIs RESTful</mark>, <mark>integração com vários
+                                    parceiros de negócios</mark>, <mark>desenvolvimento e segurança de APIs</mark>,
+                                <mark>refatoração</mark> e <mark>melhorias de
+                                    desempenho</mark>, entrega contínua,
+                                reestruturação de dados, atualizações de framework, <mark>decisões de arquitetura de
+                                    novos projetos</mark>, experiência do usuário entre outros.
+                            </p>
                         </div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-date">Feb. 2020 - Apr. 2021</div>
+                        <div class="timeline-date" data-text-en="Feb. 2020 - Apr. 2021"
+                            data-text-pt="Fev. 2020 - Abr. 2021">Fev. 2020 - Abr. 2021</div>
                         <div class="timeline-content">
-                            <h3>.NET Developer</h3>
-                            <p><strong>Fast Escova Franchising</strong></p>
-                            <p>Planning and development of a system for managing a network of clinics focused on
-                                application
-                                automation.</p>
+                            <h3 data-text-en=".NET Developer" data-text-pt="Desenvolvedor .NET Pleno">Desenvolvedor .NET
+                                Pleno</h3>
+                            <p><strong data-text-en="in Fast Escova Franchising"
+                                    data-text-pt="em Fast Escova Franchising">em Fast Escova Franchising</strong></p>
+                            <p data-text-en="<mark>Leadership in planning and development</mark> of a management software for a network of aesthetic procedure clinics.
+Implementation using <mark>clean architecture</mark>, <mark>DDD</mark>, <mark>.NET Core</mark>, <mark>clean code</mark>, <mark>secure API</mark> with endpoints for integration and communication with the franchisor, <mark>user identity</mark> management, customer subscription management, salesperson awards and bonuses with extensive competition rules, <mark>multi-tenancy</mark>, session scheduling with management of vacancies by chair and by professional, management of product inventory for direct sale and consumption of supplies in performing procedures and more."
+                                data-text-pt="<mark>Líder de planejamento e desenvolvimento</mark> de um sistema de gerenciamento para uma rede de clínicas de procedimentos estéticos.
+Implementação utilizando <mark>arquitetura limpa</mark>, <mark>DDD</mark>, <mark>.NET Core</mark>, <mark>clean code</mark>, criação de <mark>API segura</mark> com endpoints para integração e comunicação com a franqueadora, gerenciamento de <mark>identidade de usuários</mark>, gerenciamento de assinaturas de clientes, premiação e bonificação de vendedores com extensas regras de competição, <mark>multi-tenancy</mark>, agendamento de sessões com gerenciamento de vagas por cadeira e por profissional, gerenciamento de estoque de produtos para venda direta e consumo de insumos na realização de procedimentos entre outros.">
+                                <mark>Líder de planejamento e desenvolvimento</mark> de um sistema de gerenciamento para
+                                uma rede de
+                                clínicas de procedimentos
+                                estéticos.
+                                Implementação utilizando <mark>arquitetura limpa</mark>, <mark>DDD</mark>, <mark>.NET
+                                    Core</mark>,
+                                <mark>clean code</mark>, criação de <mark>API
+                                    segura</mark> com endpoints para
+                                integração e comunicação com a franqueadora, gerenciamento de <mark>identidade de
+                                    usuários</mark>,
+                                gerenciamento de assinaturas de clientes,
+                                premiação e bonificação de vendedores com extensas regras de competição,
+                                <mark>multi-tenancy</mark>,
+                                agendamento de sessões com
+                                gerenciamento de vagas por cadeira e por profissional, gerenciamento de estoque de
+                                produtos para venda direta e consumo
+                                de insumos na realização de procedimentos entre outros.
+                            </p>
                         </div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-date">Feb. 2019 - Feb. 2020</div>
+                        <div class="timeline-date" data-text-en="Feb. 2019 - Feb. 2020"
+                            data-text-pt="Fev. 2019 - Fev. 2020">Fev. 2019 - Fev. 2020</div>
                         <div class="timeline-content">
-                            <h3>.NET Developer</h3>
-                            <p><strong>MedicMais Franchising</strong></p>
-                            <p>Planning and development of a system for managing a network of medical clinics with high
-                                demand.</p>
+                            <h3 data-text-en=".NET Developer" data-text-pt="Desenvolvedor .NET Pleno">Desenvolvedor .NET
+                                Pleno</h3>
+                            <p><strong data-text-en="in MedicMais Franchising"
+                                    data-text-pt="em MedicMais Franchising">em MedicMais Franchising</strong></p>
+                            <p data-text-en="<mark>Leadership in planning and development</mark> of a management software for a health insurance network with their own clinics. Implementation using <mark>ASP.NET
+                                Webforms</mark>, <mark>Repository Pattern</mark>, <mark>DevExpress</mark>, <mark>clean code</mark>, notifications
+                            with <mark>SignalR</mark>, <mark>secure API</mark> with endpoints for integration and communication with the
+                            franchisor, <mark>CRM for lead and customer management</mark>, secure registration and storage of <mark>medical
+                                records</mark>, <mark>interactive component for dental procedures</mark>, multi-view <mark>medical calendar</mark>
+                            with interactions in the calendar itself." data-text-pt="Líder de planejamento e desenvolvimento</mark> de um sistema de gerenciamento para
+                                uma rede de planos de saúde com clínicas próprias.
+                                Implementação utilizando <mark>ASP.NET Webforms</mark>, <mark>Repository Pattern</mark>,
+                                <mark>DevExpress</mark>,
+                                <mark>clean code</mark>, notificações com <mark>SignalR</mark>
+                                criação de <mark>API
+                                    segura</mark> com endpoints para
+                                integração e comunicação com a franqueadora, <mark>CRM para gestão de leads e
+                                    clientes</mark>,
+                                registro e armazenamento seguro de <mark>prontuários médicos</mark>, <mark>componente
+                                    interativo de procedimentos odontológicos</mark>, <mark>agenda médica</mark>
+                                multivisão com interações na própria agenda."><mark>Líder de planejamento e
+                                    desenvolvimento</mark> de um sistema de gerenciamento para
+                                uma rede de planos de saúde com clínicas próprias.
+                                Implementação utilizando <mark>ASP.NET Webforms</mark>, <mark>Repository Pattern</mark>,
+                                <mark>DevExpress</mark>,
+                                <mark>clean code</mark>, notificações com <mark>SignalR</mark>
+                                criação de <mark>API
+                                    segura</mark> com endpoints para
+                                integração e comunicação com a franqueadora, <mark>CRM para gestão de leads e
+                                    clientes</mark>,
+                                registro e armazenamento seguro de <mark>prontuários médicos</mark>, <mark>componente
+                                    interativo de procedimentos odontológicos</mark>, <mark>agenda médica</mark>
+                                multivisão com interações na própria agenda.
+                            </p>
                         </div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-date">Nov. 2016 - Jan. 2019</div>
+                        <div class="timeline-date" data-text-en="Nov. 2016 - Jan. 2019"
+                            data-text-pt="Nov. 2016 - Jan. 2019">Nov. 2016 - Jan. 2019</div>
                         <div class="timeline-content">
-                            <h3>Junior .NET Developer</h3>
-                            <p><strong>Instituto da Construção</strong></p>
-                            <p>Development of new features for a management system for students and classes in
-                                construction-related
-                                courses.</p>
+                            <h3 data-text-en="Junior .NET Developer" data-text-pt="Desenvolvedor .NET Júnior">
+                                Desenvolvedor .NET
+                                Júnior</h3>
+                            <p><strong data-text-en="in Instituto da Construção"
+                                    data-text-pt="em Instituto da Construção">em Instituto da Construção</strong></p>
+                            <p data-text-en="Maintenance and development of new features in management software for a network of schools offering courses in the construction industry. <mark>ASP.NET WebForms</mark>,
+<mark>MySQL</mark>
+<mark>Entity Framework</mark>, <mark>Repository Pattern</mark>, <mark>UnitOfWork
+Pattern</mark>, KPI reports, <mark>query performance improvement</mark>." data-text-pt="Manutenção e desenvolvimento de novas funcionalidades em software de gestão em rede de
+                                escolas com cursos na área da construção civil. <mark>ASP.NET WebForms</mark>,
+                                <mark>MySQL</mark>
+                                <mark>Entity Framework</mark>, <mark>Repository Pattern</mark>, <mark>UnitOfWork
+                                    Pattern</mark>, relatórios de KPIs, <mark>melhoria de performance de
+                                    consultas</mark>.">Manutenção e desenvolvimento de novas funcionalidades em
+                                software de gestão em rede de
+                                escolas com cursos na área da construção civil. <mark>ASP.NET WebForms</mark>,
+                                <mark>MySQL</mark>
+                                <mark>Entity Framework</mark>, <mark>Repository Pattern</mark>, <mark>UnitOfWork
+                                    Pattern</mark>, relatórios de KPIs, <mark>melhoria de performance de
+                                    consultas</mark>.
+                            </p>
                         </div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-date">Apr. 2016 - Nov. 2016</div>
+                        <div class="timeline-date" data-text-en="Apr. 2016 - Nov. 2016"
+                            data-text-pt="Abr. 2016 - Nov. 2016">Abr. 2016 - Nov. 2016</div>
                         <div class="timeline-content">
-                            <h3>Support Analyst</h3>
-                            <p><strong>Resolve Franchising</strong></p>
-                            <p>Provided support and training for franchisees and employees using three franchise ERP
-                                systems.</p>
+                            <h3 data-text-en="Support analyst" data-text-pt="Analista de suporte">
+                                Analista de suporte</h3>
+                            <p><strong data-text-en="in Resolve Franchising" data-text-pt="em Resolve Franchising">em
+                                    Resolve Franchising</strong></p>
+                            <p data-text-pt="Prestação de suporte a usuários e franqueados na utilização de softwares de gestão de 3
+                                marcas: Dr. Resolve(serviços de manutenção para casa), Dona Resolve(serviços de
+                                limpeza) e Instituto da Construção (rede de escolas de ensino com cursos na área da
+                                construlção civil). Suporte ao usuário, apresentação de treinamentos de utilização dos
+                                sistemas,
+                                suportes nível 1 e 2, consultas em banco MySQL, análise de solicitações, levantamento de
+                                requisitos, auxílio aos desenvolvedores realizando a intermediação entre as solicitações
+                                e a linguagem técnica."
+                                data-text-en="Support providing to users and franchisees in the use of management software from 3 brands: Dr. Resolve (home maintenance services), Dona Resolve (cleaning services) and Instituto da Construção (a network of schools offering courses in the area of ​​civil construction). User support, presentation of trainings on how to use the systems, level 1 and 2 support, MySQL database queries, request analysis, requirements gathering, assistance to developers by acting as intermediary between requests and technical language.">
+                                Prestação de suporte a usuários e franqueados na utilização de softwares de gestão de 3
+                                marcas: Dr. Resolve(serviços de manutenção para casa), Dona Resolve(serviços de
+                                limpeza) e Instituto da Construção (rede de escolas de ensino com cursos na área da
+                                construlção civil). Suporte ao usuário, apresentação de treinamentos de utilização dos
+                                sistemas,
+                                suportes nível 1 e 2, consultas em banco MySQL, análise de solicitações, levantamento de
+                                requisitos, auxílio aos desenvolvedores realizando a intermediação entre as solicitações
+                                e a linguagem técnica.</p>
                         </div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-date">Nov. 2012 - Jul. 2015</div>
+                        <div class="timeline-date" data-text-en="Nov. 2012 - Jul. 2015"
+                            data-text-pt="Nov. 2012 - Jul. 2015">Nov. 2012 - Jul. 2015</div>
                         <div class="timeline-content">
-                            <h3>Administrative Assistant</h3>
-                            <p><strong>De Rose Comércio e Representações LTDA</strong></p>
-                            <p>Office routines, invoicing, and electronic invoices.</p>
+                            <h3 data-text-en="Adminstrative Assistant" data-text-pt="Assistente administrativo">
+                                Assistente administrativo</h3>
+                            <p><strong data-text-en="in De Rose Comércio e Representações LTDA"
+                                    data-text-pt="em De Rose Comércio e Representações LTDA">em De Rose Comércio e
+                                    Representações LTDA</strong></p>
+                            <p data-text-en="Office routines, invoicing, and electronic invoices."
+                                data-text-pt="Rotinas de escritório, faturamento e notas fiscais eletrônicas.">Rotinas
+                                de escritório, faturamento e notas fiscais eletrônicas.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section id="education" class="section">
-                <h2>🎓Education</h2>
+                <h2 data-text-en="🎓 Education" data-text-pt="🎓 Formação acadêmica">🎓 Formação acadêmica</h2>
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="timeline-date">Jan. 2014 - Dec. 2018</div>
+                        <div class="timeline-date" data-text-en="Jan. 2014 - Dec. 2018"
+                            data-text-pt="Jan. 2014 - Dez. 2018">Jan. 2014 - Dez. 2018</div>
                         <div class="timeline-content">
-                            <h3>Computer engineering</h3>
-                            <p><strong>UNORTE - Centro Universitário do Norte de São Paulo</strong> • <span>Bachelor
-                                    degree</span></p>
+                            <h3 data-text-en="Computer engineering" data-text-pt="Engenharia da computação">Engenharia
+                                da computação</h3>
+                            <p><strong>UNORTE - Centro Universitário do Norte de São Paulo</strong> • <span
+                                    data-text-en="Bachelor
+                                    degree" data-text-pt="Bacharelado">Bacharelado</span></p>
                             </p>
-                            <p>Scientific initiation program: Galvanometer usage in laser harp electronics.</p>
-                            <p>Thesis: Comparative study of A* pathtracing algorithm vs. machine learning genetic
-                                algorithm on warehouse robots automation.</p>
+                            <p data-text-en="Scientific initiation program: Galvanometer usage in laser harp electronics."
+                                data-text-pt="Programa de iniciação científica: utilização de galvanômetro como componente eletrônico em harpas laser.">
+                                Programa de iniciação científica: utilização de galvanômetro como componente eletrônico
+                                em harpas laser.
+                            </p>
+                            <p data-text-en="Thesis: Comparative study of A* pathtracing algorithm vs. machine learning genetic
+                                algorithm on warehouse robots automation."
+                                data-text-pt="Tese: Estudo comparativo do algoritmo de rastreamento de caminho A* versus algoritmo genético de aprendizado de máquina na automação de robôs de armazém.">
+                                Tese: Estudo comparativo do algoritmo de rastreamento de caminho A* versus algoritmo
+                                genético de aprendizado de máquina
+                                na automação de robôs de armazém.</p>
                         </div>
                     </div>
-
                     <div class="timeline-item">
-                        <div class="timeline-date">Jan. 2009 - Jul. 2010</div>
+                        <div class="timeline-date" data-text-en="Jan. 2009 - Jul. 2010"
+                            data-text-pt="Jan. 2009 - Jul. 2010">Jan. 2009 - Jul. 2010</div>
                         <div class="timeline-content">
-                            <h3>Computer technician</h3>
-                            <p><strong>ETEC Philadelpho Gouvêa Netto</strong> • <span>Technician degree</span></p>
-                            <p>Thesis: Newstand sales software automation.</p>
+                            <h3 data-text-en="Computer technician" data-text-pt="Técnico em informática">Técnico em
+                                informática</h3>
+                            <p><strong>ETEC Philadelpho Gouvêa Netto</strong> • <span data-text-en="Technician degree"
+                                    data-text-pt="Nível técnico">Nível técnico</span></p>
+                            <p data-text-en="Thesis: Newstand sales software automation."
+                                data-text-pt="Tese: Software empregado em automação de bancas de jornais.">Tese:
+                                Software empregado em automação de bancas de jornais.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section id="projects" class="section">
-                <h2>Projects</h2>
+                <h2 data-text-en="📑 Projects" data-text-pt="📑 Projetos">📑 Projetos</h2>
                 <div class="card">
                     <img class="card-img" src="static/img/utilbox/utilbox-code-header.png" />
                     <div class="card-content">
@@ -648,78 +501,382 @@
                             <h2>Utilbox</h3>
                         </div>
                         <div class="badges card-badges">
-                            <div class="badge">Open source</div>
-                            <div class="badge">MIT License</div>
+                            <div class="badge" data-text-en="Open source" data-text-pt="Código aberto">Código aberto
+                            </div>
+                            <div class="badge" data-text-en="MIT License" data-text-pt="Licença MIT">Licença MIT</div>
                         </div>
                         <div class="card-text">
-                            <p>
-                                A modular collection of C# utility libraries designed to simplify common development
+                            <p data-text-en="A modular collection of C# utility libraries designed to simplify common development
                                 tasks. With separate
                                 packages for handling dates, enums, results, strings, and pagination, Utilbox is
                                 made
-                                for developers to code without the need to reinvent the wheel.
+                                for developers to want to code without the need to reinvent the wheel."
+                                data-text-pt="Uma coleção de bibliotecas de utilidades em C# projetadas para simplificar tarefas comuns de desenvolvimento. Com pacotes separados para lidar com datas, enums, resultados, strings e paginação, o Utilbox é feito para desenvolvedores que desejam escrever código sem a necessidade de reinventar a roda.">
+                                Uma coleção de bibliotecas de utilidades em C# projetadas para simplificar tarefas
+                                comuns de desenvolvimento. Com
+                                pacotes separados para lidar com datas, enums, resultados, strings e paginação, o
+                                Utilbox é feito para desenvolvedores
+                                que desejam escrever código sem a necessidade de reinventar a roda.
                             </p>
                         </div>
                         <div class="card-footer">
                             <a href="https://github.com/rafaelchampion/Utilbox" target="_blank" class="button">
                                 <i class="devicon-github-original"></i>
-                                <span>View on GitHub</span>
+                                <span data-text-en="View on GitHub" data-text-pt="Ver no GitHub">View on GitHub</span>
                                 <i class="nf nf-oct-link_external center"></i>
                             </a>
                             <a href="https://www.nuget.org/packages?q=Utilbox" target="_blank" class="button">
                                 <i class="nf nf-dev-nuget center"></i>
-                                <span>View on Nuget.org</span>
+                                <span data-text-en="View on Nuget.org" data-text-pt="Ver no Nuget.org">View on
+                                    Nuget.org</span>
                                 <i class="nf nf-oct-link_external center"></i>
                             </a>
                         </div>
                     </div>
             </section>
-
+            <section id="courses" class="section">
+                <h2 data-text-en="🌐 Courses" data-text-pt="🌐 Cursos">🌐 Cursos</h2>
+                <h3>Balta.io</h3>
+                <div class="table-container">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p data-text-en="Fundamentals of object oriented programming"
+                                        data-text-pt="Fundamentos da orientação a objetos">Fundamentos da orientação a
+                                        objetos
+                                    </p>
+                                </td>
+                                <td style="width: 20%;">
+                                    <p data-text-en="4.1 hours" data-text-pt="4.1 horas">4.1 horas</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p data-text-en="C# Fundamentals" data-text-pt="Fundamentos do C#">Fundamentos do C#
+                                    </p>
+                                </td>
+                                <td>
+                                    <p data-text-en="12.2 hours" data-text-pt="12.2 horas">12.2 horas</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p data-text-en="Entity Framework Fundamentals"
+                                        data-text-pt="Fundamentos do Entity Framework">Fundamentos do Entity Framework
+                                    </p>
+                                </td>
+                                <td>
+                                    <p data-text-en="4.5 hours" data-text-pt="4.5 horas">4.5 horas</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p data-text-en="Microservices Fundamentals"
+                                        data-text-pt="Fundamentos dos microsserviços">Fundamentos dos microsserviços
+                                    </p>
+                                </td>
+                                <td>
+                                    <p data-text-en="2.0 hours" data-text-pt="2.0 horas">2.0 horas</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p data-text-en="Multi-tenant applicatios with Entity Framework Core"
+                                        data-text-pt="Aplicações Mult-Tenant com Entity Framework Core">Aplicações
+                                        Mult-Tenant com Entity Framework Core
+                                    </p>
+                                </td>
+                                <td>
+                                    <p data-text-en="1.2 hours" data-text-pt="1.2 horas">1.2 horas</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p data-text-en="Rich Domain Modeling" data-text-pt="Modelando Domínios Ricos">
+                                        Modelando Domínios Ricos</p>
+                                </td>
+                                <td>
+                                    <p data-text-en="4.5 hours" data-text-pt="4.5 horas">4.5 horas</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br />
+                <h3>Udemy</h3>
+                <div class="table-container">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p data-text-en="Software Architecture & System Design Practical Case Studies"
+                                        data-text-pt="Software Architecture & System Design Practical Case Studies">
+                                        Software Architecture & System Design Practical Case Studies
+                                    </p>
+                                </td>
+                                <td style="width: 20%;">
+                                    <p data-text-en="4.0 hours" data-text-pt="4.0 horas">4.0 horas</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
             <section id="languages" class="section">
-                <h2>Languages</h2>
-                <p><img class="img-flag" src="static/img/flags/bra.png"> Brazilian Portuguese (Native)</li>
-                <p><img class="img-flag" src="static/img/flags/usa.png"> English (Fluent)</li>
+                <h2 data-text-en="🌐 Languages" data-text-pt="🌐 Idiomas">🌐 Idiomas</h2>
+                <div class="table-container">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img class="img-flag" src="static/img/flags/bra.png">
+                                </td>
+                                <td style="width: 80%;">
+                                    <p data-text-en="Brazilian Portuguese" data-text-pt="Português Brasileiro">Português
+                                        Brasileiro</p>
+                                </td>
+                                <td style="width: 20%;">
+                                    <p data-text-en="Native" data-text-pt="Nativo">Nativo</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img class="img-flag" src="static/img/flags/usa.png"></td>
+                                <td>
+                                    <p data-text-en="English" data-text-pt="Inglês">Inglês</p>
+                                </td>
+                                <td>
+                                    <p data-text-en="Fluent" data-text-pt="Fluente">Fluente</p>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="books" class="section">
+                <h2 data-text-en="📘 Books" data-text-pt="📘 Livros">📘 Livros</h2>
+                <p data-text-pt="Livros que considero importantes em minha formação e dia a dia como desenvolvedor de software e que
+                    mantenho na minha escrivaninha."
+                    data-text-en="Books that I consider important in my training and daily life as a software developer and that I keep on my desk.">
+                    Livros que considero importantes em minha formação e dia a dia
+                    como desenvolvedor de software e que
+                    mantenho na minha escrivaninha.</p>
+                <br />
+                <div class="table-container">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p data-text-en="Clean Code" data-text-pt="Código Limpo">Código Limpo</p>
+                                </td>
+                                <td>
+                                    <p>Robert C. Martin</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p data-text-en="Clean Coder" data-text-pt="O Codificador Limpo">O Codificador Limpo
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>Robert C. Martin</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p data-text-en="Clean Architecture" data-text-pt="Arquitetura Limpa">Arquitetura
+                                        Limpa
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>Robert C. Martin</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p data-text-en="Domain Driven Design" data-text-pt="Domain Driven Design">Domain
+                                        Driven Design
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>Eric Evans</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p data-text-en="Refactoring: Improving the Design of Existing Code"
+                                        data-text-pt="Refatoração: Aperfeiçoando o Design de Códigos Existentes">
+                                        Refatoração: Aperfeiçoando o Design de Códigos Existentes
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>Martin Fowler</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p data-text-en="C# 9.0 Pocket Reference" data-text-pt="C# 9.0 Pocket Reference">
+                                        C# 9.0 Pocket Reference
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>Joseph Albahari, Ben Albahari</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
-            <section class="section">
-                <h2>About Me</h2>
-                <p>Driven by technology and innovation, I strive to create solutions that make an impact. I enjoy
-                    working
-                    with cross-functional teams and continuously learning new technologies.</p>
-            </section>
-
-            <section class="section contact">
-                <h2>Contact</h2>
-                <p>Email: <a href="mailto:rafael@example.com">rafael@example.com</a></p>
-                <p>GitHub: <a href="https://github.com/yourgithub">github.com/yourgithub</a></p>
-                <p>LinkedIn: <a href="https://linkedin.com/in/yourlinkedin">linkedin.com/in/yourlinkedin</a></p>
-                <p>Phone: +55 (XX) XXXXX-XXXX</p>
+            <section id="interests" class="section">
+                <h2 data-text-en="🤓 Interests" data-text-pt="🤓 Interesses">🤓 Interesses</h2>
+                <p data-text-pt="Gosto de programar, ler e aprender coisas novas. Estou sempre em busca de novas tecnologias, novos
+                    desafios e de me manter atualizado nesse mundo em constante evolução. Tenho interesse em tudo que
+                    envolve computadores, incluindo hardware mas principalmente software, e nos últimos tempos venho me
+                    aventurando com a utilização de Inteligência Artificial executada localmente para automação de
+                    tarefas, geração de imagens, som, etc. Nas horas vagas busco me envolver em projetos pessoais de
+                    software para estudo e desenvolvimento
+                    pessoal e profissional."
+                    data-text-en="I like programming, reading and learning new things. I am always looking for new technologies, new challenges and to stay up to date in this ever-evolving world. I am interested in everything that involves computers, including hardware but mainly software, and recently I have been venturing into the use of locally executed Artificial Intelligence for task automation, image generation, sound, etc. In my spare time I try to get involved in personal software projects for personal and professional study and development.">
+                    Gosto de programar, ler e aprender coisas novas. Estou sempre em busca de
+                    novas tecnologias, novos
+                    desafios e de me manter atualizado nesse mundo em constante evolução. Tenho interesse em tudo que
+                    envolve computadores, incluindo hardware mas principalmente software, e nos últimos tempos venho me
+                    aventurando com a utilização de Inteligência Artificial executada localmente para automação de
+                    tarefas, geração de imagens, som, etc. Nas horas vagas busco me envolver em projetos pessoais de
+                    software para estudo e desenvolvimento
+                    pessoal e profissional.</p>
+                <br />
+                <p data-text-pt="Gosto de tudo relacionado a ciência, principalmente astronomia. Assuntos como mecânica quântica,
+                    física e matemática também me encantam e despertam meu interesse. Parte desse amor por ciência é
+                    traduzido no código, onde procuro sempre
+                    me apoiar nas boas práticas e técnicas já estabelecidas que os textos acadêmicos apresentam. Gosto
+                    de
+                    me ater a processos bem definidos
+                    e seguí-los para entregar código com a melhor qualidade possível."
+                    data-text-en="I like everything related to science, especially astronomy. Subjects such as quantum mechanics, physics and mathematics also fascinate me and spark my interest. Part of this love for science is translated into code, where I always try to rely on the best practices and techniques already established in academic texts. I like to stick to well-defined processes and follow them to deliver code with the best possible quality.">
+                    Gosto de tudo relacionado a
+                    ciência, principalmente astronomia. Assuntos como mecânica quântica,
+                    física e matemática também me encantam e despertam meu interesse. Parte desse amor por ciência é
+                    traduzido no código, onde procuro sempre
+                    me apoiar nas boas práticas e técnicas já estabelecidas que os textos acadêmicos apresentam. Gosto
+                    de
+                    me ater a processos bem definidos
+                    e seguí-los para entregar código com a melhor qualidade possível.</p>
+                <br />
+                <p data-text-pt="Tanto no ambiente pessoal quanto no ambiente profissional, gosto de cultivar diálogo aberto e sincero
+                    como forma de manter um ambiente sadio e aprender. Gosto muito de receber feedback sobre o meu
+                    trabalho e sempre busco formas de melhorar ou me adaptar à cada situação. Sou uma pessoa que aprende
+                    rápido. Também gosto de mediar diferentes pontos de vista e encontrar uma
+                    solução em comum."
+                    data-text-en="In both my personal and professional environments, I like to foster open and sincere dialogue as a way of maintaining a healthy environment and learning. I really enjoy receiving feedback on my work and I always look for ways to improve or adapt to each situation. I am a person who learns quickly. I also enjoy mediating different points of view and finding a common solution.">
+                    Tanto no ambiente pessoal quanto no ambiente profissional, gosto de cultivar
+                    diálogo aberto e sincero
+                    como forma de manter um ambiente sadio e aprender. Gosto muito de receber feedback sobre o meu
+                    trabalho e sempre busco formas de melhorar ou me adaptar à cada situação. Sou uma pessoa que aprende
+                    rápido. Também gosto de mediar diferentes pontos de vista e encontrar uma
+                    solução em comum.</p>
+                <br />
+                <p data-text-pt="Gosto de trabalhar em equipes com objetivos de crescimento e aprendizado em comum. Procuro
+                    sempre manter um bom e cordial relacionamento com todos. Apesar de me considerar introvertido, gosto
+                    de estar em contato com pessoas e diferentes opiniões.
+                    Tanto o ambiente pessoal quanto o profissional são compartilhados com outras pessoas e saber
+                    entender, respeitar e as vezes absorver outros pontos de vista nos mantém em constante evolução."
+                    data-text-en="I like to work in teams with common goals of growth and learning. I always try to maintain a good and cordial relationship with everyone. Although I consider myself an introvert, I like to be in contact with people and different opinions. Both the personal and professional environment are shared with other people and knowing how to understand, respect and sometimes absorb other points of view keeps us constantly evolving.">
+                    Gosto de trabalhar em equipes com objetivos de crescimento e aprendizado em comum. Procuro
+                    sempre manter um bom e cordial relacionamento com todos. Apesar de me considerar introvertido, gosto
+                    de estar em contato com pessoas e diferentes opiniões.
+                    Tanto o ambiente pessoal quanto o profissional são compartilhados com outras pessoas e saber
+                    entender, respeitar e as vezes absorver outros pontos de vista nos mantém em constante evolução.</p>
             </section>
         </main>
     </div>
     <script>
-        function toggleTheme() {
-            document.body.style.backgroundColor = document.body.style.backgroundColor === 'white' ? '#121212' : 'white';
-            document.body.style.color = document.body.style.color === 'black' ? 'white' : 'black';
-        }
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-        function toggleLanguage() {
-            const elements = {
-                "name": { en: "Rafael", pt: "Rafael" },
-                "role": { en: "Passionate Software Developer | .NET Expert | Tech Enthusiast", pt: "Desenvolvedor de Software Apaixonado | Especialista em .NET | Entusiasta de Tecnologia" },
-                "greetings-title": { en: "Greetings/Presentation", pt: "Saudações/Apresentação" },
-                "greetings": { en: "Hi, I'm Rafael, a software developer passionate about building scalable and efficient applications. I thrive on solving complex challenges and continuously improving my skills.", pt: "Olá, sou Rafael, um desenvolvedor de software apaixonado por criar aplicações escaláveis e eficientes. Adoro resolver desafios complexos e melhorar continuamente minhas habilidades." },
-                "skills-title": { en: "Technical Skills", pt: "Habilidades Técnicas" },
-                "contact-title": { en: "Contact", pt: "Contato" }
-            };
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
 
-            const currentLang = document.documentElement.lang === "en" ? "pt" : "en";
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+        });
+
+        // Language Toggle
+        const ptLangToggle = document.getElementById('lang-toggle-pt');
+        const enLangToggle = document.getElementById('lang-toggle-en');
+
+        ptLangToggle.addEventListener('click', () => {
+            if (currentLang == 'pt') {
+                return;
+            }
+            const translatableElements = document.querySelectorAll('[data-text-en][data-text-pt]');
+            translatableElements.forEach(el => {
+                el.classList.add('lang-transition');
+                setTimeout(() => {
+                    el.classList.remove('lang-transition');
+                }, 500);
+            });
+            currentLang = 'pt';
+            localStorage.setItem('language', currentLang);
+            document.querySelectorAll('[data-text-en][data-text-pt]').forEach(el => {
+                el.innerHTML = el.getAttribute(`data-text-pt`);
+            });
+            document.querySelector('html').lang = 'pt-BR';
+            document.querySelector('title').innerHTML = "Rafael Comunhão Ferreira - Resumo acadêmico e profissional";
+        });
+
+        enLangToggle.addEventListener('click', () => {
+            if (currentLang == 'en') {
+                return;
+            }
+            const translatableElements = document.querySelectorAll('[data-text-en][data-text-pt]');
+            translatableElements.forEach(el => {
+                el.classList.add('lang-transition');
+                setTimeout(() => {
+                    el.classList.remove('lang-transition');
+                }, 500);
+            });
+            currentLang = 'en';
+            localStorage.setItem('language', currentLang);
+            document.querySelectorAll('[data-text-en][data-text-pt]').forEach(el => {
+                el.innerHTML = el.getAttribute(`data-text-en`);
+            });
+            document.querySelector('html').lang = 'en-US';
+            document.querySelector('title').innerHTML = "Rafael Comunhão Ferreira - Academic and professional resumé";
+
+        });
+
+        // Initial Theme and Language Setup
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme setup
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                body.classList.add('dark-mode');
+            }
+
+            // Language setup
+            const savedLang = localStorage.getItem('language') || 'en';
+            currentLang = savedLang;
             document.documentElement.lang = currentLang;
 
-            Object.keys(elements).forEach(id => {
-                document.getElementById(id).textContent = elements[id][currentLang];
+            document.querySelectorAll('[data-text-en][data-text-pt]').forEach(el => {
+                el.innerHTML = el.getAttribute(`data-text-${currentLang}`);
             });
-        }
+        });
+
+        document.querySelector('.nav-toggle').addEventListener('click', function () {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
     </script>
 </body>
 
