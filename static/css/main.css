@@ -618,9 +618,7 @@ details[open] summary svg {
 }
 
 .table tr td:has(img) {
-    display: grid;
-    align-items: center;
-    justify-content: left;
+    line-height: 0;
 }
 
 .table tr:first-child td:first-child {
@@ -724,6 +722,7 @@ details[open] summary svg {
 /*--------------------------------------------------------------
   Image Flag
 --------------------------------------------------------------*/
+
 .img-flag {
     width: 35px;
     aspect-ratio: 1;

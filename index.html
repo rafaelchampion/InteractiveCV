@@ -320,15 +320,15 @@
                                     <span data-text-en="Grupo Fast" data-text-pt="Grupo Fast">Grupo Fast</span>
                                 </h3>
                             </div>
-                            <p data-text-en="Maintenance and development of new system features for managing a network of laser hair removal clinics, focusing on patient care, scheduling, inventory management and account management. <mark>ASP.NET MVC</mark>,<mark>Razor Pages</mark>, <mark>.NET Core to .NET
+                            <p data-text-en="Maintenance and development of new system features for managing a network of laser hair removal clinics, focusing on patient care, scheduling, inventory management and account management. <mark>ASP.NET MVC</mark>, <mark>Razor Pages</mark>, <mark>.NET Core to .NET
                                     8</mark>, <mark>RESTful APIs</mark>, <mark>integration with several business partners</mark>, <mark>API developement and security</mark>, <mark>refactoring</mark> and <mark>performance improvements</mark>, continuous delivery, data reestructuring, framework upgrades, <mark>new projects architecture decisions</mark>, user experience and more."
-                                data-text-pt="Manutenção e desenvolvimento de novos recursos de sistema para gerenciar uma rede de clínicas de depilação a laser, com foco em atendimento ao paciente, agendamento, gerenciamento de estoque e gerenciamento de contas. <mark>ASP.NET MVC</mark>,<mark>Razor Pages</mark>, <mark>.NET Core a .NET
+                                data-text-pt="Manutenção e desenvolvimento de novos recursos de sistema para gerenciar uma rede de clínicas de depilação a laser, com foco em atendimento ao paciente, agendamento, gerenciamento de estoque e gerenciamento de contas. <mark>ASP.NET MVC</mark>, <mark>Razor Pages</mark>, <mark>.NET Core a .NET
                                     8</mark>, <mark>APIs RESTful</mark>, <mark>integração com vários parceiros de negócios</mark>, <mark>desenvolvimento e segurança de APIs</mark>, <mark>refatoração</mark> e <mark>melhorias de desempenho</mark>, entrega contínua, reestruturação de dados, atualizações de framework, <mark>decisões de arquitetura de novos projetos</mark>, experiência do usuário entre outros.">
                                 Manutenção e desenvolvimento de novos recursos de sistema para gerenciar uma rede de
                                 clínicas de depilação a laser, com
                                 foco em atendimento ao paciente, agendamento, gerenciamento de estoque e
                                 gerenciamento
-                                de contas. <mark>ASP.NET MVC</mark>,<mark>Razor Pages</mark>, <mark>.NET Core a .NET
+                                de contas. <mark>ASP.NET MVC</mark>, <mark>Razor Pages</mark>, <mark>.NET Core a .NET
                                     8</mark>, <mark>APIs RESTful</mark>, <mark>integração com vários
                                     parceiros de negócios</mark>, <mark>desenvolvimento e segurança de APIs</mark>,
                                 <mark>refatoração</mark> e <mark>melhorias de
@@ -700,7 +700,9 @@ Pattern</mark>, KPI reports, <mark>query performance improvement</mark>." data-t
                         <tbody>
                             <tr>
                                 <td>
-                                    <img class="img-flag" src="static/img/flags/bra.png">
+                                    <div class="img-flag-container">
+                                        <img class="img-flag" src="static/img/flags/bra.png">
+                                    </div>
                                 </td>
                                 <td style="width: 80%;">
                                     <p data-text-en="Brazilian Portuguese" data-text-pt="Português Brasileiro">Português
@@ -711,7 +713,11 @@ Pattern</mark>, KPI reports, <mark>query performance improvement</mark>." data-t
                                 </td>
                             </tr>
                             <tr>
-                                <td><img class="img-flag" src="static/img/flags/usa.png"></td>
+                                <td>
+                                    <div class="img-flag-container">
+                                        <img class="img-flag" src="static/img/flags/usa.png">
+                                    </div>
+                                </td>
                                 <td>
                                     <p data-text-en="English" data-text-pt="Inglês">Inglês</p>
                                 </td>
@@ -865,7 +871,7 @@ Pattern</mark>, KPI reports, <mark>query performance improvement</mark>." data-t
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                document.querySelector('.nav-menu').classList.toggle('active');
+                document.querySelector('.nav-menu').classList.remove('active');
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
