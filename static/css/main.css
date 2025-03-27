@@ -340,6 +340,8 @@ main section:first-child {
 
 .skill i {
     margin-right: 5px;
+    font-size: 24px;
+    vertical-align: middle;
 }
 
 /*--------------------------------------------------------------
