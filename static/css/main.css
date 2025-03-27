@@ -2,8 +2,8 @@
 :root {
     /* Light Theme Variables */
     --bg-primary: #D1D5DB;
-    --bg-secondary: #F1F3F5;
-    --bg-tertiary: #F9FAFB;
+    --bg-secondary: #ececec;
+    --bg-tertiary: #f2f2f2;
     --text-primary: #1E2433;
     --text-secondary: #374151;
 
@@ -256,12 +256,11 @@ h6 {
 --------------------------------------------------------------*/
 .main-content {
     flex: 1;
-    padding: 2rem;
 }
 
-main,
+.section,
 aside {
-    padding: 20px;
+    padding: 35px;
     background: var(--bg-secondary);
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -271,8 +270,6 @@ aside {
 main {
     width: 930px;
     float: right;
-    padding-bottom: 50px;
-    margin-bottom: 20px;
     margin-top: 60px;
     position: relative;
 }
@@ -285,7 +282,7 @@ main section:first-child {
   Sections
 --------------------------------------------------------------*/
 .section {
-    margin: 60px 0;
+    margin: 30px 0;
     animation: fadeIn 0.7s ease-in-out forwards;
 }
 
@@ -598,7 +595,7 @@ details[open] summary svg {
 .table-container {
     border: 1px solid var(--neutral-secondary);
     border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); */
 }
 
 .table {
@@ -818,7 +815,7 @@ body.dark-mode h6 {
 }
 
 body.dark-mode .main-nav .nav-left .nav-logo {
-    color: var(--accent-tertiary);
+    color: var(--dark-text-primary);
 }
 
 body.dark-mode .main-nav .nav-menu ul li:not(:last-child):after {
@@ -826,7 +823,7 @@ body.dark-mode .main-nav .nav-menu ul li:not(:last-child):after {
 }
 
 body.dark-mode .nav-toggle-icon {
-    color: var(--accent-tertiary);
+    color: var(--dark-text-primary);
 }
 
 body.dark-mode .profile-pic {
@@ -834,7 +831,7 @@ body.dark-mode .profile-pic {
 }
 
 body.dark-mode .sidebar,
-body.dark-mode .main-content {
+body.dark-mode .section {
     background-color: var(--dark-bg-secondary);
 }
 
@@ -981,6 +978,11 @@ body.dark-mode .timeline-subtitle {
         font-size: 14px;
     }
 
+    .main-nav .img-flag {
+        width: 30px;
+        aspect-ratio: 1;
+    }
+
     .nav-menu {
         display: none;
         flex-direction: column;
@@ -1003,6 +1005,8 @@ body.dark-mode .timeline-subtitle {
 
     .nav-toggle {
         display: block;
+        width: 30px;
+        height: 30px;
     }
 
     .nav-menu ul {
@@ -1040,5 +1044,28 @@ body.dark-mode .timeline-subtitle {
         max-width: 80px;
         top: -45px;
         right: 15px;
+    }
+}
+
+@media screen and (max-width: 359px) {
+    .main-nav .nav-left .nav-logo {
+        font-size: 10px;
+    }
+
+    .main-nav .nav-extras {
+        gap: 5px;
+    }
+
+    .main-nav .img-flag {
+        width: 20px;
+    }
+
+    .toggle-btn {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nav-toggle {
+        flex-grow: 1;
     }
 }
