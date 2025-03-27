@@ -225,6 +225,7 @@ const translations = {
         course_multitenant: "Aplicações Mult-Tenant com Entity Framework Core",
         course_ddd: "Modelando Domínios Ricos",
         course_architecture: "Software Architecture & System Design Practical Case Studies",
+        course_hours: "horas",
 
         // Languages section
         languages_title: "🌐 Idiomas",
