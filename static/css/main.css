@@ -247,7 +247,7 @@ h6 {
     animation: glow infinite 30s linear;
     background-image: radial-gradient(circle at var(--x) var(--y), rgb(74, 210, 255), #007bff 50%, #ffffff00 70%);
     background-size: 100% 100%;
-    filter: saturate(2) contrast(3) blur(15px) hue-rotate(260deg);
+    filter: saturate(2) contrast(3) blur(15px) hue-rotate(340deg);
     animation-timing-function: linear;
 }
 
