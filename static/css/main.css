@@ -925,6 +925,7 @@ body.dark-mode .timeline-subtitle {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
+        padding: 0.5rem;
     }
 
     .main-nav .nav-left .nav-logo {
@@ -954,6 +955,11 @@ body.dark-mode .timeline-subtitle {
         margin-bottom: 0;
         position: relative;
         top: 60px;
+    }
+
+    .section,
+    aside {
+        padding: 25px;
     }
 
     .sidebar {
@@ -1045,6 +1051,7 @@ body.dark-mode .timeline-subtitle {
 
     .button span {
         text-align: center;
+        line-height: 20px;
     }
 
     .card .card-content,
