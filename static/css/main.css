@@ -268,7 +268,7 @@ aside {
 }
 
 main {
-    width: 930px;
+    width: 940px;
     float: right;
     margin-top: 60px;
     position: relative;
@@ -984,15 +984,19 @@ body.dark-mode .timeline-subtitle {
     }
 
     .nav-menu {
-        display: none;
         flex-direction: column;
         position: absolute;
-        top: 50px;
+        top: 60px;
         left: 0;
         right: 0;
         background: var(--bg-primary);
         padding: 10px 20px;
         overflow-y: auto;
+        transition: all 0.2s ease-in-out;
+        display: flex;
+        transform: translateX(-100vw);
+        opacity: 0;
+        height: calc(100vh - 60px);
     }
 
     body.dark-mode .nav-menu {
@@ -1000,7 +1004,8 @@ body.dark-mode .timeline-subtitle {
     }
 
     .nav-menu.active {
-        display: flex;
+        transform: translateX(0);
+        opacity: 1;
     }
 
     .nav-toggle {
@@ -1012,6 +1017,12 @@ body.dark-mode .timeline-subtitle {
     .nav-menu ul {
         flex-direction: column;
         gap: 10px;
+    }
+
+    .main-nav .nav-menu ul {
+        flex-direction: column;
+        gap: 15px;
+        height: 100%;
     }
 }
 
