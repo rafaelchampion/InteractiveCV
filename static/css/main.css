@@ -579,25 +579,10 @@ details[open] summary svg {
         border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.timeline-item::before {
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 0 5px var(--accent-secondary);
-    animation: pulse 2s infinite ease-in-out;
+.timeline-content p:not(:last-child) {
+    margin-bottom: 15px;
 }
 
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 5px rgba(123, 97, 255, 0.5);
-    }
-
-    50% {
-        box-shadow: 0 0 15px rgba(123, 97, 255, 0.7);
-    }
-
-    100% {
-        box-shadow: 0 0 5px rgba(123, 97, 255, 0.5);
-    }
-}
 
 /*--------------------------------------------------------------
   Lists
