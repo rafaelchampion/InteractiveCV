@@ -7,6 +7,8 @@
     --text-primary: #1E2433;
     --text-secondary: #374151;
 
+    --light-border-color: #d1d5db;
+
     /* Dark Theme Variables */
     --dark-bg-contrast: #000000;
     --dark-bg-primary: #121620;
@@ -14,6 +16,8 @@
     --dark-bg-tertiary: #2A3242;
     --dark-text-primary: #ffffff;
     --dark-text-secondary: #cccccc;
+
+    --dark-border-color: hsl(220deg 10% 50% / 50%);
 
     /* Accent Variables */
     --accent-primary: #4F46E5;
@@ -56,6 +60,10 @@ body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
     transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+* {
+    border-color: var(--light-border-color) !important;
 }
 
 /*--------------------------------------------------------------
@@ -261,7 +269,7 @@ h6 {
 }
 
 .section,
-aside {
+.sidebar {
     padding: 35px;
     background: var(--bg-secondary);
     border-radius: 15px;
@@ -306,7 +314,7 @@ main section:first-child {
 .badge {
     background: var(--accent-tertiary);
     color: white;
-    padding: 4px 10px;
+    padding: 2px 8px;
     border-radius: 25px;
     font-weight: 500;
     font-size: 14px;
@@ -574,7 +582,7 @@ details[open] summary svg {
     text-align: justify;
     /* box-shadow: 0 1px 2px #0000000d; */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid #e2e8f0;
+    border: 1px solid;
     transition: transform 0.2s ease-in-out,
         border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
@@ -661,9 +669,11 @@ details[open] summary svg {
 --------------------------------------------------------------*/
 .card {
     background: var(--bg-tertiary);
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    border-radius: 12px;
+    /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); */
+    border: 1px solid;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .card .card-img {
@@ -685,7 +695,7 @@ details[open] summary svg {
     position: relative;
     text-align: justify;
     display: grid;
-    gap: 15px;
+    gap: 20px;
 }
 
 .card .card-content-img {
@@ -712,7 +722,7 @@ details[open] summary svg {
     gap: 10px;
     background: var(--accent-tertiary);
     color: white;
-    padding: 10px 15px;
+    padding: 5px 15px;
     font-weight: bold;
     text-decoration: none;
     border-radius: 6px;
@@ -726,7 +736,6 @@ details[open] summary svg {
 }
 
 .button:hover {
-    background-color: var(--accent-tertiary);
     box-shadow: 0 6px 14px var(--accent-tertiary);
 }
 
@@ -825,6 +834,10 @@ body.dark-mode {
     color: var(--dark-text-primary);
 }
 
+body.dark-mode * {
+    border-color: var(--dark-border-color) !important;
+}
+
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3,
@@ -832,6 +845,10 @@ body.dark-mode h4,
 body.dark-mode h5,
 body.dark-mode h6 {
     color: var(--dark-text-primary);
+}
+
+body.dark-mode .nav-menu {
+    background-color: var(--dark-bg-secondary);
 }
 
 body.dark-mode .main-nav .nav-left .nav-logo {
@@ -899,6 +916,20 @@ body.dark-mode .timeline-subtitle {
     color: var(--accent-complementary);
 }
 
+body.dark-mode .badge {
+    background: var(--accent-complementary);
+    color: var(--text-primary);
+}
+
+body.dark-mode .button {
+    background: var(--accent-complementary);
+    color: var(--text-primary);
+}
+
+.button:hover {
+    box-shadow: 0 6px 14px var(--accent-complementary);
+}
+
 /*--------------------------------------------------------------
   Responsive Design
 --------------------------------------------------------------*/
@@ -954,12 +985,8 @@ body.dark-mode .timeline-subtitle {
     }
 
     main,
-    aside {
+    .sidebar {
         margin: 0;
-    }
-
-    aside {
-        margin-bottom: 10px;
     }
 
     main {
@@ -970,7 +997,7 @@ body.dark-mode .timeline-subtitle {
     }
 
     .section,
-    aside {
+    .sidebar {
         padding: 25px;
     }
 
@@ -978,10 +1005,11 @@ body.dark-mode .timeline-subtitle {
         width: unset;
         position: relative;
         top: 60px;
+        margin-bottom: 10px;
     }
 
     .timeline {
-        padding-left: 20px;
+        padding-left: 15px;
     }
 
     .timeline::before {
@@ -1023,10 +1051,6 @@ body.dark-mode .timeline-subtitle {
         transform: translateX(-100vw);
         opacity: 0;
         height: calc(100vh - 60px);
-    }
-
-    body.dark-mode .nav-menu {
-        background-color: var(--dark-bg-secondary);
     }
 
     .nav-menu.active {

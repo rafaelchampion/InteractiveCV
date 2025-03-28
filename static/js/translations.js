@@ -216,7 +216,7 @@ const translations = {
         project_utilbox_title: "Utilbox",
         project_opensource: "Código aberto",
         project_mit_license: "Licença MIT",
-        project_utilbox_description: "Uma coleção de bibliotecas de utilidades em C# projetadas para simplificar tarefas comuns de desenvolvimento. Com pacotes separados para lidar com datas, enums, resultados, strings e paginação, o Utilbox é feito para desenvolvedores que desejam escrever código sem a necessidade de reinventar a roda.",
+        project_utilbox_description: "Uma coleção de bibliotecas de utilidades em C# projetadas para simplificar tarefas comuns de desenvolvimento. Com pacotes individuais para lidar com datas, enums, resultados, strings e paginação, o Utilbox é feito para desenvolvedores que desejam escrever código sem a necessidade de reinventar a roda.",
         view_github: "Ver no GitHub",
         view_nuget: "Ver no Nuget.org",
 
