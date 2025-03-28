@@ -33,6 +33,7 @@
 <body>
     <div class="container">
         <aside class="sidebar">
+            <div class="reflection"></div>
             <div class="sidebar-content">
                 <div class="profile-pic">
                     <img src="static/img/photo.jpg" alt="Rafael's Profile Picture">
@@ -782,6 +783,32 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const aside = document.querySelector("aside");
+
+            aside.addEventListener("mousemove", (e) => {
+                const { width, height, left, top } = aside.getBoundingClientRect();
+                const x = (e.clientX - left) / width * 100;
+                const y = (e.clientY - top) / height * 100;
+
+                aside.style.setProperty("--light-x", `${x}%`);
+                aside.style.setProperty("--light-y", `${y}%`);
+
+                const rotateX = ((e.clientY - top - height / 2) / 25) * -1;
+                const rotateY = (e.clientX - left - width / 2) / 25;
+
+                aside.style.setProperty("--rotateX", `${rotateX}deg`);
+                aside.style.setProperty("--rotateY", `${rotateY}deg`);
+            });
+
+            aside.addEventListener("mouseleave", () => {
+                aside.style.setProperty("--light-x", "50%");
+                aside.style.setProperty("--light-y", "50%");
+                aside.style.setProperty("--rotateX", "0deg");
+                aside.style.setProperty("--rotateY", "0deg");
             });
         });
     </script>

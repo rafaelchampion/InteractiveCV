@@ -257,8 +257,46 @@ h6 {
     animation: glow infinite 30s linear;
     background-image: radial-gradient(circle at var(--x) var(--y), rgb(74, 210, 255), #007bff 50%, #ffffff00 70%);
     background-size: 100% 100%;
-    filter: saturate(2) contrast(3) blur(15px) hue-rotate(340deg);
+    filter: saturate(3) contrast(5) blur(5px) hue-rotate(340deg);
     animation-timing-function: linear;
+}
+
+aside {
+    position: relative;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    transform-style: preserve-3d;
+    z-index: 10000;
+    cursor: pointer;
+}
+
+/* Light reflection effect inside the card */
+aside .reflection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--light-x) var(--light-y), rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 80%);
+    opacity: 0.5;
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    border-radius: 15px;
+}
+
+aside:hover .reflection {
+    opacity: 0.8;
+    transform: scale(1.0);
+}
+
+aside:hover {
+    transform: perspective(1000px) scale(1.08) rotateX(var(--rotateX)) rotateY(var(--rotateY));
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Cursor-based 3D effect */
+aside {
+    will-change: transform;
 }
 
 /*--------------------------------------------------------------
@@ -1106,6 +1144,10 @@ body.dark-mode .button {
         max-width: 80px;
         top: -45px;
         right: 15px;
+    }
+
+    .sidebar {
+        z-index: 1;
     }
 }
 
