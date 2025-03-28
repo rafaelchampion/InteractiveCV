@@ -220,6 +220,10 @@ h6 {
     position: fixed;
     width: 400px;
     top: 75px;
+    background-image: url("../img/card-bg.jpg");
+    background-color: var(--accent-primary);
+    background-size: cover;
+    background-blend-mode: luminosity;
 }
 
 .sidebar h1 {
@@ -254,10 +258,10 @@ h6 {
 }
 
 .sidebar::before {
-    animation: glow infinite 30s linear;
+    animation: glow infinite 20s linear;
     background-image: radial-gradient(circle at var(--x) var(--y), rgb(74, 210, 255), #007bff 50%, #ffffff00 70%);
     background-size: 100% 100%;
-    filter: saturate(3) contrast(5) blur(5px) hue-rotate(340deg);
+    filter: saturate(2) contrast(1) blur(15px) hue-rotate(0deg);
     animation-timing-function: linear;
 }
 
@@ -269,7 +273,6 @@ aside {
     cursor: pointer;
 }
 
-/* Light reflection effect inside the card */
 aside .reflection {
     position: absolute;
     top: 0;
@@ -280,8 +283,9 @@ aside .reflection {
     opacity: 0.5;
     transition: opacity 0.2s ease-out, transform 0.2s ease-out;
     pointer-events: none;
-    mix-blend-mode: overlay;
+    mix-blend-mode: hard-light;
     border-radius: 15px;
+    z-index: 10;
 }
 
 aside:hover .reflection {
@@ -294,7 +298,10 @@ aside:hover {
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.35);
 }
 
-/* Cursor-based 3D effect */
+aside:hover::before {
+    animation-play-state: paused;
+}
+
 aside {
     will-change: transform;
 }
@@ -309,10 +316,13 @@ aside {
 .section,
 .sidebar {
     padding: 35px;
-    background: var(--bg-secondary);
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     margin: 0 10px;
+}
+
+.section {
+    background: var(--bg-secondary);
 }
 
 main {
@@ -910,6 +920,11 @@ body.dark-mode .section {
     background-color: var(--dark-bg-secondary);
 }
 
+body.dark-mode .sidebar {
+    background-image: url("../img/card-bg.jpg");
+    background-blend-mode: lighten;
+}
+
 body.dark-mode .timeline-content,
 body.dark-mode .card {
     background-color: var(--dark-bg-tertiary);
@@ -921,7 +936,7 @@ body.dark-mode .social-icon {
 }
 
 body.dark-mode .sidebar::before {
-    filter: saturate(2) contrast(3) blur(15px) hue-rotate(35deg);
+    filter: saturate(1.5) contrast(2) blur(15px) hue-rotate(35deg);
 }
 
 body.dark-mode .sidebar::after {
@@ -962,6 +977,10 @@ body.dark-mode .badge {
 body.dark-mode .button {
     background: var(--accent-complementary);
     color: var(--text-primary);
+}
+
+body.dark-mode aside .reflection {
+    mix-blend-mode: soft-light;
 }
 
 .button:hover {
