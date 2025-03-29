@@ -52,6 +52,7 @@
 
 html {
     font-size: 16px;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -513,6 +514,12 @@ details[open] summary svg {
     grid-gap: 5px;
 }
 
+.social-links {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+}
+
 .social-icon {
     width: 30px;
     height: 30px;
@@ -524,6 +531,12 @@ details[open] summary svg {
     justify-content: center;
     font-size: 18px;
     text-decoration: none;
+}
+
+.social-links .social-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
 }
 
 /*--------------------------------------------------------------
@@ -1053,6 +1066,10 @@ body.dark-mode aside .reflection {
         top: 60px;
     }
 
+    aside {
+        z-index: 10;
+    }
+
     .section,
     .sidebar {
         padding: 25px;
@@ -1130,6 +1147,10 @@ body.dark-mode aside .reflection {
         flex-direction: column;
         gap: 15px;
         height: 100%;
+    }
+
+    .social-links {
+        justify-content: center;
     }
 }
 

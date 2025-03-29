@@ -16,6 +16,7 @@ const translations = {
         nav_languages: "Languages",
         nav_books: "Books",
         nav_interests: "Interests",
+        nav_socials: "Contact me",
 
         // About section
         about_title: "About me",
@@ -126,7 +127,12 @@ const translations = {
         interests_tech: "I like programming, reading and learning new things. I am always looking for new technologies, new challenges and to stay up to date in this ever-evolving world. I am interested in everything that involves computers, including hardware but mainly software, and recently I have been venturing into the use of locally executed Artificial Intelligence for task automation, image generation, sound, etc. In my spare time I try to get involved in personal software projects for personal and professional study and development.",
         interests_science: "I like everything related to science, especially astronomy. Subjects such as quantum mechanics, physics and mathematics also fascinate me and spark my interest. Part of this love for science is translated into code, where I always try to rely on the best practices and techniques already established in academic texts. I like to stick to well-defined processes and follow them to deliver code with the best possible quality.",
         interests_communication: "In both my personal and professional environments, I like to foster open and sincere dialogue as a way of maintaining a healthy environment and learning. I really enjoy receiving feedback on my work and I always look for ways to improve or adapt to each situation. I am a person who learns quickly. I also enjoy mediating different points of view and finding a common solution.",
-        interests_teamwork: "I like to work in teams with common goals of growth and learning. I always try to maintain a good and cordial relationship with everyone. Although I consider myself an introvert, I like to be in contact with people and different opinions. Both the personal and professional environment are shared with other people and knowing how to understand, respect and sometimes absorb other points of view keeps us constantly evolving."
+        interests_teamwork: "I like to work in teams with common goals of growth and learning. I always try to maintain a good and cordial relationship with everyone. Although I consider myself an introvert, I like to be in contact with people and different opinions. Both the personal and professional environment are shared with other people and knowing how to understand, respect and sometimes absorb other points of view keeps us constantly evolving.",
+
+        //Contacts section
+        socials_title: "🌐 Contact and Social Networks",
+        socials_intro: "Let's connect!",
+        socials_invite: "It’s always good to connect with new people. Got a project idea? Want to discuss technology, programming, and coding? Need a developer? Get in touch.",
     },
     pt: {
         // Location
@@ -145,6 +151,7 @@ const translations = {
         nav_languages: "Idiomas",
         nav_books: "Livros",
         nav_interests: "Interesses",
+        nav_socials: "Links",
 
         // About section
         about_title: "Sobre mim",
@@ -253,6 +260,11 @@ const translations = {
         interests_tech: "Gosto de programar, ler e aprender coisas novas. Estou sempre em busca de novas tecnologias, novos desafios e de me manter atualizado nesse mundo em constante evolução. Tenho interesse em tudo que envolve computadores, incluindo hardware mas principalmente software, e nos últimos tempos venho me aventurando com a utilização de Inteligência Artificial executada localmente para automação de tarefas, geração de imagens, som, etc. Nas horas vagas busco me envolver em projetos pessoais de software para estudo e desenvolvimento pessoal e profissional.",
         interests_science: "Gosto de tudo relacionado a ciência, principalmente astronomia. Assuntos como mecânica quântica, física e matemática também me encantam e despertam meu interesse. Parte desse amor por ciência é traduzido no código, onde procuro sempre me apoiar nas boas práticas e técnicas já estabelecidas que os textos acadêmicos apresentam. Gosto de me ater a processos bem definidos e seguí-los para entregar código com a melhor qualidade possível.",
         interests_communication: "Tanto no ambiente pessoal quanto no ambiente profissional, gosto de cultivar diálogo aberto e sincero como forma de manter um ambiente sadio e aprender. Gosto muito de receber feedback sobre o meu trabalho e sempre busco formas de melhorar ou me adaptar à cada situação. Sou uma pessoa que aprende rápido. Também gosto de mediar diferentes pontos de vista e encontrar uma solução em comum.",
-        interests_teamwork: "Gosto de trabalhar em equipes com objetivos de crescimento e aprendizado em comum. Procuro sempre manter um bom e cordial relacionamento com todos. Apesar de me considerar introvertido, gosto de estar em contato com pessoas e diferentes opiniões. Tanto o ambiente pessoal quanto o profissional são compartilhados com outras pessoas e saber entender, respeitar e as vezes absorver outros pontos de vista nos mantém em constante evolução."
+        interests_teamwork: "Gosto de trabalhar em equipes com objetivos de crescimento e aprendizado em comum. Procuro sempre manter um bom e cordial relacionamento com todos. Apesar de me considerar introvertido, gosto de estar em contato com pessoas e diferentes opiniões. Tanto o ambiente pessoal quanto o profissional são compartilhados com outras pessoas e saber entender, respeitar e as vezes absorver outros pontos de vista nos mantém em constante evolução.",
+
+        //Contacts section
+        socials_title: "🌐 Contato e Redes Sociais",
+        socials_intro: "Vamos nos conectar!",
+        socials_invite: "É sempre bom estar em contato com novas pessoas. Tem alguma ideia de projeto? Quer discutir tecnologia, programação e código? Precisa de um desenvolvedor? Encontre-me nos links abaixo."
     }
 };
