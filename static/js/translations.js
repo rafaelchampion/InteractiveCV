@@ -4,7 +4,7 @@ const translations = {
         location: "SP • Brazil",
 
         // Role
-        role: "🧑🏻‍🎓Computer Engineer • 🧑🏻‍💻 Full stack Software Engineer • 💜.NET Expert • 💛JavaScript • ✨Clean code",
+        role: "Computer Engineer • Full Stack Software Engineer • .NET Expert",
 
         // Navigation
         nav_about: "About me",
@@ -48,27 +48,40 @@ const translations = {
         job5_date: "Feb. 2020 - Apr. 2021",
         job5_title: ".NET Developer",
         job5_company: "Fast Escova Franchising",
-        job5_description: "<mark>Leadership in planning and development</mark> of a management software for a network of aesthetic procedure clinics. Implementation using <mark>clean architecture</mark>, <mark>DDD</mark>, <mark>.NET Core</mark>, <mark>clean code</mark>, <mark>secure API</mark> with endpoints for integration and communication with the franchisor, <mark>user identity</mark> management, customer subscription management, salesperson awards and bonuses with extensive competition rules, <mark>multi-tenancy</mark>, session scheduling with management of vacancies by chair and by professional, management of product inventory for direct sale and consumption of supplies in performing procedures and more.",
+        job5_description_1: "Led the development of a new management system for a cosmetic procedures clinic franchise, simplifying appointment scheduling, inventory management, and operational oversight.",
+        job5_description_2: "Designed the system architecture, database structure, chosen technologies, and project stack for a new system using clean architecture, DDD, .NET Core, and SOLID principles, ensuring scalability, maintainability, and long-term security.",
+        job5_description_3: "Managed a small team of freelance developers, delegating tasks, reviewing code, and ensuring adherence to best practices and business objectives.",
+        job5_description_4: "Designed secure APIs for real-time data synchronization between multiple clinics and the franchisor, streamlining business processes and centralizing data management.",
+        job5_description_5: "Developed an inventory and supplies system for product sales and inventory control of product supplies used in procedures, improving inventory visibility and reducing costs.",
 
         job4_date: "Feb. 2019 - Feb. 2020",
         job4_title: ".NET Developer",
         job4_company: "MedicMais Franchising",
-        job4_description: "<mark>Leadership in planning and development</mark> of a management software for a health insurance network with their own clinics. Implementation using <mark>ASP.NET Webforms</mark>, <mark>Repository Pattern</mark>, <mark>DevExpress</mark>, <mark>clean code</mark>, notifications with <mark>SignalR</mark>, <mark>secure API</mark> with endpoints for integration and communication with the franchisor, <mark>CRM for lead and customer management</mark>, secure registration and storage of <mark>medical records</mark>, <mark>interactive component for dental procedures</mark>, multi-view <mark>medical calendar</mark> with interactions in the calendar itself.",
+        job4_description_1: "Led the development of a brand new management system for a health plan franchise, automating clinical operations, medical record management, and appointment scheduling.",
+        job4_description_2: "Designed the system architecture, database structure, chosen technologies and project stack for a new system.",
+        job4_description_3: "Designed a multi-view interactive medical agenda with real-time synchronization, significantly enhancing scheduling efficiency and medical staff coordination.",
+        job4_description_4: "Managed a small team of freelance developers, overseeing development efforts and ensuring delivery of high-quality, scalable software solutions.",
+        job4_description_5: "Implemented security best practices, including secure data storage and secure API integrations, ensuring compliance with healthcare regulations.",
 
         job3_date: "Nov. 2016 - Jan. 2019",
         job3_title: "Junior .NET Developer",
         job3_company: "Instituto da Construção",
-        job3_description: "Maintenance and development of new features in management software for a network of schools offering courses in the construction industry. <mark>ASP.NET WebForms</mark>, <mark>MySQL</mark> <mark>Entity Framework</mark>, <mark>Repository Pattern</mark>, <mark>UnitOfWork Pattern</mark>, KPI reports, <mark>query performance improvement</mark>.",
+        job3_description_1: "Played a key role in improving a management system for a construction training school franchise, improving operational workflows, speeding up processes and increasing course uptake.",
+        job3_description_2: "Optimized database queries and reports to improve system performance, reducing query execution time and improving data retrieval efficiency.",
+        job3_description_3: "Developed integration with payment gateways for pinpad transactions - a payment method most widely adopted by the target audience - increasing sales.",
+        job3_description_4: "Developed a group scheduling process to control classes, rooms, teachers and students, avoiding time conflicts and improving date and time availability.",
 
         job2_date: "Apr. 2016 - Nov. 2016",
         job2_title: "Support analyst",
         job2_company: "Resolve Franchising",
-        job2_description: "Support providing to users and franchisees in the use of management software from 3 brands: Dr. Resolve (home maintenance services), Dona Resolve (cleaning services) and Instituto da Construção (a network of schools offering courses in the area of civil construction). User support, presentation of trainings on how to use the systems, level 1 and 2 support, MySQL database queries, request analysis, requirements gathering, assistance to developers by acting as intermediary between requests and technical language.",
+        job2_description_1: "Provided technical support and training to users and franchisees across three distinct franchise brands, improving user adoption to system usability and preventing operation issues.",
+        job2_description_2: "Conducted database queries and troubleshooting to resolve system issues, acting as the bridge between end-users and developers for feature enhancements.",
+        job2_description_3: "Composed documentation for existing systems and new features keeping operation up to date with changes and improvements.",
 
         job1_date: "Nov. 2012 - Jul. 2015",
         job1_title: "Adminstrative Assistant",
         job1_company: "De Rose Comércio e Representações LTDA",
-        job1_description: "Office routines, invoicing, and electronic invoices.",
+        job1_description: "Managed financial and administrative tasks, including invoicing and document processing.",
 
         // Education section
         education_title: "🎓 Education",
@@ -139,7 +152,7 @@ const translations = {
         location: "SP • Brasil",
 
         // Role
-        role: "🧑🏻‍🎓Engenheiro de Computação • 🧑🏻‍💻 Desenvolvedor Full Stack • 💜Especialista .NET • 💛JavaScript • ✨Código Limpo",
+        role: "Engenheiro da Computação • Engenheiro de Software Full Stack • Especialista .NET",
 
         // Navigation
         nav_about: "Sobre mim",
@@ -182,27 +195,40 @@ const translations = {
         job5_date: "Fev. 2020 - Abr. 2021",
         job5_title: "Desenvolvedor .NET Pleno",
         job5_company: "Fast Escova Franchising",
-        job5_description: "<mark>Líder de planejamento e desenvolvimento</mark> de um sistema de gerenciamento para uma rede de clínicas de procedimentos estéticos. Implementação utilizando <mark>arquitetura limpa</mark>, <mark>DDD</mark>, <mark>.NET Core</mark>, <mark>clean code</mark>, criação de <mark>API segura</mark> com endpoints para integração e comunicação com a franqueadora, gerenciamento de <mark>identidade de usuários</mark>, gerenciamento de assinaturas de clientes, premiação e bonificação de vendedores com extensas regras de competição, <mark>multi-tenancy</mark>, agendamento de sessões com gerenciamento de vagas por cadeira e por profissional, gerenciamento de estoque de produtos para venda direta e consumo de insumos na realização de procedimentos entre outros.",
+        job5_description_1: "<mark>Líder de planejamento e desenvolvimento</mark> de um novo sistema de gerenciamento para uma franquia de clínicas de procedimentos estéticos, <mark>simplificando o agendamento de consultas</mark>, o <mark>gerenciamento de estoque</mark> e a <mark>supervisão operacional</mark>.",
+        job5_description_2: "<mark>Projeto de arquitetura do sistema</mark>, <mark>estrutura do banco de dados</mark>, usando <mark>arquitetura limpa</mark>, <mark>DDD</mark>, <mark>.NET Core</mark> e <mark>princípios SOLID</mark>, garantindo <mark> escalabilidade</mark>, <mark>manutenibilidade</mark> e <mark>segurança</mark> de longo prazo.",
+        job5_description_3: "<mark>Gestão</mark> uma pequena equipe de desenvolvedores autônomos, <mark>delegando tarefas</mark>, <mark>revisando o código</mark> e <mark>garantindo a adesão às melhores práticas</mark> e objetivos de negócios.",
+        job5_description_4: "Desenvolvimento de <mark>APIs seguras</mark> para <mark>sincronização de dados em tempo real</mark> entre várias clínicas e o franqueador, <mark>simplificando os processos de negócios</mark> e <mark>centralizando o gerenciamento de dados</mark>.",
+        job5_description_5: "Desenvolvimento de um <mark>robusto sistema de estoque</mark> e insumos para venda de produtos e controle de estoque de insumos de produtos utilizados nos procedimentos, <mark>melhorando a visão do estoque</mark> e <mark>diminuindo gastos</mark>.",
 
         job4_date: "Fev. 2019 - Fev. 2020",
         job4_title: "Desenvolvedor .NET Pleno",
         job4_company: "MedicMais Franchising",
-        job4_description: "<mark>Líder de planejamento e desenvolvimento</mark> de um sistema de gerenciamento para uma rede de planos de saúde com clínicas próprias. Implementação utilizando <mark>ASP.NET Webforms</mark>, <mark>Repository Pattern</mark>, <mark>DevExpress</mark>, <mark>clean code</mark>, notificações com <mark>SignalR</mark> criação de <mark>API segura</mark> com endpoints para integração e comunicação com a franqueadora, <mark>CRM para gestão de leads e clientes</mark>, registro e armazenamento seguro de <mark>prontuários médicos</mark>, <mark>componente interativo de procedimentos odontológicos</mark>, <mark>agenda médica</mark> multivisão com interações na própria agenda.",
+        job4_description_1: "<mark>Líder de planejamento e desenvolvimento</mark> de um novo sistema de gerenciamento para uma franquia de planos de saúde, <mark>automatizando operações clínicas</mark>, <mark>gerenciamento de registros médicos</mark> e <mark>agendamento de consultas</mark>.",
+        job4_description_2: "<mark>Projeto de arquitetura do sistema</mark>, <mark>estrutura de banco de dados</mark>, <mark>decisão de tecnologias escolhidas</mark> e stack do projeto.",
+        job4_description_3: "Desenvolvimento de uma <mark>agenda médica interativa</mark> multivisualização com <mark>sincronização em tempo real</mark>, <mark>melhorando significativamente</mark> a eficiência do agendamento e a coordenação da equipe médica.",
+        job4_description_4: "<mark>Gestão</mark> de uma pequena equipe de desenvolvedores autônomos, <mark>supervisionando os esforços</mark> de desenvolvimento e <mark>garantindo a entrega</mark> de soluções de software escaláveis ​​e de alta qualidade.",
+        job4_description_5: "Implementação das <mark>melhores práticas de segurança</mark>, incluindo <mark>armazenamento seguro de dados</mark> e <mark>integrações seguras de API</mark>, garantindo a conformidade com os regulamentos de saúde.",
 
         job3_date: "Nov. 2016 - Jan. 2019",
         job3_title: "Desenvolvedor .NET Júnior",
         job3_company: "Instituto da Construção",
-        job3_description: "Manutenção e desenvolvimento de novas funcionalidades em software de gestão em rede de escolas com cursos na área da construção civil. <mark>ASP.NET WebForms</mark>, <mark>MySQL</mark> <mark>Entity Framework</mark>, <mark>Repository Pattern</mark>, <mark>UnitOfWork Pattern</mark>, relatórios de KPIs, <mark>melhoria de performance de consultas</mark>.",
+        job3_description_1: "<mark>Responsável pela melhoria</mark> de um sistema de gestão para uma franquia de escolas com cursos na área da construção civil, <mark>melhorando os fluxos de trabalho operacionais</mark>, <mark>acelerando processos</mark> e <mark>aumentando a adesão aos cursos</mark>.",
+        job3_description_2: "<mark>Otimização de consultas</mark> e relatórios de banco de dados para melhorar o desempenho do sistema, <mark>reduzindo o tempo de execução de consultas</mark> e <mark>melhorando a eficiência</mark> de obtenção de dados de relatórios.",
+        job3_description_3: "<mark>Integração com gateways de pagamento</mark> para operações de pinpad - um método de pagamento mais adotado pelo público-alvo - <mark>aumentando as vendas</mark>.",
+        job3_description_4: "<mark>Otimização de processo de agendamento</mark> por turmas para controle de aulas, salas, professores e alunos, evitando colisão de horários e <mark>melhorando a disponibilidade de datas e horários</mark>.",
 
         job2_date: "Abr. 2016 - Nov. 2016",
         job2_title: "Analista de suporte",
         job2_company: "Resolve Franchising",
-        job2_description: "Prestação de suporte a usuários e franqueados na utilização de softwares de gestão de 3 marcas: Dr. Resolve(serviços de manutenção para casa), Dona Resolve(serviços de limpeza) e Instituto da Construção (rede de escolas de ensino com cursos na área da construlção civil). Suporte ao usuário, apresentação de treinamentos de utilização dos sistemas, suportes nível 1 e 2, consultas em banco MySQL, análise de solicitações, levantamento de requisitos, auxílio aos desenvolvedores realizando a intermediação entre as solicitações e a linguagem técnica.",
+        job2_description_1: "<mark>Suporte técnico e treinamento</mark> para usuários e franqueados em três marcas de franquia, <mark>aumentando a adoção dos usuários</mark> à usabilidade do sistema e <mark>prevenindo problemas de operação</mark>.",
+        job2_description_2: "<mark>Consultas de banco de dados</mark> para relatórios pontuais e <mark>análise de anolamias</mark> para resolver problemas do sistema, <mark>atuando como ponte</mark> entre usuários finais e desenvolvedores para aprimoramentos de recursos de sistema.",
+        job2_description_3: "<mark>Composição de documentação</mark> para sistemas existentes e novos recursos, <mark>mantendo a operação atualizada</mark> com mudanças e melhorias.",
 
         job1_date: "Nov. 2012 - Jul. 2015",
         job1_title: "Assistente administrativo",
         job1_company: "De Rose Comércio e Representações LTDA",
-        job1_description: "Rotinas de escritório, faturamento e notas fiscais eletrônicas.",
+        job1_description: "Gerenciamento de tarefas financeiras e administrativas, incluindo faturamento e processamento de notas fiscais eletrônicas.",
 
         // Education section
         education_2_date: "Jan. 2014 - Dez. 2018",

@@ -316,13 +316,14 @@ aside {
 
 .section,
 .sidebar {
-    padding: 35px;
+    padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     margin: 0 10px;
 }
 
 .section {
+    padding: 35px;
     background: var(--bg-secondary);
 }
 
@@ -439,6 +440,10 @@ main section:first-child {
     position: static;
 }
 
+.role {
+    line-height: 25px;
+}
+
 /*--------------------------------------------------------------
   Toggles
 --------------------------------------------------------------*/
@@ -521,16 +526,21 @@ details[open] summary svg {
 }
 
 .social-icon {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background-color: var(--accent-primary);
     color: var(--dark-text-primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 30px;
     text-decoration: none;
+}
+
+.socials .social-icon {
+    background-color: var(--bg-tertiary);
+    color: var(--accent-secondary);
 }
 
 .social-links .social-icon {
@@ -650,6 +660,18 @@ details[open] summary svg {
 
 .timeline-content p:not(:last-child) {
     margin-bottom: 15px;
+}
+
+.timeline-body ul {
+    margin-left: 20px;
+}
+
+.timeline-body ul li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.timeline-body ul li::marker {
+    color: var(--accent-secondary)
 }
 
 
@@ -944,8 +966,8 @@ body.dark-mode .card {
 }
 
 body.dark-mode .social-icon {
-    background-color: var(--accent-primary);
-    color: var(--bg-primary);
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
 }
 
 body.dark-mode .sidebar::before {
@@ -1098,6 +1120,10 @@ body.dark-mode aside .reflection {
     .timeline-title-detail::before {
         content: '';
         margin: 0;
+    }
+
+    .timeline-body ul {
+        margin-left: 5px;
     }
 
     .main-nav {
