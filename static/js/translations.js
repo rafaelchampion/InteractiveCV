@@ -14,7 +14,7 @@ const translations = {
         nav_projects: "Projects",
         nav_courses: "Courses",
         nav_languages: "Languages",
-        nav_books: "Books",
+        nav_books: "Shelf",
         nav_interests: "Interests",
         nav_socials: "Contact me",
 
@@ -43,10 +43,14 @@ const translations = {
         job6_date: "Apr. 2021 - Present",
         job6_title: "Senior Software Engineer",
         job6_company: "Grupo Fast",
-        job6_description: "Maintenance and development of new system features for managing a network of laser hair removal clinics, focusing on patient care, scheduling, inventory management and account management. <mark>ASP.NET MVC</mark>, <mark>Razor Pages</mark>, <mark>.NET Core to .NET 8</mark>, <mark>RESTful APIs</mark>, <mark>integration with several business partners</mark>, <mark>API developement and security</mark>, <mark>refactoring</mark> and <mark>performance improvements</mark>, continuous delivery, data reestructuring, framework upgrades, <mark>new projects architecture decisions</mark>, user experience and more.",
+        job6_description_1: "Composed a continuous enhancement and development team of a cutting-edge management system for a rapidly expanding laser hair removal clinic network, significantly improving operational efficiency.",
+        job6_description_2: "Integrated important system design, architecture and business rules decision making being a core member of product steering and providing valuable experience and academic-based propositions for the product's future.",
+        job6_description_3: "Spearheaded system integrations with multiple third-party services, legacy architecture modernizing, database interactions optimization, and system experience and performance enhancement to support business growth.",
+        job6_description_4: "Reworked main institutional website with modern .NET technologies and multiple language support, improving raw and SEO performance and user experience.",
+        job6_description_5: "Improved main system's scheduling gap finding with custom parameters, greatly reducing customers and users scheduling operation time, reducing customer complaints and improving business time utilization.",
 
         job5_date: "Feb. 2020 - Apr. 2021",
-        job5_title: ".NET Developer",
+        job5_title: "Mid-Level .NET Developer",
         job5_company: "Fast Escova Franchising",
         job5_description_1: "Led the development of a new management system for a cosmetic procedures clinic franchise, simplifying appointment scheduling, inventory management, and operational oversight.",
         job5_description_2: "Designed the system architecture, database structure, chosen technologies, and project stack for a new system using clean architecture, DDD, .NET Core, and SOLID principles, ensuring scalability, maintainability, and long-term security.",
@@ -55,7 +59,7 @@ const translations = {
         job5_description_5: "Developed an inventory and supplies system for product sales and inventory control of product supplies used in procedures, improving inventory visibility and reducing costs.",
 
         job4_date: "Feb. 2019 - Feb. 2020",
-        job4_title: ".NET Developer",
+        job4_title: "Mid-Level .NET Developer",
         job4_company: "MedicMais Franchising",
         job4_description_1: "Led the development of a brand new management system for a health plan franchise, automating clinical operations, medical record management, and appointment scheduling.",
         job4_description_2: "Designed the system architecture, database structure, chosen technologies and project stack for a new system.",
@@ -126,12 +130,12 @@ const translations = {
         proficiency_fluent: "Fluent",
 
         // Books section
-        books_title: "📘 Books",
+        books_title: "📘 Shelf",
         books_intro: "Books that I consider important in my training and daily life as a software developer and that I keep on my desk.",
         book_clean_code: "Clean Code",
         book_clean_coder: "Clean Coder",
         book_clean_architecture: "Clean Architecture",
-        book_ddd: "Domain Driven Design",
+        book_ddd: "Domain Driven Design: Tackling Complexity in the Heart of Software",
         book_refactoring: "Refactoring: Improving the Design of Existing Code",
         book_csharp: "C# 9.0 Pocket Reference",
 
@@ -162,7 +166,7 @@ const translations = {
         nav_projects: "Projetos",
         nav_courses: "Cursos",
         nav_languages: "Idiomas",
-        nav_books: "Livros",
+        nav_books: "Prateleira",
         nav_interests: "Interesses",
         nav_socials: "Links",
 
@@ -190,7 +194,12 @@ const translations = {
         job6_date: "Abr. 2021 - Presente",
         job6_title: "Engenheiro de software sênior",
         job6_company: "Grupo Fast",
-        job6_description: "Manutenção e desenvolvimento de novos recursos de sistema para gerenciar uma rede de clínicas de depilação a laser, com foco em atendimento ao paciente, agendamento, gerenciamento de estoque e gerenciamento de contas. <mark>ASP.NET MVC</mark>, <mark>Razor Pages</mark>, <mark>.NET Core a .NET 8</mark>, <mark>APIs RESTful</mark>, <mark>integração com vários parceiros de negócios</mark>, <mark>desenvolvimento e segurança de APIs</mark>, <mark>refatoração</mark> e <mark>melhorias de desempenho</mark>, entrega contínua, reestruturação de dados, atualizações de framework, <mark>decisões de arquitetura de novos projetos</mark>, experiência do usuário entre outros.",
+        job6_description_1: "Aprimoramento e desenvolvimento de um sistema de gerenciamento de ponta para uma rede de clínicas de depilação a laser em rápida expansão, <mark>melhorando significativamente a eficiência operacional</mark>.",
+        job6_description_2: "<mark>Importantes tomadas de decisão</mark> em <mark>design</mark>, <mark>arquitetura</mark> e <mark>regras de negócios</mark>, sendo um <mark>membro central do direcionamento do produto</mark> e fornecendo propostas baseadas em experiência profissional e acadêmica para o futuro do produto.",
+        job6_description_3: "<mark>Integrações com vários serviços de terceiros</mark>, <mark>modernização de arquitetura legada</mark>, <mark>otimização de performance</mark> para consultas, <mark>procedures</mark>, <mark>triggers</mark> e <mark>funções</mark> de banco de dados e <mark>aprimoramento de experiência e desempenho do sistema</mark> para dar suporte ao crescimento do negócio.",
+        job6_description_4: "<mark>Reformulação do site institucional</mark> principal com <mark>tecnologias .NET modernas</mark> e <mark>suporte a vários idiomas</mark>, melhorando o desempenho bruto e de SEO e a experiência do usuário.",
+        job6_description_5: "Implementação de descoberta de lacunas de agendamento do sistema principal com parâmetros personalizados, <mark>reduzindo significativamente</mark> o tempo de operação de agendamento de clientes e usuários, <mark>reduzindo reclamações</mark> de clientes e <mark>melhorando a utilização do tempo comercial</mark>.",
+
 
         job5_date: "Fev. 2020 - Abr. 2021",
         job5_title: "Desenvolvedor .NET Pleno",
@@ -272,12 +281,12 @@ const translations = {
         proficiency_fluent: "Fluente",
 
         // Books section
-        books_title: "📘 Livros",
+        books_title: "📘 Prateleira",
         books_intro: "Livros que considero importantes em minha formação e dia a dia como desenvolvedor de software e que mantenho na minha escrivaninha.",
         book_clean_code: "Código Limpo",
         book_clean_coder: "O Codificador Limpo",
         book_clean_architecture: "Arquitetura Limpa",
-        book_ddd: "Domain Driven Design",
+        book_ddd: "Domain-Driven Design: Atacando as Complexidades no Coração do Software",
         book_refactoring: "Refatoração: Aperfeiçoando o Design de Códigos Existentes",
         book_csharp: "C# 9.0 Pocket Reference",
 

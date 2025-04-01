@@ -224,7 +224,8 @@ h6 {
     background-image: url("../img/card-bg.jpg");
     background-color: var(--accent-primary);
     background-size: cover;
-    background-blend-mode: luminosity;
+    background-blend-mode: soft-light;
+    box-shadow: inset 0px 0 200px 105px #1f1f1f;
 }
 
 .sidebar h1 {
@@ -280,11 +281,26 @@ aside .reflection {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at var(--light-x) var(--light-y), rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 80%);
+    background: radial-gradient(farthest-corner circle at var(--light-x) var(--light-y), hsla(0, 0%, 100%, 0.8) 10%, hsla(0, 0%, 100%, 0.65) 20%, hsla(0, 0%, 0%, 0.5) 90%);
     opacity: 0.5;
     transition: opacity 0.2s ease-out, transform 0.2s ease-out;
     pointer-events: none;
-    mix-blend-mode: hard-light;
+    mix-blend-mode: soft-light;
+    border-radius: 15px;
+    z-index: 10;
+}
+
+aside .reflection_2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(farthest-corner circle at var(--light-x) var(--light-y), hsla(0, 0%, 100%, 0.8) 10%, hsla(0, 0%, 100%, 0.65) 20%, hsla(0, 0%, 0%, 0.5) 90%);
+    opacity: 0.5;
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+    pointer-events: none;
+    mix-blend-mode: soft-light;
     border-radius: 15px;
     z-index: 10;
 }
@@ -674,6 +690,135 @@ details[open] summary svg {
     color: var(--accent-secondary)
 }
 
+/*--------------------------------------------------------------
+  Bookshelf
+--------------------------------------------------------------*/
+.bookshelf {
+    position: relative;
+    margin: 0 auto;
+    column-gap: 12px;
+    padding: 4px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.book {
+    position: relative;
+    cursor: default;
+    padding: 16px;
+    margin: 0;
+    display: grid;
+    break-inside: avoid;
+}
+
+.book-content {
+    position: relative;
+}
+
+.book-cover {
+    position: relative;
+}
+
+.book-cover .book-pages {
+    position: absolute;
+    width: 90%;
+    height: 96%;
+    top: 1%;
+    left: 16px;
+    border: 1px solid grey;
+    border-radius: 2px 6px 6px 2px;
+    background: white;
+    box-shadow:
+        -5px 20px 15px 0px #00000030,
+        inset -2px 0 0 grey,
+        inset -3px 0 0 #dbdbdb, inset -4px 0 0 white, inset -5px 0 0 #dbdbdb,
+        inset -6px 0 0 white, inset -7px 0 0 #dbdbdb, inset -8px 0 0 white,
+        inset -9px 0 0 #dbdbdb;
+}
+
+.book-cover .book-image {
+    line-height: 0;
+    position: relative;
+    border-radius: 2px 6px 6px 2px;
+    box-shadow: 6px 6px 18px -2px rgba(0, 0, 0, 0.2),
+        24px 28px 40px -6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    transform: perspective(2000px) rotateY(-15deg) translateX(-10px) scaleX(0.94);
+    cursor: pointer;
+}
+
+.book-image img {
+    grid-row: 1 / -1;
+    grid-column: 1;
+    width: 100%;
+    border-radius: 2px 6px 6px 2px;
+}
+
+.book-image:hover {
+    transform: perspective(2000px) rotateY(0deg) translateX(0px) scaleX(1);
+    transform-style: preserve-3d;
+    box-shadow: 6px 6px 12px -1px rgba(0, 0, 0, 0.1),
+        20px 14px 16px -6px rgba(0, 0, 0, 0.1);
+}
+
+.book-details {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    display: grid;
+    align-items: self-end;
+}
+
+.book-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.3;
+    margin-bottom: 3px;
+    display: block;
+}
+
+.book-author {
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    color: var(--accent-complementary);
+    display: block;
+    line-height: 15px;
+}
+
+.book-effect {
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    margin-left: 16px;
+    top: 0;
+    border-left: 2px solid #00000010;
+    background-image: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.2) 0%,
+            rgba(255, 255, 255, 0) 100%);
+    transition: all 0.5s ease;
+    z-index: 5;
+}
+
+.book-light {
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    border-radius: 3px;
+    background-image: linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.2) 100%);
+    top: 0;
+    right: 0;
+    opacity: 0.1;
+    transition: all 0.5s ease;
+    z-index: 4;
+}
+
+.book-image:hover .effect {
+    margin-left: 14px;
+}
 
 /*--------------------------------------------------------------
   Lists
@@ -956,8 +1101,9 @@ body.dark-mode .section {
 }
 
 body.dark-mode .sidebar {
-    background-image: url("../img/card-bg.jpg");
+    background-image: url("../img/binary-code-background-vector.jpg");
     background-blend-mode: lighten;
+    box-shadow: inset 0px 0 200px 105px var(--dark-bg-primary);
 }
 
 body.dark-mode .timeline-content,
@@ -1016,6 +1162,14 @@ body.dark-mode .button {
 
 body.dark-mode aside .reflection {
     mix-blend-mode: soft-light;
+}
+
+body.dark-mode .book-title {
+    color: var(--dark-text-primary);
+}
+
+body.dark-mode .book-author {
+    color: var(--accent-complementary);
 }
 
 .button:hover {
@@ -1214,6 +1368,37 @@ body.dark-mode aside .reflection {
 
     .sidebar {
         z-index: 1;
+    }
+
+    .bookshelf {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .effect {
+        margin-left: 5px;
+        border-left: 1px solid #00000010;
+    }
+
+    .book-image:hover .effect {
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .book-cover .book-image {
+        transform: perspective(2000px) rotateY(-15deg) translateX(-4px) scaleX(0.94);
+    }
+
+    .book-effect {
+        margin-left: 5px;
+        border-left: 1px solid #00000010;
+    }
+
+    .book-image:hover {
+        transform: perspective(2000px) rotateY(0deg) translateX(1px) scaleX(1);
+        transform-style: preserve-3d;
+        box-shadow: 6px 6px 12px -1px rgba(0, 0, 0, 0.1),
+            20px 14px 16px -6px rgba(0, 0, 0, 0.1);
     }
 }
 

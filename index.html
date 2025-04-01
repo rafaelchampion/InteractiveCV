@@ -56,7 +56,9 @@
                     </a>
                 </div>
             </div>
+            <div class="glitter"></div>
             <div class="reflection"></div>
+            <div class="reflection_2"></div>
         </aside>
         <header class="main-nav">
             <div class="nav-left">
@@ -301,19 +303,47 @@
                                     <span data-translate-key="job6_company">Grupo Fast</span>
                                 </h3>
                             </div>
-                            <p data-translate-key="job6_description">
-                                Manutenção e desenvolvimento de novos recursos de sistema para gerenciar uma rede de
-                                clínicas de depilação a laser, com
-                                foco em atendimento ao paciente, agendamento, gerenciamento de estoque e
-                                gerenciamento
-                                de contas. <mark>ASP.NET MVC</mark>, <mark>Razor Pages</mark>, <mark>.NET Core a .NET
-                                    8</mark>, <mark>APIs RESTful</mark>, <mark>integração com vários
-                                    parceiros de negócios</mark>, <mark>desenvolvimento e segurança de APIs</mark>,
-                                <mark>refatoração</mark> e <mark>melhorias de
-                                    desempenho</mark>, entrega contínua,
-                                reestruturação de dados, atualizações de framework, <mark>decisões de arquitetura de
-                                    novos projetos</mark>, experiência do usuário entre outros.
-                            </p>
+                            <div class="timeline-body">
+                                <ul>
+
+                                    <li data-translate-key="job6_description_1">
+                                        Aprimoramento e desenvolvimento de um sistema de gerenciamento de ponta para uma
+                                        rede de clínicas de depilação a laser
+                                        em rápida expansão, <mark>melhorando significativamente a eficiência
+                                            operacional</mark>.
+                                    </li>
+                                    <li data-translate-key="job6_description_2">
+                                        <mark>Importantes tomadas de decisão</mark> em <mark>design</mark>,
+                                        <mark>arquitetura</mark> e <mark>regras de
+                                            negócios</mark>, sendo um <mark>membro central do direcionamento do
+                                            produto</mark> e fornecendo propostas baseadas
+                                        em experiência profissional e acadêmica para o futuro do produto.
+                                    </li>
+                                    <li data-translate-key="job6_description_3">
+                                        <mark>Integrações com vários serviços de terceiros</mark>, <mark>modernização de
+                                            arquitetura legada</mark>,
+                                        <mark>otimização de performance</mark> para consultas, <mark>procedures</mark>,
+                                        <mark>triggers</mark> e
+                                        <mark>funções</mark> de banco de dados e <mark>aprimoramento de experiência e
+                                            desempenho do sistema</mark> para dar
+                                        suporte ao crescimento do negócio.
+                                    </li>
+                                    <li data-translate-key="job6_description_4">
+                                        <mark>Reformulação do site institucional</mark> principal com <mark>tecnologias
+                                            .NET modernas</mark> e <mark>suporte a
+                                            vários idiomas</mark>, melhorando o desempenho bruto e de SEO e a
+                                        experiência do usuário.
+                                    </li>
+                                    <li data-translate-key="job6_description_5">
+                                        Implementação de descoberta de lacunas de agendamento do sistema principal com
+                                        parâmetros personalizados,
+                                        <mark>reduzindo significativamente</mark> o tempo de operação de agendamento de
+                                        clientes e usuários, <mark>reduzindo
+                                            reclamações</mark> de clientes e <mark>melhorando a utilização do tempo
+                                            comercial</mark>.
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -735,74 +765,127 @@
                 </div>
             </section>
             <section id="books" class="section">
-                <h1 data-translate-key="books_title">📘 Livros</h1>
+                <h1 data-translate-key="books_title">📘 Prateleira</h1>
                 <p data-translate-key="books_intro">
                     Livros que considero importantes em minha formação e dia a dia
                     como desenvolvedor de software e que
                     mantenho na minha escrivaninha.</p>
                 <br />
-                <div class="table-container">
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <p data-translate-key="book_clean_code">Código Limpo</p>
-                                </td>
-                                <td>
-                                    <p>Robert C. Martin</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p data-translate-key="book_clean_coder">O Codificador Limpo
-                                    </p>
-                                </td>
-                                <td>
-                                    <p>Robert C. Martin</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p data-translate-key="book_clean_architecture">Arquitetura
-                                        Limpa
-                                    </p>
-                                </td>
-                                <td>
-                                    <p>Robert C. Martin</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p data-translate-key="book_ddd">Domain
-                                        Driven Design
-                                    </p>
-                                </td>
-                                <td>
-                                    <p>Eric Evans</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p data-translate-key="book_refactoring">
-                                        Refatoração: Aperfeiçoando o Design de Códigos Existentes
-                                    </p>
-                                </td>
-                                <td>
-                                    <p>Martin Fowler</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p data-translate-key="book_csharp">
-                                        C# 9.0 Pocket Reference
-                                    </p>
-                                </td>
-                                <td>
-                                    <p>Joseph Albahari, Ben Albahari</p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="bookshelf">
+                    <div class="book">
+                        <div class="book-content">
+                            <div class="book-cover">
+                                <div class="book-pages"></div>
+                                <div class="book-image">
+                                    <img src="static/img/books/clean_code.jpg" />
+                                    <div class="book-effect"></div>
+                                    <div class="book-light"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="book-details">
+                            <div class="book-details-content">
+                                <span class="book-title" data-translate-key="book_clean_code">Código Limpo</span>
+                                <span class="book-author">Robert C. Martin</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book">
+                        <div class="book-content">
+                            <div class="book-cover">
+                                <div class="book-pages"></div>
+                                <div class="book-image">
+                                    <img src="static/img/books/clean_coder.jpg" />
+                                    <div class="book-effect"></div>
+                                    <div class="book-light"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="book-details">
+                            <div class="book-details-content">
+                                <span class="book-title" data-translate-key="book_clean_coder">O Codificador
+                                    Limpo</span>
+                                <span class="book-author">Robert C. Martin</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book">
+                        <div class="book-content">
+                            <div class="book-cover">
+                                <div class="book-pages"></div>
+                                <div class="book-image">
+                                    <img src="static/img/books/clean_architecture.jpg" />
+                                    <div class="book-effect"></div>
+                                    <div class="book-light"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="book-details">
+                            <div class="book-details-content">
+                                <span class="book-title" data-translate-key="book_clean_architecture">Arquitetura
+                                    Limpa</span>
+                                <span class="book-author">Robert C. Martin</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book">
+                        <div class="book-content">
+                            <div class="book-cover">
+                                <div class="book-pages"></div>
+                                <div class="book-image">
+                                    <img src="static/img/books/domain_driven_design.jpg" />
+                                    <div class="book-effect"></div>
+                                    <div class="book-light"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="book-details">
+                            <div class="book-details-content">
+                                <span class="book-title" data-translate-key="book_ddd">Domain-Driven Design: Atacando as
+                                    Complexidades no Coração do
+                                    Software</span>
+                                <span class="book-author">Eric Evans</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book">
+                        <div class="book-content">
+                            <div class="book-cover">
+                                <div class="book-pages"></div>
+                                <div class="book-image">
+                                    <img src="static/img/books/refactoring.jpg" />
+                                    <div class="book-effect"></div>
+                                    <div class="book-light"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="book-details">
+                            <div class="book-details-content">
+                                <span class="book-title" data-translate-key="book_refactoring">Refatoração:
+                                    Aperfeiçoando o Design de Códigos
+                                    Existentes</span>
+                                <span class="book-author">Martin Fowler</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book">
+                        <div class="book-content">
+                            <div class="book-cover">
+                                <div class="book-pages"></div>
+                                <div class="book-image">
+                                    <img src="static/img/books/C_sharp_pocket.jpg" />
+                                    <div class="book-effect"></div>
+                                    <div class="book-light"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="book-details">
+                            <div class="book-details-content">
+                                <span class="book-title" data-translate-key="book_csharp">C# 9.0 Pocket Reference</span>
+                                <span class="book-author">Joseph Albahari, Ben Albahari</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -901,6 +984,8 @@
 
                 aside.style.setProperty("--rotateX", `${rotateX}deg`);
                 aside.style.setProperty("--rotateY", `${rotateY}deg`);
+
+                aside.style.setProperty("--pointer-from-center", pointFromCenter(x, y));
             });
 
             aside.addEventListener("mouseleave", () => {
@@ -908,6 +993,7 @@
                 aside.style.setProperty("--light-y", "50%");
                 aside.style.setProperty("--rotateX", "0deg");
                 aside.style.setProperty("--rotateY", "0deg");
+                aside.style.setProperty("--pointer-from-center", "0");
             });
         });
     </script>
