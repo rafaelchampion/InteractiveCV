@@ -265,6 +265,7 @@ h6 {
     background-size: 100% 100%;
     filter: saturate(2) contrast(1) blur(15px) hue-rotate(0deg);
     animation-timing-function: linear;
+    transition: opacity 0.5s ease-in-out;
 }
 
 aside {
@@ -282,8 +283,8 @@ aside .reflection {
     width: 100%;
     height: 100%;
     background: radial-gradient(farthest-corner circle at var(--light-x) var(--light-y), hsla(0, 0%, 100%, 0.8) 10%, hsla(0, 0%, 100%, 0.65) 20%, hsla(0, 0%, 0%, 0.5) 90%);
-    opacity: 0.5;
-    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+    opacity: 0;
+    transition: opacity 0.7s ease-out, transform 0.2s ease-out;
     pointer-events: none;
     mix-blend-mode: soft-light;
     border-radius: 15px;
@@ -296,9 +297,9 @@ aside .reflection_2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(farthest-corner circle at var(--light-x) var(--light-y), hsla(0, 0%, 100%, 0.8) 10%, hsla(0, 0%, 100%, 0.65) 20%, hsla(0, 0%, 0%, 0.5) 90%);
-    opacity: 0.5;
-    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+    background: radial-gradient(farthest-corner circle at var(--light-x) var(--light-y), hsla(0, 0%, 100%, 0.8) 10%, hsla(0, 0%, 100%, 0.65) 20%, hsla(0, 0%, 0%, 0.5) 90%);
+    opacity: 0;
+    transition: opacity 0.7s ease-out, transform 0.2s ease-out;
     pointer-events: none;
     mix-blend-mode: soft-light;
     border-radius: 15px;
@@ -310,6 +311,92 @@ aside:hover .reflection {
     transform: scale(1.0);
 }
 
+aside:hover .sidebar::before {
+    opacity: 0;
+}
+
+.holo-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 3;
+    pointer-events: none;
+    mask-image: url('../img/effect.png');
+    -webkit-mask-image: url('../img/effect.png');
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    border-radius: 15px;
+    mix-blend-mode: plus-lighter;
+}
+
+.holo-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-size: 100% 100%;
+    z-index: 4;
+    mix-blend-mode: exclusion;
+    background:
+        repeating-linear-gradient(30deg,
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 0, 255, 0.5) 15%,
+            rgba(0, 255, 255, 0.5) 30%,
+            rgba(255, 255, 0, 0.5) 45%,
+            rgba(255, 0, 0, 0.5) 60%,
+            rgba(255, 255, 255, 0.5) 75%);
+    mix-blend-mode: difference;
+    transition: opacity 0.2s ease-in-out;
+}
+
+aside:hover .holo-pattern {
+    opacity: 0.5;
+}
+
+
+.holo-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    mix-blend-mode: color-dodge;
+    pointer-events: none;
+    background-image:
+        repeating-linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.1) 1px,
+            transparent 3px);
+    z-index: 5;
+}
+
+.card-shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 6;
+}
+
 aside:hover {
     transform: perspective(1000px) scale(1.08) rotateX(var(--rotateX)) rotateY(var(--rotateY));
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.35);
@@ -317,6 +404,7 @@ aside:hover {
 
 aside:hover::before {
     animation-play-state: paused;
+    opacity: 0;
 }
 
 aside {
@@ -1101,9 +1189,9 @@ body.dark-mode .section {
 }
 
 body.dark-mode .sidebar {
-    background-image: url("../img/binary-code-background-vector.jpg");
+    background-image: url("../img/card-bg.jpg");
     background-blend-mode: lighten;
-    box-shadow: inset 0px 0 200px 105px var(--dark-bg-primary);
+    /* box-shadow: inset 0px 0 200px 105px var(--dark-bg-primary); */
 }
 
 body.dark-mode .timeline-content,
@@ -1248,7 +1336,7 @@ body.dark-mode .book-author {
 
     .section,
     .sidebar {
-        padding: 25px;
+        padding: 50px 20px;
     }
 
     .sidebar {
@@ -1259,7 +1347,11 @@ body.dark-mode .book-author {
     }
 
     .timeline {
-        padding-left: 15px;
+        padding-left: 0;
+    }
+
+    .timeline::before {
+        display: none;
     }
 
     .timeline::before {
