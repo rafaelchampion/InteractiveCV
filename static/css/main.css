@@ -63,6 +63,20 @@ body {
     transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
+body::before {
+    content: '';
+    display: block;
+    position: fixed;
+    background-size: 75% 200%;
+    background-position: 50% -110vh;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    mix-blend-mode: plus-lighter;
+    z-index: 0;
+    background: radial-gradient(50% 100% at 50% 25%, rgb(101 145 255 / 8%) 0%, rgba(3, 0, 20, 0) 100%);
+}
+
 * {
     border-color: var(--light-border-color) !important;
 }
@@ -88,6 +102,7 @@ mark {
     padding: 2px 5px;
     color: inherit;
 }
+
 
 /*--------------------------------------------------------------
   Typography
@@ -431,6 +446,7 @@ aside {
     background: var(--bg-secondary);
 }
 
+
 main {
     width: 940px;
     float: right;
@@ -453,6 +469,10 @@ main section:first-child {
 .section#about-me,
 .section#interests {
     text-align: justify;
+}
+
+#interests p {
+    margin-bottom: 10px;
 }
 
 /*--------------------------------------------------------------
@@ -1072,6 +1092,14 @@ span[data-translate-key="course_hours"] {
     margin-left: 5px;
 }
 
+.gradient-text {
+    background-image: linear-gradient(to right, var(--accent-tertiary), var(--accent-complementary)) !important;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: fit-content;
+}
+
 /*--------------------------------------------------------------
   Animations
 --------------------------------------------------------------*/
@@ -1161,6 +1189,10 @@ body.dark-mode h4,
 body.dark-mode h5,
 body.dark-mode h6 {
     color: var(--dark-text-primary);
+}
+
+body.dark-mode h3 {
+    color: var(--accent-tertiary);
 }
 
 body.dark-mode .nav-menu {
@@ -1336,6 +1368,7 @@ body.dark-mode .book-author {
 
     .section,
     .sidebar {
+        content: '';
         padding: 50px 20px;
     }
 

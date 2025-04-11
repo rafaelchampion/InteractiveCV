@@ -141,10 +141,19 @@ const translations = {
 
         // Interests section
         interests_title: "Interests",
+        interests_tech_title: "Technology",
+        interests_science_title: "Science",
+        interests_communication_title: "Communication",
+        interests_teamwork_title: "Teamwork",
+        interests_ai_title: "Artificial intelligence",
         interests_tech: "I like programming, reading and learning new things. I am always looking for new technologies, new challenges and to stay up to date in this ever-evolving world. I am interested in everything that involves computers, including hardware but mainly software, and recently I have been venturing into the use of locally executed Artificial Intelligence for task automation, image generation, sound, etc. In my spare time I try to get involved in personal software projects for personal and professional study and development.",
         interests_science: "I like everything related to science, especially astronomy. Subjects such as quantum mechanics, physics and mathematics also fascinate me and spark my interest. Part of this love for science is translated into code, where I always try to rely on the best practices and techniques already established in academic texts. I like to stick to well-defined processes and follow them to deliver code with the best possible quality.",
         interests_communication: "In both my personal and professional environments, I like to foster open and sincere dialogue as a way of maintaining a healthy environment and learning. I really enjoy receiving feedback on my work and I always look for ways to improve or adapt to each situation. I am a person who learns quickly. I also enjoy mediating different points of view and finding a common solution.",
         interests_teamwork: "I like to work in teams with common goals of growth and learning. I always try to maintain a good and cordial relationship with everyone. Although I consider myself an introvert, I like to be in contact with people and different opinions. Both the personal and professional environment are shared with other people and knowing how to understand, respect and sometimes absorb other points of view keeps us constantly evolving.",
+        interests_ai_1: "Would you live in a building whose architectural design was done 100% with artificial intelligence, without the evaluation of an engineer? Of course, the use of AI in work, in various areas, has created a big buzz in recent years.",
+        interests_ai_2: "There is a lot of talk about replacing developers with AI, however, let's remember that civil engineers were not replaced by AutoCad. In the same way that AutoCad optimized the work of engineers, AI is a valuable tool in the development process. It is even more powerful because it speeds up code writing, assists in fixing bugs, and allows us to focus on <i>human</i> challenges.",
+        interests_ai_3: "This is the key word here. We must always remember that the essence of the knowledge that LLMs possesses was trained and based on human knowledge. However, AI  intelligent the machine may be, it cannot replace the creativity and humanity employed in solving problems and finding simple solutions for challenges such as the architecture of complex systems, the deep understanding of user needs and strategic decision-making.",
+        interests_ai_4: "The technology area is constantly evolving, and AI is the newest and greatest of these evolutions. It is up to us to adapt, evolve our way of working, be increasingly discerning with code, analytical, and decide where and when we need machine code, and the moments when a human touch is needed.",
 
         //Contacts section
         socials_title: "Contact and Social Networks",
@@ -292,10 +301,19 @@ const translations = {
 
         // Interests section
         interests_title: "Interesses",
+        interests_tech_title: "Tecnologia",
+        interests_science_title: "Ciência",
+        interests_communicatin_title: "Comunicação",
+        interests_teamwork_title: "Trabalho em equipe",
+        interests_ai_title: "Inteligência artificial",
         interests_tech: "Gosto de programar, ler e aprender coisas novas. Estou sempre em busca de novas tecnologias, novos desafios e de me manter atualizado nesse mundo em constante evolução. Tenho interesse em tudo que envolve computadores, incluindo hardware mas principalmente software, e nos últimos tempos venho me aventurando com a utilização de Inteligência Artificial executada localmente para automação de tarefas, geração de imagens, som, etc. Nas horas vagas busco me envolver em projetos pessoais de software para estudo e desenvolvimento pessoal e profissional.",
         interests_science: "Gosto de tudo relacionado a ciência, principalmente astronomia. Assuntos como mecânica quântica, física e matemática também me encantam e despertam meu interesse. Parte desse amor por ciência é traduzido no código, onde procuro sempre me apoiar nas boas práticas e técnicas já estabelecidas que os textos acadêmicos apresentam. Gosto de me ater a processos bem definidos e seguí-los para entregar código com a melhor qualidade possível.",
         interests_communication: "Tanto no ambiente pessoal quanto no ambiente profissional, gosto de cultivar diálogo aberto e sincero como forma de manter um ambiente sadio e aprender. Gosto muito de receber feedback sobre o meu trabalho e sempre busco formas de melhorar ou me adaptar à cada situação. Sou uma pessoa que aprende rápido. Também gosto de mediar diferentes pontos de vista e encontrar uma solução em comum.",
         interests_teamwork: "Gosto de trabalhar em equipes com objetivos de crescimento e aprendizado em comum. Procuro sempre manter um bom e cordial relacionamento com todos. Apesar de me considerar introvertido, gosto de estar em contato com pessoas e diferentes opiniões. Tanto o ambiente pessoal quanto o profissional são compartilhados com outras pessoas e saber entender, respeitar e as vezes absorver outros pontos de vista nos mantém em constante evolução.",
+        interests_ai_1: "Você entraria em um prédio cujo projeto arquitetônico foi feito 100% com inteligência artificial, sem a avaliação de um engenheiro? Claro que a utilização de IA no trabalho, em diversas áreas criou um murmúrio muito grande nos últimos anos.",
+        interests_ai_2: "Muito se fala em substituir desenvolvedores por IA, porém vamos lembrar que não se substituíram os engenheiros civis com o AutoCad. Da mesma forma que o AutoCad otimizou o trabalho do engenheiro, a IA é uma ferramenta valiosa no processo de desenvolvimento. Ela é ainda mais transformadora pois ela agiliza a escrita de código, auxilia na correção de bugs, e nos permite focar nos desafios <i>humanos</i>.",
+        interests_ai_3: "Esta é a palavra chave aqui. Devemos nos lembrar sempre que a essência do conhecimento que os grandes modelos de linguagem de IA possuem, foi treinada e embasada no conhecimento humano. Por mais inteligente que a máquina seja, ela não pode substituir a criatividade e humanidade empregada em resolver problemas e encontrar soluções simples para desafios como a arquitetura de sistemas complexos, a compreensão profunda das necessidades do usuário e a tomada de decisões estratégicas.",
+        interests_ai_4: "A área da tecnologia está em constante evolução, e IA é a mais nova e grandiosa delas. Cabe a nós nos adaptarmos, evoluir nossa forma de trabalhar, sermos cada vez mais criteriosos com código, analíticos, e decidir onde e quando precisamos de código de máquina, e os momentos em que é preciso um toque humano.",
 
         //Contacts section
         socials_title: "Contato e Redes Sociais",
