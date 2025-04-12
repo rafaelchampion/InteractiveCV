@@ -237,7 +237,7 @@ h6 {
     position: fixed;
     width: 400px;
     top: 75px;
-    background-image: url("../img/card-bg.jpg");
+    background-image: url("../img/card-bg.webp");
     background-color: var(--accent-primary);
     background-size: cover;
     background-blend-mode: soft-light;
@@ -1251,7 +1251,7 @@ body.dark-mode .section {
 }
 
 body.dark-mode .sidebar {
-    /* background-image: url("../img/card-bg.jpg"); */
+    /* background-image: url("../img/card-bg.webp"); */
     background-blend-mode: lighten;
     /* box-shadow: inset 0px 0 200px 105px var(--dark-bg-primary); */
 }
