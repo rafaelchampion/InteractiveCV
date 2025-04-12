@@ -445,8 +445,15 @@ aside {
 .section {
     padding: 35px;
     background: var(--bg-secondary);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 main {
     width: 940px;
@@ -464,7 +471,10 @@ main section:first-child {
 --------------------------------------------------------------*/
 .section {
     margin: 30px 0;
-    animation: fadeIn 0.7s ease-in-out forwards;
+    border: 1px solid;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .section#about-me,
@@ -669,6 +679,7 @@ details[open] summary svg {
     justify-content: center;
     font-size: 30px;
     text-decoration: none;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 .socials .social-icon {
@@ -826,6 +837,7 @@ details[open] summary svg {
     margin: 0;
     display: grid;
     break-inside: avoid;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .book-content {
@@ -1025,7 +1037,7 @@ details[open] summary svg {
     background: var(--bg-tertiary);
     padding: 25px;
     border-radius: 12px;
-    /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); */
+    transition: all 0.2s ease-in-out;
     border: 1px solid;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -1573,4 +1585,14 @@ body.dark-mode .book-title {
     .nav-toggle {
         flex-grow: 1;
     }
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
