@@ -173,6 +173,7 @@ h6 {
 }
 
 .main-nav .nav-left .nav-logo {
+    font-family: 'Poppins', 'sans-serif';
     font-size: 1.2rem;
     font-weight: bold;
     text-decoration: none;
@@ -513,16 +514,24 @@ main section:first-child {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.skill.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skill i {
+    vertical-align: middle;
+    margin-right: 5px;
+    font-size: 1.5em;
 }
 
 .skill:hover {
     transform: translateY(-5px);
-}
-
-.skill i {
-    margin-right: 5px;
-    font-size: 24px;
-    vertical-align: middle;
 }
 
 /*--------------------------------------------------------------
@@ -887,12 +896,21 @@ details[open] summary svg {
     display: block;
 }
 
+.book-subtitle {
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    display: block;
+    line-height: 18px;
+    margin-bottom: 6px;
+}
+
 .book-author {
     font-family: 'Inter', sans-serif;
     font-size: 1em;
-    color: var(--accent-complementary);
     display: block;
     line-height: 15px;
+    color: var(--accent-complementary);
 }
 
 .book-effect {
@@ -1221,7 +1239,7 @@ body.dark-mode .section {
 }
 
 body.dark-mode .sidebar {
-    background-image: url("../img/card-bg.jpg");
+    /* background-image: url("../img/card-bg.jpg"); */
     background-blend-mode: lighten;
     /* box-shadow: inset 0px 0 200px 105px var(--dark-bg-primary); */
 }
@@ -1286,10 +1304,6 @@ body.dark-mode aside .reflection {
 
 body.dark-mode .book-title {
     color: var(--dark-text-primary);
-}
-
-body.dark-mode .book-author {
-    color: var(--accent-complementary);
 }
 
 .button:hover {
@@ -1409,6 +1423,17 @@ body.dark-mode .book-author {
         left: 0;
         width: 100%;
         font-size: 14px;
+        grid-template-columns: 3fr 1fr 3fr;
+        justify-items: anchor-center;
+        justify-content: space-between;
+    }
+
+    .main-nav .nav-left {
+        justify-self: self-start;
+    }
+
+    .main-nav .nav-extras {
+        justify-self: self-end;
     }
 
     .main-nav .img-flag {

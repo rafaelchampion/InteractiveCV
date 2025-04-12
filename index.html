@@ -108,7 +108,7 @@
         </aside>
         <header class="main-nav">
             <div class="nav-left">
-                <a class="nav-logo" href="#about-me">Rafael Ferreira</a>
+                <a class="nav-logo gradient-text" href="#about-me">Rafael Ferreira</a>
             </div>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <i class="nav-toggle-icon nf nf-md-microsoft_xbox_controller_menu center"></i>
@@ -161,7 +161,7 @@
                 </h1>
                 <p data-translate-key="skills_instructions">Clique nas
                     categorias para expandi-las e visualizar mais habilidades.</small>
-                <details open>
+                <details>
                     <summary>
                         <h2 data-translate-key="skills_backend">Backend</h2>
                         <svg aria-hidden="true" focusable="false" class="octicon octicon-plus" viewBox="0 0 16 16"
@@ -184,7 +184,7 @@
                         <span class="skill">DevExpress</span>
                     </div>
                 </details>
-                <details open>
+                <details>
                     <summary>
                         <h2 data-translate-key="skills_frontend">Frontend</h2><svg aria-hidden="true" focusable="false"
                             class="octicon octicon-plus" viewBox="0 0 16 16" width="16" height="16" fill="#ffffff">
@@ -208,7 +208,7 @@
                         <span class="skill"><i class="devicon-angularjs-plain"></i> Angular</span>
                     </div>
                 </details>
-                <details open>
+                <details>
                     <summary>
                         <h2 data-translate-key="skills_databases">Bancos de dados</h2><svg aria-hidden="true"
                             focusable="false" class="octicon octicon-plus" viewBox="0 0 16 16" width="16" height="16"
@@ -233,7 +233,7 @@
                                 consultas</span></span>
                     </div>
                 </details>
-                <details open>
+                <details>
                     <summary>
                         <h2 data-translate-key="skills_devops">DevOps</h2><svg aria-hidden="true" focusable="false"
                             class="octicon octicon-plus" viewBox="0 0 16 16" width="16" height="16" fill="#ffffff">
@@ -252,7 +252,7 @@
                         <span class="skill"><i class="devicon-docker-plain"></i>Docker compose</span>
                     </div>
                 </details>
-                <details open>
+                <details>
                     <summary>
                         <h2 data-translate-key="skills_tests">Testes</h2><svg aria-hidden="true" focusable="false"
                             class="octicon octicon-plus" viewBox="0 0 16 16" width="16" height="16" fill="#ffffff">
@@ -267,7 +267,7 @@
                         <span class="skill">xUnit</span>
                     </div>
                 </details>
-                <details open>
+                <details>
                     <summary>
                         <h2 data-translate-key="skills_architecture">Arquitetura</h2><svg aria-hidden="true"
                             focusable="false" class="octicon octicon-plus" viewBox="0 0 16 16" width="16" height="16"
@@ -286,7 +286,7 @@
                             Architecture</span>
                     </div>
                 </details>
-                <details open>
+                <details>
                     <summary>
                         <h2 data-translate-key="skills_code_quality">Qualidade de
                             código</h2><svg aria-hidden="true" focusable="false" class="octicon octicon-plus"
@@ -304,7 +304,7 @@
                         <span class="skill">KISS</span>
                     </div>
                 </details>
-                <details open>
+                <details>
                     <summary>
                         <h2 data-translate-key="skills_agile">Metodologias</h2><svg aria-hidden="true" focusable="false"
                             class="octicon octicon-plus" viewBox="0 0 16 16" width="16" height="16" fill="#ffffff">
@@ -319,7 +319,7 @@
                         <span class="skill">Kanban</span>
                     </div>
                 </details>
-                <details open>
+                <details>
                     <summary>
                         <h2 data-translate-key="skills_other">Outras
                             habilidades</h2><svg aria-hidden="true" focusable="false" class="octicon octicon-plus"
@@ -888,7 +888,8 @@
                         </div>
                         <div class="book-details">
                             <div class="book-details-content">
-                                <span class="book-title" data-translate-key="book_ddd">Domain-Driven Design: Atacando as
+                                <span class="book-title" data-translate-key="book_ddd">Domain-Driven Design</span>
+                                <span class="book-subtitle" data-translate-key="book_ddd_subtitle">Atacando as
                                     Complexidades no Coração do
                                     Software</span>
                                 <span class="book-author">Eric Evans</span>
@@ -908,8 +909,9 @@
                         </div>
                         <div class="book-details">
                             <div class="book-details-content">
-                                <span class="book-title" data-translate-key="book_refactoring">Refatoração:
-                                    Aperfeiçoando o Design de Códigos
+                                <span class="book-title" data-translate-key="book_refactoring">Refatoração</span>
+                                <span class="book-subtitle" data-translate-key="book_ddd_refactoring">Aperfeiçoando o
+                                    Design de Códigos
                                     Existentes</span>
                                 <span class="book-author">Martin Fowler</span>
                             </div>
@@ -1106,6 +1108,45 @@
                 holoPattern.style.opacity = 0;
                 reflection.style.opacity = 0;
             }
+
+            // Skills Section Animation Logic
+            const skillsSection = document.getElementById('skills');
+            const detailsElements = skillsSection.querySelectorAll('details');
+            const skillItems = skillsSection.querySelectorAll('.skill');
+
+            // Observer for opening details
+            const detailsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        detailsElements.forEach(details => {
+                            details.open = true;
+                        });
+                        detailsObserver.unobserve(entry.target); // Stop observing once opened
+                    }
+                });
+            }, { threshold: 0.1 }); // Trigger when 10% of the section is visible
+
+            if (skillsSection) {
+                detailsObserver.observe(skillsSection);
+            }
+
+            // Observer for animating skill items
+            const skillObserver = new IntersectionObserver((entries, observer) => {
+                let delay = 0;
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, delay);
+                        delay += 100; // Stagger animation by 100ms
+                        observer.unobserve(entry.target); // Stop observing the item once animated
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }); // Trigger slightly before fully visible
+
+            skillItems.forEach(item => {
+                skillObserver.observe(item);
+            });
         });
 
     </script>

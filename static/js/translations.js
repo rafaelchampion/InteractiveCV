@@ -135,9 +135,12 @@ const translations = {
         book_clean_code: "Clean Code",
         book_clean_coder: "Clean Coder",
         book_clean_architecture: "Clean Architecture",
-        book_ddd: "Domain Driven Design: Tackling Complexity in the Heart of Software",
-        book_refactoring: "Refactoring: Improving the Design of Existing Code",
+        book_ddd: "Domain Driven Design",
+        book_refactoring: "Refactoring",
         book_csharp: "C# 9.0 Pocket Reference",
+
+        book_ddd_subtitle: "Tackling Complexity in the Heart of Software",
+        book_refactoring_subtitle: "Improving the Design of Existing Code",
 
         // Interests section
         interests_title: "Interests",
@@ -295,9 +298,12 @@ const translations = {
         book_clean_code: "Código Limpo",
         book_clean_coder: "O Codificador Limpo",
         book_clean_architecture: "Arquitetura Limpa",
-        book_ddd: "Domain-Driven Design: Atacando as Complexidades no Coração do Software",
-        book_refactoring: "Refatoração: Aperfeiçoando o Design de Códigos Existentes",
+        book_ddd: "Domain Driven Design",
+        book_refactoring: "Refatoração",
         book_csharp: "C# 9.0 Pocket Reference",
+
+        book_ddd_subtitle: "Atacando as Complexidades no Coração do Software",
+        book_refactoring_subtitle: "Aperfeiçoando o Design de Códigos Existentes",
 
         // Interests section
         interests_title: "Interesses",
