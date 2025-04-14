@@ -4,7 +4,9 @@ const translations = {
         location: "SP • Brazil",
 
         // Role
-        role: "Computer Engineer • Full Stack Software Engineer • .NET Expert",
+        role_1: "Computer Engineer",
+        role_2: "Full Stack Software Engineer",
+        role_3: ".NET Expert",
 
         // Navigation
         nav_about: "About me",
@@ -168,7 +170,9 @@ const translations = {
         location: "SP • Brasil",
 
         // Role
-        role: "Engenheiro da Computação • Engenheiro de Software Full Stack • Especialista .NET",
+        role_1: "Engenheiro da Computação",
+        role_2: "Engenheiro de Software Full Stack",
+        role_3: "Especialista .NET",
 
         // Navigation
         nav_about: "Sobre mim",

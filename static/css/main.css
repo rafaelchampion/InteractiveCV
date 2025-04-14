@@ -265,6 +265,20 @@ h6 {
 .sidebar-content p,
 .sidebar-content span {
     filter: drop-shadow(0px 0px 6px var(--accent-tertiary));
+    font-family: 'Poppins';
+}
+
+.sidebar-content h1 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.sidebar-content p,
+.sidebar-content span {
+    font-weight: 300;
+    font-size: 0.8em;
+    letter-spacing: 0.10em;
+    line-height: 1.1em;
 }
 
 .sidebar::before,
@@ -1327,7 +1341,7 @@ body.dark-mode .book-title {
 body.dark-mode .sidebar-content h1,
 body.dark-mode .sidebar-content p,
 body.dark-mode .sidebar-content span {
-    filter: drop-shadow(0px 0px 6px var(--dark-bg-primary));
+    filter: drop-shadow(0px 0px 2px var(--dark-bg-primary));
 }
 
 .button:hover {
