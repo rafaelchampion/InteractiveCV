@@ -1392,6 +1392,16 @@ body.dark-mode .book-title {
         z-index: 10;
     }
 
+    aside:hover {
+        transform: perspective(1000px) scale(0.95) rotateX(var(--rotateX)) rotateY(var(--rotateY));
+        box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    /* aside:hover::before {
+        animation-play-state: running;
+        opacity: 1;
+    } */
+
     .section,
     .sidebar {
         content: '';
