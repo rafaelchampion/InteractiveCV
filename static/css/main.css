@@ -340,8 +340,8 @@ aside:hover .sidebar::before {
     background-color: transparent;
     z-index: 3;
     pointer-events: none;
-    mask-image: url('../img/effect.png');
-    -webkit-mask-image: url('../img/effect.png');
+    mask-image: url('../img/effect.webp');
+    -webkit-mask-image: url('../img/effect.webp');
     mask-size: 100% 100%;
     -webkit-mask-size: 100% 100%;
     mask-repeat: no-repeat;
