@@ -247,7 +247,7 @@ const translations = {
         job2_title: "Analista de suporte",
         job2_company: "Resolve Franchising",
         job2_description_1: "<mark>Suporte técnico e treinamento</mark> para usuários e franqueados em três marcas de franquia, <mark>aumentando a adoção dos usuários</mark> à usabilidade do sistema e <mark>prevenindo problemas de operação</mark>.",
-        job2_description_2: "<mark>Consultas de banco de dados</mark> para relatórios pontuais e <mark>análise de anolamias</mark> para resolver problemas do sistema, <mark>atuando como ponte</mark> entre usuários finais e desenvolvedores para aprimoramentos de recursos de sistema.",
+        job2_description_2: "<mark>Consultas de banco de dados</mark> para relatórios pontuais e <mark>análise de anomalias</mark> para resolver problemas do sistema, <mark>atuando como ponte</mark> entre usuários finais e desenvolvedores para aprimoramentos de recursos de sistema.",
         job2_description_3: "<mark>Composição de documentação</mark> para sistemas existentes e novos recursos, <mark>mantendo a operação atualizada</mark> com mudanças e melhorias.",
 
         job1_date: "Nov. 2012 - Jul. 2015",
