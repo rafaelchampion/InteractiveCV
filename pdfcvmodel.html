@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Rafael Comunhão Ferreira</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/e2ea3b63b3.js" crossorigin="anonymous" async></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -325,8 +326,34 @@
             /* text-sm */
         }
 
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .print-btn:hover {
+            background-color: var(--primary-color-dark);
+        }
+
         /* Print-specific styles */
         @media print {
+            .print-btn {
+                display: none;
+            }
+
             body {
                 background-color: white;
                 margin: 0;
@@ -444,10 +471,12 @@
 </head>
 
 <body>
+    <button onclick="window.print()" class="print-btn">
+        <i class="fa-solid fa-print"></i> Print / Save as PDF
+    </button>
     <div class="cv-container">
         <aside class="sidebar">
-            <div class="photo-placeholder">
-                <span>Your Photo Here</span>
+            <div class="photo-placeholder" style="background-image: url('static/img/photo.webp'); background-size: cover; background-position: center;">
             </div>
 
             <section class="contact-info">
