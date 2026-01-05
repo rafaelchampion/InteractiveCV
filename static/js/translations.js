@@ -8,6 +8,9 @@ const translations = {
         role_2: "Full Stack Software Engineer",
         role_3: ".NET Expert",
 
+        // Skip Link
+        skip_link: "Skip to main content",
+
         // Navigation
         nav_about: "About me",
         nav_skills: "Skills",
@@ -173,6 +176,9 @@ const translations = {
         role_1: "Engenheiro da Computação",
         role_2: "Engenheiro de Software Full Stack",
         role_3: "Especialista .NET",
+
+        // Skip Link
+        skip_link: "Pular para o conteúdo principal",
 
         // Navigation
         nav_about: "Sobre mim",
