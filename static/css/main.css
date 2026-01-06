@@ -55,6 +55,11 @@ html {
     scroll-behavior: smooth;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     line-height: 35px;
