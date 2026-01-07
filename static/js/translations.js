@@ -1,5 +1,8 @@
 const translations = {
     en: {
+        // Skip link
+        skip_link: "Skip to main content",
+
         // Location
         location: "SP • Brazil",
 
@@ -166,6 +169,9 @@ const translations = {
         socials_invite: "It’s always good to connect with new people. Got a project idea? Want to discuss technology, programming, and coding? Need a developer? Get in touch.",
     },
     pt: {
+        // Skip link
+        skip_link: "Pular para o conteúdo principal",
+
         // Location
         location: "SP • Brasil",
 
