@@ -14,6 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let lastMouseY = 50;
     let mobileEffectInterval;
 
+    // Optimization: Throttle visual updates using requestAnimationFrame
+    let ticking = false;
+    let mouseX = 0;
+    let mouseY = 0;
+
     function updateHolographicEffects(rotateX, rotateY) {
         const normRotateX = (rotateX + 15) / 30;
         const normRotateY = (rotateY + 15) / 30;
@@ -60,6 +65,37 @@ document.addEventListener("DOMContentLoaded", () => {
         return /Mobi|Android/i.test(navigator.userAgent);
     }
 
+    function updateVisuals() {
+        // We calculate dimensions here to ensure correctness even if layout changes (e.g. scroll on non-fixed sidebar)
+        // Since this runs in rAF, it's throttled to frame rate, which is efficient enough.
+        const { width, height, left, top } = aside.getBoundingClientRect();
+
+        // Avoid division by zero
+        if (width === 0 || height === 0) return;
+
+        const x = (mouseX - left) / width * 100;
+        const y = (mouseY - top) / height * 100;
+
+        const rotateX = ((mouseY - top - height / 2) / 35) * -1;
+        const rotateY = (mouseX - left - width / 2) / 35;
+
+        aside.style.setProperty("--rotateX", `${rotateX}deg`);
+        aside.style.setProperty("--rotateY", `${rotateY}deg`);
+
+        const lightX = x * 0.8 + (50 + rotateY * 2) * 0.2;
+        const lightY = y * 0.8 + (50 + rotateX * 2) * 0.2;
+        const clampedLightX = Math.max(0, Math.min(100, lightX));
+        const clampedLightY = Math.max(0, Math.min(100, lightY));
+
+        aside.style.setProperty("--light-x", `${clampedLightX}%`);
+        aside.style.setProperty("--light-y", `${clampedLightY}%`);
+
+        lastMouseX = clampedLightX;
+        lastMouseY = clampedLightY;
+
+        updateHolographicEffects(rotateX, rotateY);
+    }
+
     if (isMobile()) {
         aside.style.setProperty("transition", "transform 0.2s ease-out");
         reflection.style.opacity = 1;
@@ -71,29 +107,18 @@ document.addEventListener("DOMContentLoaded", () => {
             reflection.style.opacity = 1;
         });
 
+        // Optimized mousemove handler
         aside.addEventListener("mousemove", (e) => {
-            const { width, height, left, top } = aside.getBoundingClientRect();
-            const x = (e.clientX - left) / width * 100;
-            const y = (e.clientY - top) / height * 100;
+            mouseX = e.clientX;
+            mouseY = e.clientY;
 
-            const rotateX = ((e.clientY - top - height / 2) / 35) * -1;
-            const rotateY = (e.clientX - left - width / 2) / 35;
-
-            aside.style.setProperty("--rotateX", `${rotateX}deg`);
-            aside.style.setProperty("--rotateY", `${rotateY}deg`);
-
-            const lightX = x * 0.8 + (50 + rotateY * 2) * 0.2;
-            const lightY = y * 0.8 + (50 + rotateX * 2) * 0.2;
-            const clampedLightX = Math.max(0, Math.min(100, lightX));
-            const clampedLightY = Math.max(0, Math.min(100, lightY));
-
-            aside.style.setProperty("--light-x", `${clampedLightX}%`);
-            aside.style.setProperty("--light-y", `${clampedLightY}%`);
-
-            lastMouseX = clampedLightX;
-            lastMouseY = clampedLightY;
-
-            updateHolographicEffects(rotateX, rotateY);
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    updateVisuals();
+                    ticking = false;
+                });
+                ticking = true;
+            }
         });
 
         aside.addEventListener("mouseleave", () => {
