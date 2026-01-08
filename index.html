@@ -84,6 +84,7 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link" data-translate-key="skip_content">Pular para o conteúdo principal</a>
     <div class="container">
         <aside class="sidebar">
             <div class="sidebar-content">
@@ -143,18 +144,19 @@
             <div class="nav-extras">
                 <button class="toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
                     <img class="img-flag" src="static/img/theme/switch.webp"
-                        alt="Ícone para alternar tema claro/escuro">
+                        alt="Ícone para alternar tema claro/escuro" aria-hidden="true">
                 </button>
                 <button id="lang-toggle-pt" class="toggle-btn" aria-label="Toggle Language PT-BR">
                     <img class="img-flag" src="static/img/flags/bra.webp"
-                        alt="Selecionar idioma Português (Bandeira do Brasil)">
+                        alt="Selecionar idioma Português (Bandeira do Brasil)" aria-hidden="true">
                 </button>
                 <button id="lang-toggle-en" class="toggle-btn" aria-label="Toggle Language EN-US">
-                    <img class="img-flag" src="static/img/flags/usa.webp" alt="Select English language (USA Flag)">
+                    <img class="img-flag" src="static/img/flags/usa.webp" alt="Select English language (USA Flag)"
+                        aria-hidden="true">
                 </button>
             </div>
         </header>
-        <main class="main-content">
+        <main class="main-content" id="main-content" tabindex="-1">
             <section class="section" id="about-me">
                 <h1 data-translate-key="about_title">Sobre mim</h1>
                 <p data-translate-key="about_content">
