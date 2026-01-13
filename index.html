@@ -11,6 +11,7 @@
         content="Rafael Comunhão Ferreira, Desenvolvedor .NET, Engenheiro de Software, Programador C#, Full Stack Developer, Software Architecture, Backend, Frontend, JavaScript, Web Development" />
     <meta name="author" content="Rafael Comunhão Ferreira" />
     <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://kit.fontawesome.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://www.nerdfonts.com https://ka-f.fontawesome.com; img-src 'self' https://i.postimg.cc https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self' https://fonts.gstatic.com https://ka-f.fontawesome.com https://www.nerdfonts.com; connect-src 'self' https://ka-f.fontawesome.com https://www.google-analytics.com https://www.googletagmanager.com;">
     <link rel="canonical" href="https://rafaelchampion.github.io/InteractiveCV/" />
 
     <!-- Open Graph (Facebook, LinkedIn) -->
@@ -40,16 +41,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" media="print"
-        onload="this.media='all'" />
-    <noscript>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    </noscript>
-    <link href="https://www.nerdfonts.com/assets/css/webfont.css" rel="stylesheet" media="print"
-        onload="this.media='all'" />
-    <noscript>
-        <link rel="stylesheet" href="https://www.nerdfonts.com/assets/css/webfont.css">
-    </noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" media="all" />
+    <link href="https://www.nerdfonts.com/assets/css/webfont.css" rel="stylesheet" media="all" />
     <script src="https://kit.fontawesome.com/e2ea3b63b3.js" crossorigin="anonymous" async></script>
 
     <!-- Styles -->
@@ -57,12 +50,7 @@
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEXN3H3SBP"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-EEXN3H3SBP');
-    </script>
+    <script src="static/js/analytics.js"></script>
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -1110,10 +1098,7 @@
     <script src="static/js/navigation.js" type="text/javascript"></script>
     <script src="static/js/sidebar-effects.js" type="text/javascript"></script>
     <script src="static/js/scroll-animations.js" type="text/javascript"></script>
-    <script>
-        initializeTheme();
-        initializeLanguage();
-    </script>
+    <script src="static/js/app-init.js" type="text/javascript"></script>
 </body>
 
 </html>
