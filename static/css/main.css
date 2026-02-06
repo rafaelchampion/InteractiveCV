@@ -269,6 +269,8 @@ h6 {
 }
 
 .sidebar-content h1 {
+    font-family: 'DM Serif Text';
+    letter-spacing: 0.05em;
     font-weight: 600;
     margin-bottom: 10px;
 }
@@ -539,14 +541,14 @@ main section:first-child {
     text-transform: uppercase;
     flex-grow: 1;
     text-align: center;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.1s ease-in-out;
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transition: opacity 0.5s ease-out, transform 0.25s ease-out;
 }
 
 .skill.visible {
@@ -591,8 +593,8 @@ main section:first-child {
 }
 
 .profile-pic img {
-    width: 97%;
-    height: 97%;
+    width: 99%;
+    height: 99%;
     border-radius: 50%;
     object-fit: cover;
 }
