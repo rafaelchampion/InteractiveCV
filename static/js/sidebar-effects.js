@@ -14,6 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let lastMouseY = 50;
     let mobileEffectInterval;
 
+    // Optimization: Cache layout dimensions to avoid layout thrashing
+    let sidebarRect = null;
+
+    function updateSidebarRect() {
+        if (aside) {
+            sidebarRect = aside.getBoundingClientRect();
+        }
+    }
+
     // Optimization: Throttle visual updates using requestAnimationFrame
     let ticking = false;
     let mouseX = 0;
@@ -66,9 +75,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function updateVisuals() {
-        // We calculate dimensions here to ensure correctness even if layout changes (e.g. scroll on non-fixed sidebar)
-        // Since this runs in rAF, it's throttled to frame rate, which is efficient enough.
-        const { width, height, left, top } = aside.getBoundingClientRect();
+        // Optimization: Use cached dimensions instead of forcing layout reflow
+        if (!sidebarRect) updateSidebarRect();
+
+        const { width, height, left, top } = sidebarRect;
 
         // Avoid division by zero
         if (width === 0 || height === 0) return;
@@ -102,7 +112,13 @@ document.addEventListener("DOMContentLoaded", () => {
         startMobileEffect();
         window.addEventListener("beforeunload", stopMobileEffect);
     } else {
+        // Initialize rect and update on relevant events
+        updateSidebarRect();
+        window.addEventListener("resize", updateSidebarRect);
+        window.addEventListener("scroll", updateSidebarRect, { passive: true });
+
         aside.addEventListener("mouseenter", (e) => {
+            updateSidebarRect(); // Ensure rect is fresh on interaction start
             aside.style.setProperty("transition", "transform 0.2s ease-out");
             reflection.style.opacity = 1;
         });
