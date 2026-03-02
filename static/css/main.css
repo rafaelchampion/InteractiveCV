@@ -50,6 +50,26 @@
     scroll-margin-top: 75px;
 }
 
+.skip-link {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-primary);
+    color: white;
+    padding: 10px 20px;
+    z-index: 10001;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0 0 5px 5px;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid var(--accent-secondary);
+}
+
 html {
     font-size: 16px;
     scroll-behavior: smooth;

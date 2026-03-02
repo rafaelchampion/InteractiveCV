@@ -9,6 +9,7 @@ const translations = {
         role_3: ".NET Expert",
 
         // Navigation
+        skip_content: "Skip to main content",
         nav_about: "About me",
         nav_skills: "Skills",
         nav_career: "Career",
@@ -199,6 +200,7 @@ const translations = {
         role_3: "Especialista .NET",
 
         // Navigation
+        skip_content: "Pular para o conteúdo principal",
         nav_about: "Sobre mim",
         nav_skills: "Habilidades",
         nav_career: "Carreira",
