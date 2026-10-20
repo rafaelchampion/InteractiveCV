@@ -28,29 +28,27 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({
     <div className={`relative group ${className}`}>
       {/* Connecting vertical line segment */}
       {!isLast ? (
+        // Solid line between items, smoothly expanding with card height
         <div
-          className="absolute -left-8 sm:-left-10 -translate-x-1/2 top-1/2 w-[2px] h-[calc(100%+1.5rem)] sm:h-[calc(100%+2rem)] z-0 pointer-events-none transition-all duration-300"
+          className="absolute -left-8 sm:-left-10 -translate-x-1/2 top-[32px] sm:top-[38px] w-[2px] h-[calc(100%+1.5rem)] sm:h-[calc(100%+2rem)] z-0 pointer-events-none transition-all duration-300"
           style={{
-            background:
-              'linear-gradient(to bottom, var(--accent-primary) 0%, var(--accent-secondary) 50%, var(--border-medium) 100%)',
+            background: 'var(--accent-primary)',
           }}
         />
       ) : (
+        // Fade line occurring exclusively on the oldest item
         <div
-          className="absolute -left-8 sm:-left-10 -translate-x-1/2 top-1/2 w-[2px] h-20 z-0 pointer-events-none transition-all duration-300"
+          className="absolute -left-8 sm:-left-10 -translate-x-1/2 top-[32px] sm:top-[38px] w-[2px] h-20 z-0 pointer-events-none"
           style={{
             background:
-              'linear-gradient(to bottom, var(--border-medium) 0%, var(--accent-subtle) 50%, transparent 100%)',
+              'linear-gradient(to bottom, var(--border-medium) 0%, transparent 100%)',
           }}
         />
       )}
 
-      {/* Marker: Centered to the exact vertical midpoint of the card */}
+      {/* Marker: Centered with the item title at the top of the card */}
       <div
-        className="absolute -left-8 sm:-left-10 -translate-x-1/2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-bg-surface border-2 border-accent-primary shadow-[0_0_8px_var(--accent-glow)] z-10 group-hover:scale-125 group-hover:bg-accent-primary group-hover:shadow-[0_0_14px_var(--accent-primary)] transition-all duration-300"
-        style={{
-          transition: 'top 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s ease, background-color 0.2s',
-        }}
+        className="absolute -left-8 sm:-left-10 -translate-x-1/2 top-[32px] sm:top-[38px] -translate-y-1/2 w-4 h-4 rounded-full bg-bg-surface border-2 border-accent-primary shadow-[0_0_8px_var(--accent-glow)] z-10 group-hover:scale-125 group-hover:bg-accent-primary group-hover:shadow-[0_0_14px_var(--accent-primary)] transition-all duration-300"
       />
 
       {children}

@@ -44,7 +44,7 @@ export const Text: React.FC<TextProps> = ({
 }) => {
   const styles = {
     lead: 'text-base sm:text-lg text-text-primary leading-relaxed',
-    body: 'text-sm sm:text-base text-text-secondary !leading-8',
+    body: 'text-sm sm:text-base text-text-secondary !leading-8 text-pretty',
     muted: 'text-xs sm:text-sm text-text-tertiary leading-relaxed',
     small: 'text-xs text-text-secondary leading-normal',
     mono: 'font-mono text-xs sm:text-sm text-text-secondary',
