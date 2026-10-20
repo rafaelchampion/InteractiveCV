@@ -65,6 +65,12 @@ document.addEventListener("DOMContentLoaded", () => {
         return /Mobi|Android/i.test(navigator.userAgent);
     }
 
+    const MAX_TILT = 6; // Max degrees of tilt in any direction
+
+    function clampTilt(val) {
+        return Math.max(-MAX_TILT, Math.min(MAX_TILT, val));
+    }
+
     function updateVisuals() {
         // We calculate dimensions here to ensure correctness even if layout changes (e.g. scroll on non-fixed sidebar)
         // Since this runs in rAF, it's throttled to frame rate, which is efficient enough.
@@ -76,8 +82,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const x = (mouseX - left) / width * 100;
         const y = (mouseY - top) / height * 100;
 
-        const rotateX = ((mouseY - top - height / 2) / 35) * -1;
-        const rotateY = (mouseX - left - width / 2) / 35;
+        const rawRotateX = ((mouseY - top - height / 2) / 55) * -1;
+        const rawRotateY = (mouseX - left - width / 2) / 55;
+        const rotateX = clampTilt(rawRotateX);
+        const rotateY = clampTilt(rawRotateY);
 
         aside.style.setProperty("--rotateX", `${rotateX}deg`);
         aside.style.setProperty("--rotateY", `${rotateY}deg`);
@@ -97,13 +105,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (isMobile()) {
-        aside.style.setProperty("transition", "transform 0.2s ease-out");
         reflection.style.opacity = 1;
         startMobileEffect();
         window.addEventListener("beforeunload", stopMobileEffect);
     } else {
-        aside.addEventListener("mouseenter", (e) => {
-            aside.style.setProperty("transition", "transform 0.2s ease-out");
+        aside.addEventListener("mouseenter", () => {
             reflection.style.opacity = 1;
         });
 
@@ -122,7 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         aside.addEventListener("mouseleave", () => {
-            aside.style.setProperty("transition", "transform 0.6s ease-out, --light-x 0.6s ease-out, --light-y 0.6s ease-out");
             aside.style.setProperty("--rotateX", "0deg");
             aside.style.setProperty("--rotateY", "0deg");
             resetCard();

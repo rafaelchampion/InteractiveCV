@@ -1,0 +1,98 @@
+import { JobExperience } from '@/types';
+
+export const careerJobs: JobExperience[] = [
+  {
+    id: 'omie',
+    titleKey: 'job9_title',
+    dateKey: 'job9_date',
+    companyKey: 'job9_company',
+    summaryKey: 'job9_summary',
+    descriptionKeys: [
+      'job9_description_1',
+      'job9_description_2',
+      'job9_description_3',
+      'job9_description_4',
+    ],
+  },
+  {
+    id: 'bankly',
+    titleKey: 'job8_title',
+    dateKey: 'job8_date',
+    companyKey: 'job8_company',
+    summaryKey: 'job8_summary',
+    descriptionKeys: [
+      'job8_description_1',
+      'job8_description_2',
+      'job8_description_3',
+      'job8_description_4',
+    ],
+  },
+  {
+    id: 'eicon',
+    titleKey: 'job7_title',
+    dateKey: 'job7_date',
+    companyKey: 'job7_company',
+    summaryKey: 'job7_summary',
+    descriptionKeys: [
+      'job7_description_1',
+      'job7_description_2',
+      'job7_description_3',
+      'job7_description_4',
+    ],
+  },
+  {
+    id: 'laserfast',
+    titleKey: 'job6_title',
+    dateKey: 'job6_date',
+    companyKey: 'job6_company',
+    summaryKey: 'job6_summary',
+    descriptionKeys: [
+      'job6_description_1',
+      'job6_description_2',
+      'job6_description_3',
+      'job6_description_4',
+      'job6_description_5',
+    ],
+  },
+  {
+    id: 'fastescova',
+    titleKey: 'job5_title',
+    dateKey: 'job5_date',
+    companyKey: 'job5_company',
+    summaryKey: 'job5_summary',
+    descriptionKeys: [
+      'job5_description_1',
+      'job5_description_2',
+      'job5_description_3',
+      'job5_description_4',
+      'job5_description_5',
+    ],
+  },
+  {
+    id: 'medicmais',
+    titleKey: 'job4_title',
+    dateKey: 'job4_date',
+    companyKey: 'job4_company',
+    summaryKey: 'job4_summary',
+    descriptionKeys: [
+      'job4_description_1',
+      'job4_description_2',
+      'job4_description_3',
+      'job4_description_4',
+      'job4_description_5',
+    ],
+  },
+  {
+    id: 'institutoconstrucao',
+    titleKey: 'job3_title',
+    dateKey: 'job3_date',
+    companyKey: 'job3_company',
+    summaryKey: 'job3_summary',
+    descriptionKeys: [
+      'job3_description_1',
+      'job3_description_2',
+      'job3_description_3',
+      'job3_description_4',
+    ],
+  },
+];
