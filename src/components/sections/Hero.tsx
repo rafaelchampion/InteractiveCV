@@ -3,6 +3,7 @@
 import React, { useState, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { getAssetPath } from '@/utils/assets';
+import { Badge } from '@/components/ui/Badge';
 import { FaLinkedinIn, FaGithub, FaEnvelope, FaLocationDot } from 'react-icons/fa6';
 
 export const Hero: React.FC = () => {
@@ -64,10 +65,10 @@ export const Hero: React.FC = () => {
           </h1>
 
           {/* Roles */}
-          <div className="flex flex-col items-center gap-1.5 mb-4">
-            <span className="text-xs sm:text-sm font-semibold px-3.5 py-1 rounded-full bg-accent-subtle text-accent-primary border border-accent-secondary/20">
+          <div className="flex flex-col items-center gap-2 mb-4">
+            <Badge variant="accent" className="text-xs sm:text-sm px-4 py-1">
               {t('role_3')}
-            </span>
+            </Badge>
             <span className="text-xs sm:text-sm font-medium text-text-secondary">
               {t('role_2')}
             </span>

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 import {
   FaPrint,
   FaArrowLeft,
@@ -13,6 +14,8 @@ import {
 } from 'react-icons/fa6';
 
 export default function CVPage() {
+  const { t } = useLanguage();
+
   const handlePrint = () => {
     if (typeof window !== 'undefined') {
       window.print();
@@ -28,7 +31,7 @@ export default function CVPage() {
           className="inline-flex items-center gap-2 text-xs font-semibold px-3.5 py-2 rounded-xl bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 shadow-sm transition-all"
         >
           <FaArrowLeft className="w-3.5 h-3.5" />
-          <span>Voltar ao Portfólio Interativo</span>
+          <span>{t('back_to_portfolio')}</span>
         </Link>
 
         <button
@@ -36,7 +39,7 @@ export default function CVPage() {
           className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-xl bg-[#0d9488] hover:bg-[#0f766e] text-white shadow-sm transition-all"
         >
           <FaPrint className="w-3.5 h-3.5" />
-          <span>Imprimir / Salvar PDF</span>
+          <span>{t('print_cv')}</span>
         </button>
       </div>
 

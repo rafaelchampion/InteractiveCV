@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { getAssetPath } from '@/utils/assets';
+import { Badge } from '@/components/ui/Badge';
 import {
-  FaFolderOpen,
   FaCopy,
   FaCheck,
   FaGithub,
@@ -25,20 +25,19 @@ export const ProjectsBento: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-12 scroll-mt-24">
-      {/* Section Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8 pb-4 border-b border-border-subtle">
-        <h2 className="font-heading font-bold text-xl sm:text-2xl text-text-primary flex items-center gap-2.5">
-          <FaFolderOpen className="text-accent-primary" />
-          <span>{t('projects_title')}</span>
+    <section id="projects" className="py-16 scroll-mt-24">
+      {/* Section Header without icon and without dividing line */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8">
+        <h2 className="font-heading font-bold text-2xl sm:text-3xl text-text-primary tracking-tight">
+          {t('projects_title')}
         </h2>
-        <span className="self-start sm:self-auto text-xs font-semibold px-3 py-1 rounded-full bg-accent-subtle text-accent-primary border border-accent-secondary/20">
+        <Badge variant="accent">
           Open Source
-        </span>
+        </Badge>
       </div>
 
-      {/* Utilbox Bento Card */}
-      <div className="rounded-3xl bg-bg-surface border border-border-subtle overflow-hidden shadow-sm hover:border-border-medium hover:shadow-xl transition-all">
+      {/* Utilbox Bento Card with minimalist airy styling */}
+      <div className="rounded-3xl bg-bg-surface/60 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
         {/* Banner Header Image */}
         <div className="w-full h-44 sm:h-56 bg-bg-elevated relative overflow-hidden">
           <img
@@ -55,22 +54,22 @@ export const ProjectsBento: React.FC = () => {
             <img
               src={getAssetPath('/img/utilbox/utilbox-logo.webp')}
               alt="Utilbox Logo"
-              className="w-14 h-14 rounded-2xl p-1 bg-bg-elevated border border-border-subtle object-contain shadow-sm"
+              className="w-14 h-14 rounded-2xl p-1 bg-bg-elevated object-contain shadow-sm"
             />
             <div>
               <h3 className="font-heading font-bold text-xl text-text-primary">
                 Utilbox
               </h3>
-              <div className="flex flex-wrap items-center gap-1.5 mt-1">
-                <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-accent-subtle text-accent-primary border border-accent-secondary/20">
+              <div className="flex flex-wrap items-center gap-2 mt-1.5">
+                <Badge variant="accent">
                   {t('project_opensource')}
-                </span>
-                <span className="text-[11px] font-medium px-2 py-0.5 rounded-full bg-bg-elevated text-text-secondary border border-border-subtle">
+                </Badge>
+                <Badge variant="subtle">
                   {t('project_mit_license')}
-                </span>
-                <span className="text-[11px] font-medium px-2 py-0.5 rounded-full bg-bg-elevated text-text-secondary border border-border-subtle">
+                </Badge>
+                <Badge variant="subtle">
                   C# / .NET Standard
-                </span>
+                </Badge>
               </div>
             </div>
           </div>
@@ -81,14 +80,14 @@ export const ProjectsBento: React.FC = () => {
           </p>
 
           {/* CLI Install Box */}
-          <div className="flex items-center justify-between p-3.5 mb-6 rounded-xl bg-bg-elevated border border-border-subtle font-mono text-xs text-text-primary">
+          <div className="flex items-center justify-between p-3.5 mb-6 rounded-2xl bg-bg-elevated/80 font-mono text-xs text-text-primary">
             <code>dotnet add package Utilbox</code>
             <button
               onClick={handleCopy}
               className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-sans font-semibold transition-all ${
                 copied
                   ? 'bg-status-success text-white'
-                  : 'bg-bg-surface hover:bg-bg-surface/80 border border-border-subtle text-text-secondary hover:text-text-primary'
+                  : 'bg-bg-surface hover:bg-bg-surface/80 text-text-secondary hover:text-text-primary'
               }`}
             >
               {copied ? <FaCheck className="w-3.5 h-3.5" /> : <FaCopy className="w-3.5 h-3.5" />}
@@ -102,7 +101,7 @@ export const ProjectsBento: React.FC = () => {
               href="https://github.com/rafaelchampion/Utilbox"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-xl bg-bg-elevated hover:bg-bg-surface border border-border-subtle hover:border-accent-primary text-text-primary transition-all shadow-sm"
+              className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2.5 rounded-xl bg-bg-elevated/80 hover:bg-bg-surface text-text-primary transition-all shadow-sm"
             >
               <FaGithub className="w-4 h-4" />
               <span>{t('view_github')}</span>
@@ -113,7 +112,7 @@ export const ProjectsBento: React.FC = () => {
               href="https://www.nuget.org/packages?q=Utilbox"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-xl bg-bg-elevated hover:bg-bg-surface border border-border-subtle hover:border-accent-primary text-text-primary transition-all shadow-sm"
+              className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2.5 rounded-xl bg-bg-elevated/80 hover:bg-bg-surface text-text-primary transition-all shadow-sm"
             >
               <FaBoxOpen className="w-4 h-4" />
               <span>{t('view_nuget')}</span>

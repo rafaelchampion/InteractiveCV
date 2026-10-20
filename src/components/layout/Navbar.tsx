@@ -3,8 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
-import { ThemeToggle } from '@/components/ui/ThemeToggle';
-import { LanguageToggle } from '@/components/ui/LanguageToggle';
 import { FaFilePdf, FaBars, FaXmark } from 'react-icons/fa6';
 
 const navItems = [
@@ -64,26 +62,24 @@ export const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-3.5 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-7xl h-[60px] px-5 bg-bg-glass backdrop-blur-md border border-border-subtle rounded-full flex items-center justify-between z-50 transition-all duration-300 ${
+      className={`fixed top-3.5 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-5xl h-[60px] px-6 bg-bg-glass backdrop-blur-md border border-border-subtle rounded-full flex items-center justify-between z-50 transition-all duration-300 ${
         isScrolled
           ? 'top-2.5 shadow-lg border-border-medium shadow-accent-glow'
           : 'shadow-md'
       }`}
     >
       {/* Brand Logo */}
-      <div className="flex items-center gap-3">
-        <a
-          href="#about-me"
-          onClick={(e) => handleScrollTo(e, '#about-me')}
-          className="font-heading font-bold text-base tracking-tight gradient-text hover:opacity-90 transition-opacity"
-        >
-          Rafael Ferreira
-        </a>
-      </div>
+      <a
+        href="#about-me"
+        onClick={(e) => handleScrollTo(e, '#about-me')}
+        className="font-heading font-bold text-base sm:text-lg tracking-tight gradient-text hover:opacity-90 transition-opacity"
+      >
+        Rafael Ferreira
+      </a>
 
       {/* Desktop Navigation Links */}
-      <nav className="hidden lg:flex items-center">
-        <ul className="flex items-center gap-1 list-none m-0 p-0">
+      <nav className="hidden md:flex items-center">
+        <ul className="flex items-center gap-1.5 list-none m-0 p-0">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             return (
@@ -91,10 +87,10 @@ export const Navbar: React.FC = () => {
                 <a
                   href={item.href}
                   onClick={(e) => handleScrollTo(e, item.href)}
-                  className={`text-xs font-medium px-3 py-1.5 rounded-full transition-all whitespace-nowrap ${
+                  className={`text-sm font-medium px-3.5 py-1.5 rounded-full transition-all whitespace-nowrap ${
                     isActive
                       ? 'text-accent-primary bg-accent-subtle font-semibold'
-                      : 'text-text-secondary hover:text-text-primary hover:bg-bg-elevated'
+                      : 'text-text-secondary hover:text-text-primary hover:bg-bg-elevated/70'
                   }`}
                 >
                   {t(item.labelKey)}
@@ -105,27 +101,24 @@ export const Navbar: React.FC = () => {
         </ul>
       </nav>
 
-      {/* Extras: PDF CV, Theme Toggle, Language Toggle, Mobile Hamburger */}
+      {/* Action / PDF Resume */}
       <div className="flex items-center gap-2">
         <Link
           href="/cv"
           target="_blank"
           rel="noopener noreferrer"
           title="Ver Currículo Imprimível / PDF"
-          className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-accent-primary text-white hover:bg-accent-secondary transition-all shadow-sm shadow-accent-glow hover:-translate-y-0.5 active:translate-y-0"
+          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full bg-accent-primary text-white hover:bg-accent-secondary transition-all shadow-sm shadow-accent-glow hover:-translate-y-0.5 active:translate-y-0"
         >
           <FaFilePdf className="w-3.5 h-3.5" />
-          <span className="hidden sm:inline">{t('nav_cv')}</span>
+          <span>{t('nav_cv')}</span>
         </Link>
-
-        <ThemeToggle />
-        <LanguageToggle />
 
         {/* Mobile menu toggle */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Abrir menu de navegação"
-          className="lg:hidden flex items-center justify-center w-9 h-9 rounded-full bg-bg-elevated text-text-primary border border-border-subtle"
+          className="md:hidden flex items-center justify-center w-9 h-9 rounded-full bg-bg-elevated text-text-primary border border-border-subtle"
         >
           {mobileMenuOpen ? <FaXmark className="w-4 h-4" /> : <FaBars className="w-4 h-4" />}
         </button>
@@ -133,7 +126,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden absolute top-[70px] left-0 w-full bg-bg-surface/95 backdrop-blur-xl border border-border-subtle rounded-2xl shadow-xl p-4 flex flex-col gap-2 z-50">
+        <div className="md:hidden absolute top-[70px] left-0 w-full bg-bg-surface/95 backdrop-blur-xl border border-border-subtle rounded-2xl shadow-xl p-4 flex flex-col gap-2 z-50">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             return (

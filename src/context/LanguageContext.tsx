@@ -1,51 +1,30 @@
 'use client';
 
-import React, { createContext, useContext, useEffect, useState, useTransition } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { Language } from '@/types';
 import { translations, TranslationKey } from '@/data/translations';
 
 interface LanguageContextType {
   language: Language;
-  setLanguage: (lang: Language) => void;
   t: (key: TranslationKey) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType>({
   language: 'pt',
-  setLanguage: () => {},
   t: (key) => key,
 });
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguageState] = useState<Language>('pt');
-  const [, startTransition] = useTransition();
+  const [language, setLanguage] = useState<Language>('pt');
 
   useEffect(() => {
-    try {
-      const savedLang = localStorage.getItem('language') as Language;
-      if (savedLang === 'en' || savedLang === 'pt') {
-        setLanguageState(savedLang);
-      } else {
-        const browserLang = navigator.language?.toLowerCase() || '';
-        const detected = browserLang.startsWith('pt') ? 'pt' : 'en';
-        setLanguageState(detected);
-      }
-    } catch {
-      // fallback
-    }
-  }, []);
+    if (typeof window === 'undefined') return;
 
-  const setLanguage = (lang: Language) => {
-    startTransition(() => {
-      setLanguageState(lang);
-      try {
-        localStorage.setItem('language', lang);
-        document.documentElement.setAttribute('lang', lang === 'en' ? 'en-US' : 'pt-BR');
-      } catch {
-        // ignore
-      }
-    });
-  };
+    const browserLang = (navigator.language || (navigator.languages && navigator.languages[0]) || '').toLowerCase();
+    const detected: Language = browserLang.startsWith('pt') ? 'pt' : 'en';
+    setLanguage(detected);
+    document.documentElement.setAttribute('lang', detected === 'en' ? 'en-US' : 'pt-BR');
+  }, []);
 
   const t = (key: TranslationKey): string => {
     const dict = translations[language] || translations.pt;
@@ -53,7 +32,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, t }}>
       {children}
     </LanguageContext.Provider>
   );
