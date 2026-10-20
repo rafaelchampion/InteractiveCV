@@ -41,7 +41,7 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({
           className="absolute -left-8 sm:-left-10 -translate-x-1/2 top-[32px] sm:top-[38px] w-[2px] h-20 z-0 pointer-events-none"
           style={{
             background:
-              'linear-gradient(to bottom, var(--border-medium) 0%, transparent 100%)',
+              'linear-gradient(to bottom, var(--accent-primary) 0%, transparent 100%)',
           }}
         />
       )}

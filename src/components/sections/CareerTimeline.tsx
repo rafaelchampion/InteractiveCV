@@ -48,10 +48,14 @@ export const CareerTimeline: React.FC = () => {
                 </div>
 
                 {/* Company Pill */}
-                <div className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-md bg-accent-subtle text-accent-primary mb-3">
+                <Text
+                  as="div"
+                  variant="small"
+                  className="inline-flex items-center gap-1.5 font-semibold text-accent-primary mb-3"
+                >
                   <FaBuilding className="w-3 h-3" />
                   <span>{t(job.companyKey as any)}</span>
-                </div>
+                </Text>
 
                 {/* Summary */}
                 <Text variant="body" className="mb-4">

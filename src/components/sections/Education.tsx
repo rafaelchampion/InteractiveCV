@@ -37,14 +37,18 @@ export const Education: React.FC = () => {
                   </Badge>
                 </div>
 
-                <div className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-md bg-accent-subtle text-accent-primary mb-3">
+                <Text
+                  as="div"
+                  variant="small"
+                  className="inline-flex items-center gap-1.5 font-semibold text-accent-primary mb-3"
+                >
                   {deg.id === 'computer_engineering' ? (
                     <FaBuildingColumns className="w-3 h-3" />
                   ) : (
                     <FaSchool className="w-3 h-3" />
                   )}
                   <span>{deg.institution}</span>
-                </div>
+                </Text>
 
                 {deg.thesis1Key && (
                   <Text variant="body" className="mb-2">
