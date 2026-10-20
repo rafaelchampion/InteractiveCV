@@ -19,16 +19,17 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
 }) => {
   return (
     <div
-      className={`flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 sm:mb-8 ${className}`}
+      className={`flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-2 sm:mb-4 ${className}`}
     >
       <div className="flex items-center gap-3">
         <Heading level={2}>{title}</Heading>
       </div>
 
-      <div className="flex items-center gap-3">
-        {action}
-        {badgeText && <Badge variant={badgeVariant}>{badgeText}</Badge>}
-      </div>
+      {action && (
+        <div className="flex items-center gap-3">
+          {action}
+        </div>
+      )}
     </div>
   );
 };

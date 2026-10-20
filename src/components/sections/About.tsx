@@ -18,7 +18,7 @@ export const About: React.FC = () => {
         badgeText={t('status_available')}
       />
 
-      <Text variant="body" className="mb-10 text-sm sm:text-base">
+      <Text variant="body" className="mb-10">
         {t('about_content')}
       </Text>
 

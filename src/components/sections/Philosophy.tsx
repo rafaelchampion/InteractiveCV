@@ -28,10 +28,9 @@ export const Philosophy: React.FC = () => {
         {/* Featured Card: AI as Force Multiplier */}
         <Card
           variant="default"
-          className="md:col-span-2 p-6 sm:p-8 relative overflow-hidden group"
+          gradient
+          className="md:col-span-2 p-6 sm:p-8 group"
         >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-accent-subtle rounded-full blur-3xl pointer-events-none -mr-16 -mt-16 opacity-40 group-hover:opacity-80 transition-opacity" />
-
           <Heading level={3} className="gradient-text flex items-center gap-2.5 mb-3">
             <FaWandMagicSparkles className="text-accent-primary shrink-0" />
             <span>{t('interests_ai_title')}</span>
