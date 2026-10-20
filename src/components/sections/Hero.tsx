@@ -30,7 +30,9 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="pt-24 pb-8 flex justify-center">
+    <section className="pt-24 pb-8 flex justify-center relative">
+      {/* Ambient mesh glow for modern visual depth */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[320px] bg-gradient-to-tr from-accent-primary/15 via-accent-secondary/10 to-accent-highlight/15 rounded-full blur-3xl pointer-events-none -z-10" />
       <div
         ref={cardRef}
         onMouseEnter={() => setIsHovered(true)}
