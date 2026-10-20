@@ -1,87 +1,136 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 import { useLanguage } from '@/context/LanguageContext';
 import { booksList } from '@/data/books';
 import { getAssetPath } from '@/utils/assets';
-import { Badge } from '@/components/ui/Badge';
+import { Section } from '@/components/ui/Section';
+import { SectionHeader } from '@/components/ui/SectionHeader';
+import { Text } from '@/components/ui/Typography';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 
 export const Bookshelf: React.FC = () => {
   const { t } = useLanguage();
-  const [activeBookId, setActiveBookId] = useState<string>(booksList[0]?.id || '');
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      align: 'start',
+      skipSnaps: false,
+    },
+    [
+      Autoplay({
+        delay: 3500,
+        stopOnInteraction: false,
+        stopOnMouseEnter: true,
+      }),
+    ]
+  );
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    emblaApi.on('select', onSelect);
+    onSelect();
+  }, [emblaApi, onSelect]);
 
   return (
-    <section id="books" className="py-16 scroll-mt-24">
-      {/* Section Header without icon and without dividing line */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-        <h2 className="font-heading font-bold text-2xl sm:text-3xl text-text-primary tracking-tight">
-          {t('books_title')}
-        </h2>
-        <Badge variant="accent">
-          {t('literature_badge')}
-        </Badge>
-      </div>
+    <Section id="books">
+      <SectionHeader
+        title={t('books_title')}
+        badgeText={t('literature_badge')}
+        action={
+          <div className="flex items-center gap-1.5">
+            <button
+              onClick={scrollPrev}
+              aria-label="Livro anterior"
+              className="w-8 h-8 rounded-full bg-bg-surface border border-subtle text-text-secondary hover:text-accent-primary hover:border-focus flex items-center justify-center transition-all shadow-sm"
+            >
+              <FaChevronLeft className="w-3 h-3" />
+            </button>
+            <button
+              onClick={scrollNext}
+              aria-label="Próximo livro"
+              className="w-8 h-8 rounded-full bg-bg-surface border border-subtle text-text-secondary hover:text-accent-primary hover:border-focus flex items-center justify-center transition-all shadow-sm"
+            >
+              <FaChevronRight className="w-3 h-3" />
+            </button>
+          </div>
+        }
+      />
 
-      <p className="text-text-secondary text-xs sm:text-sm leading-relaxed mb-10 max-w-2xl">
+      <Text variant="body" className="mb-8 max-w-2xl">
         {t('books_intro')}
-      </p>
+      </Text>
 
-      {/* Interactive Horizontal Shelf Container */}
-      <div className="relative py-8 px-4 sm:px-6 rounded-3xl bg-bg-surface/40 backdrop-blur-sm overflow-hidden">
-        {/* Subtle Ambient Wood/Glass Shelf Base Line */}
-        <div className="absolute bottom-6 left-6 right-6 h-1.5 rounded-full bg-gradient-to-r from-transparent via-border-focus/40 to-transparent pointer-events-none" />
+      {/* Embla Carousel Viewport */}
+      <div className="relative py-6 px-4 rounded-3xl bg-bg-surface/40 backdrop-blur-sm overflow-hidden">
+        {/* Subtle Ambient Shelf Line */}
+        <div className="absolute bottom-6 left-6 right-6 h-1 rounded-full bg-gradient-to-r from-transparent via-border-focus/30 to-transparent pointer-events-none" />
 
-        {/* Books Scroll/Perspective Row */}
-        <div className="flex items-end justify-start md:justify-center gap-6 sm:gap-8 overflow-x-auto pb-8 pt-4 px-4 scrollbar-none perspective-[1200px]">
-          {booksList.map((book) => {
-            const isActive = activeBookId === book.id;
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex items-end gap-6 sm:gap-8 pb-6 pt-2">
+            {booksList.map((book, idx) => {
+              const isSelected = selectedIndex === idx;
 
-            return (
-              <div
-                key={book.id}
-                onClick={() => setActiveBookId(book.id)}
-                onMouseEnter={() => setActiveBookId(book.id)}
-                className={`flex-shrink-0 cursor-pointer transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col items-center text-center ${
-                  isActive
-                    ? 'scale-110 -translate-y-4 z-20'
-                    : 'scale-95 opacity-80 hover:opacity-100 hover:-translate-y-2 z-10'
-                }`}
-              >
-                {/* 3D Book Cover with Spine Pivot */}
+              return (
                 <div
-                  className={`w-28 sm:w-36 aspect-[2/3] rounded-r-md rounded-l-xs overflow-hidden transition-all duration-400 transform-gpu ${
-                    isActive
-                      ? 'shadow-2xl shadow-accent-glow -rotate-y-[18deg] ring-1 ring-accent-secondary/50'
-                      : 'shadow-md -rotate-y-[8deg]'
-                  }`}
-                  style={{
-                    transformOrigin: 'left center',
-                    boxShadow: isActive
-                      ? '-6px 12px 28px rgba(0,0,0,0.45), 0 0 20px var(--accent-glow)'
-                      : '-4px 8px 16px rgba(0,0,0,0.3)',
-                  }}
+                  key={book.id}
+                  onClick={() => emblaApi?.scrollTo(idx)}
+                  className="flex-[0_0_140px] sm:flex-[0_0_170px] min-w-0 cursor-pointer flex flex-col items-center text-center group transition-transform duration-300"
                 >
-                  <img
-                    src={getAssetPath(book.image)}
-                    alt={t(book.titleKey as any)}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                  {/* 3D Book Cover with Subtle Perspective Spine */}
+                  <div
+                    className={`w-28 sm:w-36 aspect-[2/3] rounded-r-md rounded-l-xs overflow-hidden transition-all duration-300 transform-gpu group-hover:-translate-y-2 ${
+                      isSelected
+                        ? 'shadow-2xl shadow-accent-glow -rotate-y-[14deg] ring-1 ring-focus'
+                        : 'shadow-md -rotate-y-[6deg] opacity-90 group-hover:opacity-100'
+                    }`}
+                    style={{
+                      transformOrigin: 'left center',
+                      boxShadow: isSelected
+                        ? '-6px 12px 28px rgba(0,0,0,0.45), 0 0 18px var(--accent-glow)'
+                        : '-4px 8px 16px rgba(0,0,0,0.3)',
+                    }}
+                  >
+                    <img
+                      src={getAssetPath(book.image)}
+                      alt={t(book.titleKey as any)}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
 
-                {/* Book Details below each */}
-                <div className={`mt-4 transition-all duration-300 w-28 sm:w-36 ${isActive ? 'opacity-100' : 'opacity-60'}`}>
-                  <h4 className="font-heading font-semibold text-xs text-text-primary line-clamp-1">
-                    {t(book.titleKey as any)}
-                  </h4>
-                  <p className="text-[11px] text-text-tertiary line-clamp-1 mt-0.5">
-                    {book.author}
-                  </p>
+                  {/* Book Metadata */}
+                  <div className="mt-4 w-28 sm:w-36">
+                    <h4 className="font-heading font-semibold text-xs text-text-primary line-clamp-1 group-hover:text-accent-primary transition-colors">
+                      {t(book.titleKey as any)}
+                    </h4>
+                    <p className="text-[11px] text-text-tertiary line-clamp-1 mt-0.5">
+                      {book.author}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };

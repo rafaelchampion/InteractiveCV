@@ -31,6 +31,7 @@ const config: Config = {
           highlight: "var(--accent-highlight)",
         },
         border: {
+          DEFAULT: "var(--border-subtle)",
           subtle: "var(--border-subtle)",
           medium: "var(--border-medium)",
           focus: "var(--border-focus)",
@@ -39,6 +40,15 @@ const config: Config = {
           success: "var(--status-success)",
           "success-glow": "var(--status-success-glow)",
         },
+      },
+      borderColor: {
+        DEFAULT: "var(--border-subtle)",
+        subtle: "var(--border-subtle)",
+        medium: "var(--border-medium)",
+        focus: "var(--border-focus)",
+        accent: "var(--accent-primary)",
+        "accent-primary": "var(--accent-primary)",
+        "accent-secondary": "var(--accent-secondary)",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],

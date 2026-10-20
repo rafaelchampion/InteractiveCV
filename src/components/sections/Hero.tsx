@@ -4,6 +4,7 @@ import React, { useState, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { getAssetPath } from '@/utils/assets';
 import { Badge } from '@/components/ui/Badge';
+import { Heading, Text } from '@/components/ui/Typography';
 import { FaLinkedinIn, FaGithub, FaEnvelope, FaLocationDot } from 'react-icons/fa6';
 
 export const Hero: React.FC = () => {
@@ -42,7 +43,7 @@ export const Hero: React.FC = () => {
           transform: `perspective(1200px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
           transition: isHovered ? 'transform 0.1s ease-out' : 'transform 0.5s ease-out',
         }}
-        className="w-full max-w-xl bg-bg-surface/80 backdrop-blur-xl border border-border-subtle rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:border-border-medium transition-all duration-300 relative overflow-hidden group"
+        className="w-full max-w-xl bg-bg-surface/80 backdrop-blur-xl border border-subtle rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:border-focus transition-all duration-300 relative overflow-hidden group"
       >
         {/* Subtle holographic glare effect */}
         <div
@@ -62,21 +63,21 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Name & Title */}
-          <h1 className="font-heading font-bold text-2xl sm:text-3xl text-text-primary tracking-tight mb-3">
+          <Heading level={1} className="text-2xl sm:text-3xl tracking-tight mb-3">
             Rafael Comunhão Ferreira
-          </h1>
+          </Heading>
 
           {/* Roles */}
           <div className="flex flex-col items-center gap-2 mb-4">
             <Badge variant="accent" className="text-xs sm:text-sm px-4 py-1">
               {t('role_3')}
             </Badge>
-            <span className="text-xs sm:text-sm font-medium text-text-secondary">
+            <Text variant="body" as="span" className="text-xs sm:text-sm font-medium">
               {t('role_2')}
-            </span>
-            <span className="text-xs text-text-tertiary">
+            </Text>
+            <Text variant="muted" as="span">
               {t('role_1')}
-            </span>
+            </Text>
           </div>
 
           {/* Location Meta */}
@@ -93,7 +94,7 @@ export const Hero: React.FC = () => {
               rel="noopener noreferrer"
               aria-label="LinkedIn"
               title="LinkedIn"
-              className="w-10 h-10 rounded-full flex items-center justify-center bg-bg-elevated border border-border-subtle text-text-secondary hover:text-accent-primary hover:border-accent-secondary hover:bg-bg-surface transition-all duration-200 hover:scale-110 active:scale-95 shadow-sm"
+              className="w-10 h-10 rounded-full flex items-center justify-center bg-bg-elevated border border-subtle text-text-secondary hover:text-accent-primary hover:border-focus hover:bg-bg-surface transition-all duration-200 hover:scale-110 active:scale-95 shadow-sm"
             >
               <FaLinkedinIn className="w-4 h-4" />
             </a>
@@ -104,7 +105,7 @@ export const Hero: React.FC = () => {
               rel="noopener noreferrer"
               aria-label="GitHub"
               title="GitHub"
-              className="w-10 h-10 rounded-full flex items-center justify-center bg-bg-elevated border border-border-subtle text-text-secondary hover:text-accent-primary hover:border-accent-secondary hover:bg-bg-surface transition-all duration-200 hover:scale-110 active:scale-95 shadow-sm"
+              className="w-10 h-10 rounded-full flex items-center justify-center bg-bg-elevated border border-subtle text-text-secondary hover:text-accent-primary hover:border-focus hover:bg-bg-surface transition-all duration-200 hover:scale-110 active:scale-95 shadow-sm"
             >
               <FaGithub className="w-4 h-4" />
             </a>
@@ -113,7 +114,7 @@ export const Hero: React.FC = () => {
               href="mailto:rafael_comunhao@hotmail.com"
               aria-label="Email"
               title="Email"
-              className="w-10 h-10 rounded-full flex items-center justify-center bg-bg-elevated border border-border-subtle text-text-secondary hover:text-accent-primary hover:border-accent-secondary hover:bg-bg-surface transition-all duration-200 hover:scale-110 active:scale-95 shadow-sm"
+              className="w-10 h-10 rounded-full flex items-center justify-center bg-bg-elevated border border-subtle text-text-secondary hover:text-accent-primary hover:border-focus hover:bg-bg-surface transition-all duration-200 hover:scale-110 active:scale-95 shadow-sm"
             >
               <FaEnvelope className="w-4 h-4" />
             </a>

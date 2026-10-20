@@ -3,7 +3,10 @@
 import React, { useState, useMemo } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { skillCategoryGroups } from '@/data/skills';
-import { Badge } from '@/components/ui/Badge';
+import { Section } from '@/components/ui/Section';
+import { SectionHeader } from '@/components/ui/SectionHeader';
+import { Card } from '@/components/ui/Card';
+import { Text } from '@/components/ui/Typography';
 import {
   FaMagnifyingGlass,
   FaCircleXmark,
@@ -13,68 +16,119 @@ import {
   FaCloud,
   FaLaptopCode,
   FaAws,
+  FaDocker,
+  FaGitAlt,
+  FaJs,
+  FaHtml5,
+  FaBootstrap,
+  FaAngular,
+  FaBolt,
+  FaCube,
+  FaGears,
+  FaShapes,
+  FaDiagramProject,
+  FaNetworkWired,
+  FaShuffle,
+  FaShieldHalved,
+  FaVialCircleCheck,
+  FaBuildingUser,
+  FaChartLine,
+  FaCode,
+  FaCodeFork,
+  FaFileCode,
+  FaCloudArrowUp,
 } from 'react-icons/fa6';
 import { TbBrandCSharp } from 'react-icons/tb';
 import {
   SiDotnet,
-  SiDocker,
-  SiTerraform,
-  SiGit,
-  SiTypescript,
-  SiJavascript,
-  SiTailwindcss,
-  SiBootstrap,
-  SiAngular,
   SiPostgresql,
   SiMysql,
   SiBlazor,
-  SiHtml5,
+  SiTailwindcss,
+  SiTypescript,
+  SiTerraform,
 } from 'react-icons/si';
 
 const getCategoryIcon = (id: string, titleKey: string) => {
-  if (titleKey === 'skills_backend') return <FaServer className="text-accent-primary w-4 h-4" />;
-  if (titleKey === 'skills_architecture') return <FaSitemap className="text-accent-primary w-4 h-4" />;
-  if (titleKey === 'skills_databases') return <FaDatabase className="text-accent-primary w-4 h-4" />;
-  if (titleKey === 'skills_devops') return <FaCloud className="text-accent-primary w-4 h-4" />;
-  return <FaLaptopCode className="text-accent-primary w-4 h-4" />;
+  if (titleKey === 'skills_backend') return <FaServer className="text-accent-primary w-4 h-4 shrink-0" />;
+  if (titleKey === 'skills_architecture') return <FaSitemap className="text-accent-primary w-4 h-4 shrink-0" />;
+  if (titleKey === 'skills_databases') return <FaDatabase className="text-accent-primary w-4 h-4 shrink-0" />;
+  if (titleKey === 'skills_devops') return <FaCloud className="text-accent-primary w-4 h-4 shrink-0" />;
+  return <FaLaptopCode className="text-accent-primary w-4 h-4 shrink-0" />;
 };
 
 const getSkillIcon = (iconName?: string) => {
+  const iconClass = "text-accent-primary w-3.5 h-3.5 shrink-0";
+
   switch (iconName) {
     case 'csharp':
-      return <TbBrandCSharp className="text-[#9B4993] w-3.5 h-3.5" />;
+      return <TbBrandCSharp className={iconClass} />;
     case 'dotnet':
     case 'dotnetcore':
-      return <SiDotnet className="text-[#512BD4] w-3.5 h-3.5" />;
-    case 'typescript':
-      return <SiTypescript className="text-[#3178C6] w-3.5 h-3.5" />;
-    case 'javascript':
-      return <SiJavascript className="text-[#F7DF1E] w-3.5 h-3.5" />;
-    case 'tailwind':
-      return <SiTailwindcss className="text-[#06B6D4] w-3.5 h-3.5" />;
-    case 'bootstrap':
-      return <SiBootstrap className="text-[#7952B3] w-3.5 h-3.5" />;
-    case 'angular':
-      return <SiAngular className="text-[#DD0031] w-3.5 h-3.5" />;
-    case 'blazor':
-      return <SiBlazor className="text-[#512BD4] w-3.5 h-3.5" />;
-    case 'docker':
-      return <SiDocker className="text-[#2496ED] w-3.5 h-3.5" />;
-    case 'aws':
-      return <FaAws className="text-[#FF9900] w-3.5 h-3.5" />;
-    case 'terraform':
-      return <SiTerraform className="text-[#844FBA] w-3.5 h-3.5" />;
-    case 'git':
-    case 'githubactions':
-      return <SiGit className="text-[#F05032] w-3.5 h-3.5" />;
+      return <SiDotnet className={iconClass} />;
+    case 'database':
+    case 'sqlserver':
+      return <FaDatabase className={iconClass} />;
+    case 'bolt':
+      return <FaBolt className={iconClass} />;
+    case 'api':
+      return <FaCloudArrowUp className={iconClass} />;
+    case 'gears':
+      return <FaGears className={iconClass} />;
+    case 'cube':
+      return <FaCube className={iconClass} />;
+    case 'shapes':
+      return <FaShapes className={iconClass} />;
+    case 'diagram':
+      return <FaDiagramProject className={iconClass} />;
+    case 'network':
+      return <FaNetworkWired className={iconClass} />;
+    case 'shuffle':
+      return <FaShuffle className={iconClass} />;
+    case 'shield':
+      return <FaShieldHalved className={iconClass} />;
+    case 'vial':
+      return <FaVialCircleCheck className={iconClass} />;
+    case 'building':
+      return <FaBuildingUser className={iconClass} />;
     case 'postgres':
-      return <SiPostgresql className="text-[#4169E1] w-3.5 h-3.5" />;
+      return <SiPostgresql className={iconClass} />;
     case 'mysql':
-      return <SiMysql className="text-[#4479A1] w-3.5 h-3.5" />;
+      return <SiMysql className={iconClass} />;
+    case 'oracle':
+      return <FaDatabase className={iconClass} />;
+    case 'chart':
+      return <FaChartLine className={iconClass} />;
+    case 'code':
+      return <FaCodeFork className={iconClass} />;
+    case 'docker':
+      return <FaDocker className={iconClass} />;
+    case 'aws':
+      return <FaAws className={iconClass} />;
+    case 'terraform':
+      return <SiTerraform className={iconClass} />;
+    case 'azure':
+    case 'githubactions':
+    case 'git':
+      return <FaGitAlt className={iconClass} />;
+    case 'typescript':
+      return <SiTypescript className={iconClass} />;
+    case 'javascript':
+      return <FaJs className={iconClass} />;
+    case 'blazor':
+      return <SiBlazor className={iconClass} />;
+    case 'tailwind':
+      return <SiTailwindcss className={iconClass} />;
+    case 'bootstrap':
+      return <FaBootstrap className={iconClass} />;
     case 'html5':
-      return <SiHtml5 className="text-[#E34F26] w-3.5 h-3.5" />;
+      return <FaHtml5 className={iconClass} />;
+    case 'angular':
+      return <FaAngular className={iconClass} />;
+    case 'filecode':
+      return <FaFileCode className={iconClass} />;
     default:
-      return null;
+      return <FaCode className={iconClass} />;
   }
 };
 
@@ -120,16 +174,11 @@ export const SkillsMatrix: React.FC = () => {
   }, [filteredGroups]);
 
   return (
-    <section id="skills" className="py-16 scroll-mt-24">
-      {/* Section Header without icon and without dividing line */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
-        <h2 className="font-heading font-bold text-2xl sm:text-3xl text-text-primary tracking-tight">
-          {t('skills_title')}
-        </h2>
-        <Badge variant="accent">
-          {t('stack_overview')}
-        </Badge>
-      </div>
+    <Section id="skills">
+      <SectionHeader
+        title={t('skills_title')}
+        badgeText={t('stack_overview')}
+      />
 
       {/* Search and Tabs */}
       <div className="space-y-4 mb-8">
@@ -142,7 +191,7 @@ export const SkillsMatrix: React.FC = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder={t('skills_search_placeholder')}
             aria-label={t('skills_instructions')}
-            className="w-full pl-11 pr-10 py-3 text-sm rounded-full bg-bg-surface/70 border border-border-subtle/80 text-text-primary placeholder:text-text-tertiary focus:border-accent-primary focus:outline-none focus:ring-2 focus:ring-accent-subtle transition-all"
+            className="w-full pl-11 pr-10 py-3 text-sm rounded-full bg-bg-surface/70 border border-subtle text-text-primary placeholder:text-text-tertiary focus:border-focus focus:outline-none focus:ring-2 focus:ring-accent-subtle transition-all"
           />
           {searchTerm && (
             <button
@@ -164,7 +213,7 @@ export const SkillsMatrix: React.FC = () => {
               className={`text-xs font-medium px-4 py-1.5 rounded-full transition-all ${
                 activeTab === tab.id
                   ? 'bg-accent-primary text-white shadow-sm shadow-accent-glow font-semibold'
-                  : 'bg-bg-surface/60 text-text-secondary hover:text-text-primary hover:bg-bg-surface'
+                  : 'bg-bg-surface/60 text-text-secondary hover:text-text-primary hover:bg-bg-surface border border-subtle'
               }`}
             >
               {t(tab.labelKey)}
@@ -174,18 +223,19 @@ export const SkillsMatrix: React.FC = () => {
 
         {/* Match Count Indicator */}
         {searchTerm && (
-          <div className="text-xs font-medium text-accent-primary animate-fade-in pl-2">
+          <Text variant="muted" className="text-accent-primary font-medium pl-2">
             {totalVisibleSkills} {totalVisibleSkills === 1 ? t('search_skill_found') : t('search_skills_found')}
-          </div>
+          </Text>
         )}
       </div>
 
-      {/* Categorized Skills Grid - Minimalist without boxed borders */}
+      {/* Categorized Skills Grid using unified Card component */}
       <div className="space-y-6">
         {filteredGroups.map((group, idx) => (
-          <div
+          <Card
             key={`${group.titleKey}-${idx}`}
-            className="p-5 sm:p-6 rounded-2xl bg-bg-surface/50 hover:bg-bg-surface/80 transition-all"
+            variant="default"
+            className="p-5 sm:p-6"
           >
             <h3 className="font-heading font-semibold text-xs sm:text-sm text-text-secondary uppercase tracking-wider flex items-center gap-2 mb-3.5">
               {getCategoryIcon(group.id, group.titleKey)}
@@ -199,7 +249,7 @@ export const SkillsMatrix: React.FC = () => {
                 return (
                   <span
                     key={skill.name}
-                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-medium bg-bg-elevated/70 text-text-primary hover:bg-accent-subtle hover:text-accent-primary transition-all cursor-default"
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-medium bg-bg-surface border border-subtle text-text-primary hover:border-focus hover:text-accent-primary hover:shadow-sm transition-all cursor-default"
                   >
                     {icon}
                     <span>{displayName}</span>
@@ -207,9 +257,9 @@ export const SkillsMatrix: React.FC = () => {
                 );
               })}
             </div>
-          </div>
+          </Card>
         ))}
       </div>
-    </section>
+    </Section>
   );
 };
