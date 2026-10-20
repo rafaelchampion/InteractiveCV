@@ -68,30 +68,27 @@ export const CareerTimeline: React.FC = () => {
                     {isExpanded ? t('career_collapse_details') : t('career_expand_details')}
                   </span>
                   <FaChevronDown
-                    className={`w-3 h-3 transition-transform duration-300 ${
-                      isExpanded ? 'rotate-180' : ''
-                    }`}
+                    className={`w-3 h-3 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''
+                      }`}
                   />
                 </button>
 
                 {/* Smooth Expansion Container using CSS Grid rows + text blur-fade */}
                 <div
-                  className={`grid transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden ${
-                    isExpanded ? 'grid-rows-[1fr] mt-4 pt-4 border-t border-subtle' : 'grid-rows-[0fr]'
-                  }`}
+                  className={`grid transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden ${isExpanded ? 'grid-rows-[1fr] mt-4 pt-4' : 'grid-rows-[0fr]'
+                    }`}
                 >
                   <div className="min-h-0">
                     <ul
-                      className={`space-y-2.5 pl-4 list-disc text-xs sm:text-sm text-text-secondary transition-all duration-500 ease-out ${
-                        isExpanded
-                          ? 'opacity-100 blur-0 translate-y-0'
-                          : 'opacity-0 blur-sm -translate-y-2 pointer-events-none'
-                      }`}
+                      className={`space-y-2.5 list-disc text-xs sm:text-sm bg-indigo-500/5 rounded-xl p-8 text-text-secondary transition-all duration-500 ease-out ${isExpanded
+                        ? 'opacity-100 blur-0 translate-y-0'
+                        : 'opacity-0 blur-sm -translate-y-2 pointer-events-none'
+                        }`}
                     >
                       {job.descriptionKeys.map((descKey) => (
-                        <li key={descKey} className="leading-relaxed">
+                        <Text as="li" variant="body" key={descKey} className="leading-relaxed">
                           {t(descKey as any)}
-                        </li>
+                        </Text>
                       ))}
                     </ul>
                   </div>

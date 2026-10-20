@@ -44,7 +44,7 @@ export const Philosophy: React.FC = () => {
         </Card>
 
         {/* Technology & Craftsmanship */}
-        <Card variant="default" className="p-6">
+        <Card variant="default" gradient className="p-6">
           <Heading level={4} className="flex items-center gap-2 mb-2 text-sm sm:text-base">
             <FaMicrochip className="text-accent-primary shrink-0" />
             <span>{t('interests_tech_title')}</span>
@@ -55,7 +55,7 @@ export const Philosophy: React.FC = () => {
         </Card>
 
         {/* Scientific Rigor */}
-        <Card variant="default" className="p-6">
+        <Card variant="default" gradient className="p-6">
           <Heading level={4} className="flex items-center gap-2 mb-2 text-sm sm:text-base">
             <FaAtom className="text-accent-primary shrink-0" />
             <span>{t('interests_science_title')}</span>
@@ -66,7 +66,7 @@ export const Philosophy: React.FC = () => {
         </Card>
 
         {/* Transparent Communication */}
-        <Card variant="default" className="p-6">
+        <Card variant="default" gradient className="p-6">
           <Heading level={4} className="flex items-center gap-2 mb-2 text-sm sm:text-base">
             <FaComments className="text-accent-primary shrink-0" />
             <span>{t('interests_communication_title')}</span>
@@ -77,7 +77,7 @@ export const Philosophy: React.FC = () => {
         </Card>
 
         {/* Collaborative Leadership */}
-        <Card variant="default" className="p-6">
+        <Card variant="default" gradient className="p-6">
           <Heading level={4} className="flex items-center gap-2 mb-2 text-sm sm:text-base">
             <FaPeopleGroup className="text-accent-primary shrink-0" />
             <span>{t('interests_teamwork_title')}</span>

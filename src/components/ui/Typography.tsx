@@ -28,9 +28,9 @@ export const Heading: React.FC<HeadingProps> = ({
   );
 };
 
-interface TextProps extends React.HTMLAttributes<HTMLParagraphElement> {
+interface TextProps extends React.HTMLAttributes<HTMLElement> {
   variant?: 'lead' | 'body' | 'muted' | 'small' | 'mono';
-  as?: 'p' | 'span' | 'div';
+  as?: 'p' | 'span' | 'div' | 'li';
   children: React.ReactNode;
   className?: string;
 }

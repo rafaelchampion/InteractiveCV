@@ -33,7 +33,7 @@ export const Card: React.FC<CardProps> = ({
           className="absolute inset-0 pointer-events-none transition-opacity duration-300"
           style={{
             background:
-              'linear-gradient(to top right, transparent 0%, transparent 20%, var(--accent-subtle) 100%)',
+              'linear-gradient(to top right, var(--accent-glow) 0%, var(--accent-subtle) 100%)',
           }}
         />
       )}
